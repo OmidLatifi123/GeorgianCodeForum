@@ -1,0 +1,62 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    height: 50vh; /* Make each section take up the entire viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    margin-bottom: 10px; /* Add a slight white gap between sections */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #e1e1e1;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #888;
+}
+        /* Text container style */
+        .text-container {
+            width: 50%;
+            margin: auto;
+        }
+
+      /* Colors for each section */
+      .section-about-us { background-color: #58AD40; }
+      .section-our-mission { background-color: #005D99; }
+      .section-meet-the-team { background-color: #58AD40; }
+      .section-join-community { background-color: #005D99; }
+
+        /* Image style */
+        .section img {
+            max-width: 50%; /* Resize image to take up half of the section */
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* Image positioning for alternating sections */
+        .section img.left { left: 0; }
+        .section img.right { right: 0; }
