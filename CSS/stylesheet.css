@@ -61,6 +61,18 @@ footer {
         .section img.left { left: 0; }
         .section img.right { right: 0; }
 
-.PrivPolicy p {
+.PrivPolicyBody p {
     color: #000;
+}
+
+.PrivPolicyHeader {
+    background-color: #fff;
+}
+
+.PrivPolicyHeader img {
+    max-width: 50%; /* Resize image to take up half of the section */
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
