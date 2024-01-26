@@ -76,3 +76,22 @@ footer {
     top: 0;
     bottom: 0;
 }
+
+/* This code is for the scroll behaviour, I don't know if it's working fully yet.
+
+.animated-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .animate-on-scroll {
+    animation: slideUp 0.5s forwards;
+  }
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } */
