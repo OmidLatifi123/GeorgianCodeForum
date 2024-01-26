@@ -60,3 +60,7 @@ footer {
         /* Image positioning for alternating sections */
         .section img.left { left: 0; }
         .section img.right { right: 0; }
+
+.PrivPolicy p {
+    color: #000;
+}
