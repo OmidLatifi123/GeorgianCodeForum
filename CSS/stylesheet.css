@@ -61,6 +61,7 @@ footer {
         .section img.left { left: 0; }
         .section img.right { right: 0; }
 
+/* Delete this part of CSS */
 .PrivPolicyBody p {
     color: #000;
 }
@@ -68,16 +69,9 @@ footer {
 .PrivPolicyHeader {
     background-color: #fff;
 }
+/* Delete this part of CSS */
 
-.PrivPolicyHeader img {
-    max-width: 50%; /* Resize image to take up half of the section */
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-}
-
-/* This code is for the scroll behaviour, I don't know if it's working fully yet.
+/* This code is for the scroll behaviour, I don't know if it's working fully yet. */
 
 .animated-content {
     opacity: 0;
@@ -94,7 +88,7 @@ footer {
       opacity: 1;
       transform: translateY(0);
     }
-  } */
+  }
 
   /* Responsive screen for Samsung S8+ */
   @media only screen and (min-width: 360px) and (max-width: 740px) {
