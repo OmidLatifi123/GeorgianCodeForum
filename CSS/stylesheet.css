@@ -95,3 +95,26 @@ footer {
       transform: translateY(0);
     }
   } */
+
+  /* Responsive screen for Samsung S8+ */
+  @media only screen and (min-width: 360px) and (max-width: 740px) {
+    body {
+      margin: 10px;
+    }
+  
+    section {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .section img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    .text-container {
+      width: 100%;
+    }
+  }
