@@ -156,3 +156,19 @@ footer {
       width: 100%;
     }
   }
+.login-item{
+
+  align-items: center;
+  padding: 5%;
+
+}
+a{
+  color: #faf9f6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-style{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
