@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     var strings = [
-        "How do I center a div?",
-        "How do I clone a git repo?",
-        "Why is my code underlined red?",
-        "What is a .gitignore file?",
-        "How do I install npm packages?",
-        "Should I use Angular or React?"
+        " center a div?",
+        " clone a git repo?",
+        " fix my code?",
+        " add a .gitignore file?",
+        " install npm packages?",
+        " make a linked list?"
     ];
 
     // Shuffle the array randomly
@@ -25,5 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         typeSpeed: 125,
         backSpeed: 80,
         loop: true,
+        showCursor: false
     });
 });
