@@ -1,9 +1,8 @@
 // Make the text in the text area a place holder rather than actual text
-// document.getElementById('issue').addEventListener('click', function() {
-//      this.removeAttribute('placeholder');
-// });
+document.getElementById('issue').addEventListener('click', function() {
+     this.removeAttribute('placeholder');
+});
 const myForm = document.getElementById('contact');
-
 
 
 // Declaring dependencies
@@ -21,7 +20,6 @@ oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
 
 myForm.addEventListener('submit', function (event) {
-    event.preventDefault();
 
     // Get the values from the form
     const issue = document.getElementById('issue').value;
