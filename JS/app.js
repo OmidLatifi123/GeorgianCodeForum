@@ -2,7 +2,8 @@
 // document.getElementById('issue').addEventListener('click', function() {
 //      this.removeAttribute('placeholder');
 // });
-const myForm = document.getElementById('contact');
+const issue = document.getElementById('issue');
+const email = document.getElementById('email');
 
 
 
@@ -20,16 +21,24 @@ const oAuth2Client =  new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_
 oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
 
-myForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
+document.getElementById('contact').addEventListener('submit', sendEmails(issue, email)); {
     // Get the values from the form
-    const issue = document.getElementById('issue').value;
-    const email = document.getElementById('email').value;
+
+    alert("Form Submitted")
+
+    function sendEmails(issue, email){
+    alert("Email A Sending")
+    sendMailSupport(issue, email)
+    .then(result => console.log('email sent...', result))
+    .catch(error => console.log(error.message))
+    alert("Email B Sending")
+    sendMailClient(issue, email)
+    .then(result => console.log('email sent...', result))
+    .catch(error => console.log(error.message))
+    }
 
     // Call your function with the captured values
-    sendEmails(issue, email);
-});
+};
 
 // Send mail to support team (us)
 async function sendMailSupport(issue, email){
@@ -97,12 +106,3 @@ async function sendMailClient(){
     }
 }
 
-function sendEmails(issue, email){
-    sendMailSupport(issue, email)
-    .then(result => console.log('email sent...', result))
-    .catch(error => console.log(error.message))
-
-    sendMailClient(issue, email)
-    .then(result => console.log('email sent...', result))
-    .catch(error => console.log(error.message))
-}
