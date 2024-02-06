@@ -242,30 +242,22 @@ text-align: center;
 
 .team-members {
 display: flex;
-flex-wrap: wrap;
 justify-content: center;
 }
 
 .team-member {
 text-align: center;
-margin: 20px;
-max-width: 250px;
+margin: 40px;
+max-width: 400px;
 }
 
 .member-image {
 width: 50%;
-border-radius: 50%;
+border-radius: 60%;
 margin-top: 10px;
 }
 
 /* Center the header */
 .text-container {
 text-align: center;
-}
-
-/* Responsive adjustments */
-@media screen and (min-width: 768px) {
-.section-meet-the-team {
-flex-direction: row;
-}
 }
