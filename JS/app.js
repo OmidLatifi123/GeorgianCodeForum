@@ -1,8 +1,8 @@
 // Make the text in the text area a place holder rather than actual text
-document.getElementById('issue').addEventListener('click', function() {
-    this.removeAttribute('placeholder');
-});
-const myForm = document.getElementById('contact');
+//document.getElementById('issue').addEventListener('click', function() {
+//    this.removeAttribute('placeholder');
+//});
+//const myForm = document.getElementById('contact');
 
 
 // Declaring dependencies
@@ -19,15 +19,15 @@ const oAuth2Client =  new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_
 oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
 
-myForm.addEventListener('submit', function (event) {
+//myForm.addEventListener('submit', function (event) {
 
    // Get the values from the form
-   const issue = document.getElementById('issue').value;
-   const email = document.getElementById('email').value;
+   //const issue = document.getElementById('issue').value;
+   //const email = document.getElementById('email').value;
 
    // Call your function with the captured values
-   sendEmails(issue, email);
-});
+   //sendEmails(issue, email);
+//});
 
 // Send mail to support team (us)
 async function sendMailSupport(issue, email){
@@ -82,7 +82,7 @@ async function sendMailClient(){
 
        const mailOptions = {
            from: "cdasilv1@lakeheadu.ca",
-           to: email,
+           to: "kaiic6@gmail.com",
            subject: "Support Ticket",
            text: 'Your support ticket has been sent.',
        };
@@ -95,12 +95,10 @@ async function sendMailClient(){
    }
 }
 
-function sendEmails(issue, email){
-   sendMailSupport(issue, email)
+   sendMailSupport()
    .then(result => console.log('email sent...', result))
    .catch(error => console.log(error.message))
 
-   sendMailClient(issue, email)
+   sendMailClient()
    .then(result => console.log('email sent...', result))
    .catch(error => console.log(error.message))
-}
