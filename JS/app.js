@@ -1,11 +1,9 @@
-// Make the text in the text area a place holder rather than actual text
-//document.getElementById('issue').addEventListener('click', function() {
-//    this.removeAttribute('placeholder');
-//});
-//const myForm = document.getElementById('contact');
+function sendEmails(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var issue =document.getElementById("issue").value;
 
-
-// Declaring dependencies
+    // Declaring dependencies
 const nodemailer = require('nodemailer')
 const {google} = require ('googleapis')
 
@@ -30,7 +28,7 @@ oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 //});
 
 // Send mail to support team (us)
-async function sendMailSupport(issue, email){
+async function sendMailSupport(name, email, issue){
 
    try {
        const accessToken = await oAuth2Client.getAccessToken()
@@ -50,7 +48,7 @@ async function sendMailSupport(issue, email){
        const mailOptions = {
            from: email,
            to: 'kaiic6@gmail.com',
-           subject: "Supoort Ticket",
+           subject: name + "Support Ticket",
            text: issue,
        };
 
@@ -63,7 +61,7 @@ async function sendMailSupport(issue, email){
 }
 
 // Send mail to client
-async function sendMailClient(){
+async function sendMailClient(name, email){
 
    try {
        const accessToken = await oAuth2Client.getAccessToken()
@@ -82,8 +80,8 @@ async function sendMailClient(){
 
        const mailOptions = {
            from: "cdasilv1@lakeheadu.ca",
-           to: "kaiic6@gmail.com",
-           subject: "Support Ticket",
+           to: email,
+           subject: name + "Support Ticket",
            text: 'Your support ticket has been sent.',
        };
        
@@ -102,3 +100,5 @@ async function sendMailClient(){
    sendMailClient()
    .then(result => console.log('email sent...', result))
    .catch(error => console.log(error.message))
+}
+
