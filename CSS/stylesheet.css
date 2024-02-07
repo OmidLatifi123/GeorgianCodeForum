@@ -153,6 +153,8 @@ footer {
   }
 
 
+  /* CONTACT US */
+
   .ContactUscontainer { /* This container is specific for the Contact us containers*/
     display: flex;
     justify-content: space-between;
