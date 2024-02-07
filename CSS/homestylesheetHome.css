@@ -35,8 +35,8 @@ h2 {
 } */
 
   .header {
-    font-size: 24px; /* Adjust font size as needed */
-    margin-bottom: 10px; /* Add margin between the header and sub-header */
+    font-size: 24px; 
+    margin-bottom: 10px; 
   }
 
   .auto-type {
@@ -58,10 +58,8 @@ h2 {
 
 }
 
-
-  
-
   /* Intro Section */
+
   .introSec {
     height: fit-content;
     border-radius: 10px; 
@@ -112,8 +110,8 @@ h2 {
   }
 
   .introPart1:hover {
-    transform: scale(1.5); /* Scale the text slightly larger on hover */
-    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; /* Add a glow effect */
+    transform: scale(1.5); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
     background-color: rgba(0, 0, 0, 0);
   }
 
@@ -134,8 +132,8 @@ display: block;
   }
 
   .introPart2:hover {
-    transform: scale(1.5); /* Scale the text slightly larger on hover */
-    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; /* Add a glow effect */
+    transform: scale(1.5); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
     background-color: rgba(0, 0, 0, 0);
   }
 
@@ -169,9 +167,9 @@ color: #fff;
     text-align: center;
     align-items: center;
     font-size: 120px;
-    font-weight: bold; /* Set text to bold */
-    color: #7fff00; /* Set text color to light blue */
-    text-shadow: 3px 3px #006a12; /* Add light green outline */
+    font-weight: bold; 
+    color: #7fff00; 
+    text-shadow: 3px 3px #006a12; 
     background-color: rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
     margin-top: 0%;
@@ -179,8 +177,8 @@ color: #fff;
 }
 
 .textGreen:hover {
-    transform: scale(1.1); /* Scale the text slightly larger on hover */
-    text-shadow: 0 0 5px  #7fff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Add a glow effect */
+    transform: scale(1.1); 
+    text-shadow: 0 0 5px  #7fff00, 0 0 10px #00ff00, 0 0 15px #00ff00; 
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -190,9 +188,9 @@ color: #fff;
     text-align: center;
     align-items: center;
     font-size: 110px;
-    font-weight: bold; /* Set text to bold */
-    color: #3498db; /* Set text color to light blue */
-    text-shadow: 3px 3px #004a7b; /* Add light green outline */
+    font-weight: bold; 
+    color: #3498db; 
+    text-shadow: 3px 3px #004a7b; 
     background-color: rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
     margin-top: 0%;
@@ -200,8 +198,8 @@ color: #fff;
 }
 
 .textBlue:hover {
-    transform: scale(1.1); /* Scale the text slightly larger on hover */
-    text-shadow: 0 0 5px   #3498db, 0 0 10px  #025d9a, 0 0 15px #025d9a; /* Add a glow effect */
+    transform: scale(1.1); 
+    text-shadow: 0 0 5px   #3498db, 0 0 10px  #025d9a, 0 0 15px #025d9a; 
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -220,15 +218,15 @@ font-size: 50px;
     font-size: larger;
     width: 30%;
     background-color: #008616;
-    border: 2px solid #ffffff; /* Add a thin outline */
-    transition: background-color 0.6s ease, transform 0.3s ease; /* Smooth transition */
+    border: 2px solid #ffffff; 
+    transition: background-color 0.6s ease, transform 0.3s ease;
     z-index: 1;
 }
 
 .loginBtn:hover {
-    background-color: #22bb00; /* Change background color on hover */
-    border-color: #ffffff solid 5px; /* Change border color on hover */
-    transform: scale(1.2); /* Scale the button slightly on hover */
+    background-color: #22bb00; 
+    border-color: #ffffff solid 5px; 
+    transform: scale(1.2); 
 }
 
   .loginLogo {
@@ -265,7 +263,7 @@ font-size: 50px;
 
 .sub-header {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px; /* Adjust font size as needed */
+    font-size: 40px; 
   }
 
   .subHeaderLogo {
@@ -285,6 +283,7 @@ font-size: 50px;
   }
 
   .description2 {
+    padding-left: 5%;
     font-size: 30px;
   }
 
@@ -298,7 +297,18 @@ font-size: 50px;
   }
 
   .teamLogoImg {
-    transform: scale(0.7);
+    transform: scale(0.6);
+  }
+
+  .aboutLink {
+    padding-left: 20%;
+    font-size: 30px;
+    transition: background-color 0.6s ease, transform 0.3s ease; 
+  }
+
+  .aboutLink:hover {
+    border-color: #ffffff solid 5px; 
+    transform: scale(1.2);
   }
 
 /* Section 2 */
@@ -313,7 +323,40 @@ font-size: 50px;
     justify-content: center;
     width: 33%;
     text-align: center;
+    transition: background-color 0.6s ease, transform 0.3s ease; 
 }
+.stats:hover {
+    transform: scale(1.2); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
+    background-color: rgba(0, 0, 0, 0);
+}
+.users:hover {
+        transform: scale(1.2); 
+        text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
+        background-color: rgba(0, 0, 0, 0);
+}
+.devs:hover {
+    transform: scale(1.2); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.introPart1 {
+    width: 80%;
+    padding-top: 0%;
+    margin-top: 0%;
+    font-size: x-large;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .introPart1:hover {
+    transform: scale(1.5); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
+    background-color: rgba(0, 0, 0, 0);
+  }
 
 .sec2 {
     color: #000000;
@@ -340,7 +383,10 @@ font-size: 50px;
 }
 
 /* Section 3 */
+
 .sec3 {
+    height: fit-content;
+    background-color: #3498db;
     padding: 0.8%;
     margin: 0.8%;
     display: flex;
@@ -355,3 +401,29 @@ font-size: 50px;
     width: fit-content;
     text-align: center;
 }
+
+.post1 {
+    justify-content: center;
+    align-items: center;    
+    margin: 1%;
+}
+.clickableImage {
+    transform: scale(0.9); 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.clickableImage:hover {
+    transform: scale(1.1); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff; 
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.post2 {
+    justify-content: center;
+    align-items: center;
+    margin: 1%
+}
+
