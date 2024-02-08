@@ -868,19 +868,25 @@ input, textarea, select {
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.PrivImages{
+.Privacy-image{
+  display: flex;
+  justify-content: space-between; 
+}
+
+.Privacy-image > img{
   max-width: 10%;
-  justify-content: space-between;
-  padding: 20px;
-  
+  padding-left: 0.8%;
+  padding-right: 0.8%;
 }
 
 .privacy-Link{
   color: #fd7e14;
+  text-decoration: none;
 }
 
 .privacy-Link:hover{
    color: #4CAF50;
+   font-size: 20px;
 }
 
 .Privacy-Section-Odd { 
@@ -888,7 +894,6 @@ input, textarea, select {
     margin: 0.8%;
     padding: 0.8%;
     background-color: #58AD40; 
-    color: #000000;
 }
 
 .Privacy-Section-Even { 
@@ -896,11 +901,12 @@ input, textarea, select {
     margin: 0.8%;
     padding: 0.8%;
     background-color: #005D99;
-    color: #000;
  }
 
- .Privacy-content{
-  color: aliceblue;
+ .Privacy-Section-Even > h1{ 
+ color: black;
+ text-align: center;
+ font-weight: bold;
 }
 /* Privacy Policy CSS Ends here */
 
