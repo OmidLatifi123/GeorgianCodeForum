@@ -28,10 +28,6 @@ body {
 /* Home CSS Goes Here */
 
 
-h2 {
-    color: #000000;
-}
-
   .header {
     background-color: rgb(40, 40, 40);
     font-size: 24px; 
@@ -205,10 +201,13 @@ color: #fff;
 
 
 .introTitle {
-font-size: 50px;
+    font-weight: 800;
+font-size: 40px;
 }
 
 .loginBtn {
+    margin: 1%;
+    color: #fff;
     align-items: center;
     justify-content: center;
     padding: 2%;
@@ -256,14 +255,17 @@ font-size: 50px;
     color: #fff; 
     padding: 0.8%;
     margin: 0.8%;
-    padding-top: 0%;
+    padding-top: 1%;
     margin-top: 0%;
     flex-direction: column;
 }
 
 .sub-header {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px; 
+    font-weight: 600;
+    font-size: 50px; 
+    margin-bottom: 1%;
+    padding-bottom: 1%;
   }
 
   .subHeaderLogo {
@@ -324,8 +326,14 @@ font-size: 50px;
 /* Section 2 */
 
 .userIcon, .codeIcon, .devIcon {
-    margin: 1%;
-    transform: scale(3);
+    padding-top: 0%;
+    margin: 7%;
+    transform: scale(4);
+}
+
+.sec2h2 {
+    font-size: 30px;
+    color: #000000;
 }
 
 .stats, .users, .devs {
@@ -515,6 +523,14 @@ font-size: 50px;
 }
 
 .Contact-Instructions{
+    color: aliceblue;
+  }
+
+  .Privacy-content{
+    color: aliceblue;
+  }
+  
+  .Contact-Instructions{
     color: aliceblue;
   }
 
