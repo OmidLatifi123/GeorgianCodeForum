@@ -563,241 +563,234 @@ font-size: 50px;
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-.find-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    height: 100%;
-    background-position: top left;
-    background-color: rgb(40, 40, 40);
-}
 
-.find-html{
-    height: 100%;
-}
 .container {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  text-align: center;
+  position: relative;
+  top: 50%;
+  padding-top: 5%;
 }
 
 .logo img {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .search input[type=text] {
-    padding: 10px;
-    width: 50%;
-    margin-top: 20px;
+  padding: 10px;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .search button {
-    padding: 10px 20px;
-    margin-left: 10px;
+  padding: 10px 20px;
+  margin-left: 10px;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search input[type=text] {
-    padding: 10px;
-    width: 50%;
-    margin-top: 20px;
-    background-color: #111; /* Dark background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
+  padding: 10px;
+  width: 50%;
+  margin-top: 20px;
+  background-color: #111; /* Dark background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
 }
 
 /* Styling for the search button */
 .search button#searchBtn {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Styling for the filters button */
 .search button#filterBtn {
-    background-color: #007BFF; /* Blue background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #007BFF; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Optional: Add hover effects for visual feedback */
 .search button#searchBtn:hover {
-    background-color: #45a049; /* Slightly darker or lighter green for hover */
+  background-color: #45a049; /* Slightly darker or lighter green for hover */
 }
 
 .search button#filterBtn:hover {
-    background-color: #0056b3; /* Slightly darker or lighter blue for hover */
+  background-color: #0056b3; /* Slightly darker or lighter blue for hover */
 }
 
 /* Define fade-in animation */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Apply fade-in animation to the modal */
 .modal {
-    display: none; /* Keep modal hidden by default */
-    position: fixed;
-    z-index: 3; /* Ensure modal is above overlay */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
-    animation-name: fadeIn; /* Reference the fade-in animation */
-    animation-duration: 0.5s; /* Animation duration, adjust as needed */
+  display: none; /* Keep modal hidden by default */
+  position: fixed;
+  z-index: 3; /* Ensure modal is above overlay */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+  animation-name: fadeIn; /* Reference the fade-in animation */
+  animation-duration: 0.5s; /* Animation duration, adjust as needed */
 }
 
 
 .find-logo {
-    position: relative; /* Ensure proper positioning of the logo and tagline */
-    display: inline-block; /* Treat the logo container as an inline block */
-    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+  position: relative; /* Ensure proper positioning of the logo and tagline */
+  display: inline-block; /* Treat the logo container as an inline block */
+  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
 
 .logo img {
-    max-width: 300px;
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  max-width: 300px;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 .logo:hover img {
-    transform: scale(1.1); /* Scale up the logo on hover */
+  transform: scale(1.1); /* Scale up the logo on hover */
 }
 
 .tagline {
-    color: white; /* White text for dark mode */
-    font-size: 36px; /* Adjust size as needed */
-    margin-top: 10px; /* Space between logo and text */
+  color: white; /* White text for dark mode */
+  font-size: 36px; /* Adjust size as needed */
+  margin-top: 10px; /* Space between logo and text */
 }
 
 /* Apply fade-in animation to the overlay as well, for consistency */
 .overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 2;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 
 /* Modal Content - Dark Mode Styling */
 .modal-content {
-    background-color: #333; /* Darker background for the modal */
-    color: white; /* White text for contrast */
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #444; /* Subtle border for some depth */
-    width: 30%;
-    border-radius: 10px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #333; /* Darker background for the modal */
+  color: white; /* White text for contrast */
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #444; /* Subtle border for some depth */
+  width: 30%;
+  border-radius: 10px; /* Rounded corners for modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 /* Style form elements within the modal for dark mode */
 .modal-content input[type="text"],
 .modal-content select,
 .modal-content button {
-    width: 90%; /* Adjust width to fit modal */
-    padding: 10px;
-    margin-bottom: 10px; /* Space out elements */
-    background-color: #222; /* Even darker for inputs/selects */
-    color: white; /* Ensure text is easily readable */
-    border: 1px solid #555; /* Slightly lighter border for definition */
-    border-radius: 5px; /* Consistent rounded corners */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 90%; /* Adjust width to fit modal */
+  padding: 10px;
+  margin-bottom: 10px; /* Space out elements */
+  background-color: #222; /* Even darker for inputs/selects */
+  color: white; /* Ensure text is easily readable */
+  border: 1px solid #555; /* Slightly lighter border for definition */
+  border-radius: 5px; /* Consistent rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Adjust the button specific styles */
 .modal-content button {
-    background-color: #4CAF50; /* Reuse the green from the search button for consistency */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow the button to shrink/grow as needed */
-    display: inline-block; /* Place next to other inline or inline-block elements */
+  background-color: #4CAF50; /* Reuse the green from the search button for consistency */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: auto; /* Allow the button to shrink/grow as needed */
+  display: inline-block; /* Place next to other inline or inline-block elements */
 }
 
 /* Button hover effect for better user interaction */
 .modal-content button:hover {
-    background-color: #45a049; /* A slightly darker green for hover state */
+  background-color: #45a049; /* A slightly darker green for hover state */
 }
 
 /* Close button specific styling for better visibility */
 .close {
-    color: #aaa; /* Light gray for contrast against dark background */
-    float: right; /* Position it to the right */
-    font-size: 28px; /* Sizable close icon */
+  color: #aaa; /* Light gray for contrast against dark background */
+  float: right; /* Position it to the right */
+  font-size: 28px; /* Sizable close icon */
 }
 
 .close:hover,
 .close:focus {
-    color: #ddd; /* Lighter shade for hover/focus state */
-    text-decoration: none; /* Override default styles */
-    cursor: pointer; /* Indicate clickable action */
+  color: #ddd; /* Lighter shade for hover/focus state */
+  text-decoration: none; /* Override default styles */
+  cursor: pointer; /* Indicate clickable action */
 }
 
 .find-body, .find-html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden; /* Prevents scrolling */
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevents scrolling */
 }
 
 #matrixEffect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensures it stays behind the content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures it stays behind the content */
 }
 
 /* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
