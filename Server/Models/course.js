@@ -1,12 +1,10 @@
-/* User Model */
+/* Course Model */
 
 module.exports = class UserModel 
 {
     // Model implementation
     id = "";
-    username = "";
-    password = "";
-    email = "";
+    name = "";
 }
 
 
