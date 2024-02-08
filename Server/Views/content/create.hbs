@@ -1,0 +1,30 @@
+
+    <form action="process_post.php" method="post" enctype="multipart/form-data">
+        <!-- Add enctype="multipart/form-data" for handling file uploads -->
+        <h1 class="create-post">Create a Post</h1>
+        <label for="postTitle">Post Title:</label>
+        <input type="text" id="postTitle" name="postTitle" required>
+
+        <label for="postContent">Post Content:</label>
+        <textarea id="postContent" name="postContent" rows="6" required></textarea>
+
+        <label for="codingLanguage">Coding Language:</label>
+        <select id="codingLanguage" name="codingLanguage" required>
+            <option value="" disabled selected>Select a coding language</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- Section to upload an image -->
+        <label for="postImage">Upload an Image:</label>
+        <input type="file" id="postImage" name="postImage" accept="image/*">
+
+        <!-- Section to add code -->
+        <label for="postCode">Add Code:</label>
+        <textarea id="postCode" name="postCode" rows="6"></textarea>
+
+        <button type="submit">Submit Post</button>
+    </form>

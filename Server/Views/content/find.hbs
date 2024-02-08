@@ -1,0 +1,135 @@
+
+    <canvas id="matrixEffect"></canvas>
+
+    <div class="container">
+        <div class="logo">
+            <img src="../Images/Logo.png" alt="Debugger Logo">
+            <h1 class="tagline">Find your bug</h1> <!-- Added tagline under the logo -->
+        </div>
+        <div class="search">
+            <input type="text" id="searchBar" placeholder="Search posts...">
+            <button id="searchBtn">Search</button>
+            <button id="filterBtn">Filters</button>
+        </div>
+    </div>
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Filter Options</h2>
+            <form id="filterForm">
+                <label for="timeWindow">Time Window:</label>
+                <select id="timeWindow">
+                    <option value="24hours">Last 24 hours</option>
+                    <option value="week">Last week</option>
+                    <option value="month">Last month</option>
+                </select>
+                <br>
+                <label for="postId">Post ID:</label>
+                <input type="text" id="postId">
+                <br>
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="csharp">C#</option>
+                </select>
+                <br>
+                <button type="button" id="applyFilters">Apply Filters</button>
+            </form>
+        </div>
+    </div>
+    <div id="pageOverlay" class="overlay"></div>
+    <script>
+        document.getElementById('filterBtn').onclick = function() {
+    // Display the filter modal
+    document.getElementById('filterModal').style.display = "block";
+    // Display the overlay to dim the background
+    document.getElementById('pageOverlay').style.display = "block";
+};
+
+document.getElementsByClassName('close')[0].onclick = function() {
+    // Hide the filter modal
+    document.getElementById('filterModal').style.display = "none";
+    // Hide the overlay, removing the dim effect
+    document.getElementById('pageOverlay').style.display = "none";
+};
+
+// Prevents modal from closing when clicking inside the modal content
+document.getElementsByClassName('modal-content')[0].onclick = function(event) {
+    event.stopPropagation();
+};
+
+// Close the modal and hide the overlay when clicking outside of the modal or on the overlay itself
+window.onclick = function(event) {
+    if (event.target == document.getElementById('filterModal') || event.target == document.getElementById('pageOverlay')) {
+        document.getElementById('filterModal').style.display = "none";
+        document.getElementById('pageOverlay').style.display = "none";
+    }
+};
+document.getElementById('filterBtn').onclick = function() {
+    document.getElementById('filterModal').style.display = "block";
+    document.getElementById('pageOverlay').style.display = "block";
+};
+
+document.getElementsByClassName('close')[0].onclick = function() {
+    document.getElementById('filterModal').style.display = "none";
+    document.getElementById('pageOverlay').style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('filterModal') || event.target == document.getElementById('pageOverlay')) {
+        document.getElementById('filterModal').style.display = "none";
+        document.getElementById('pageOverlay').style.display = "none";
+    }
+};
+
+    </script>
+<script>
+    document.getElementById('applyFilters').onclick = function() {
+        // Hide the filter modal
+        document.getElementById('filterModal').style.display = "none";
+        // Hide the overlay, removing the dim effect
+        document.getElementById('pageOverlay').style.display = "none";
+    };
+</script>
+
+    <script>
+        const canvas = document.getElementById('matrixEffect');
+const context = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const katakana = '';
+const latin = '';
+const nums = '01';
+const matrixChars = nums;
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function draw() {
+    setTimeout(() => {
+        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = '#444'; // Green text
+        context.font = fontSize + 'px monospace';
+
+        for(let i = 0; i < drops.length; i++) {
+            const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+            context.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+        requestAnimationFrame(draw);
+    }, 50); // Adjust the frame rate
+}
+
+draw();
+    </script>
