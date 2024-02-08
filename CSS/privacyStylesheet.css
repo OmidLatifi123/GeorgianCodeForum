@@ -1,0 +1,25 @@
+body {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: rgb(40, 40, 40);
+}
+
+a{
+   color: #fd7e14;
+}
+
+a:hover{
+    color: #4CAF50;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between; 
+
+  }
+
+img {
+    max-width: 32%; /* Optional: limit image width */
+}
