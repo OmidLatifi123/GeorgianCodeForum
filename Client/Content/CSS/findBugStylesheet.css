@@ -1,4 +1,4 @@
-body {
+.find-body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     height: 100%;
@@ -6,7 +6,7 @@ body {
     background-color: rgb(40, 40, 40);
 }
 
-html{
+.find-html{
     height: 100%;
 }
 .container {
@@ -127,11 +127,9 @@ html{
     animation-name: fadeIn; /* Reference the fade-in animation */
     animation-duration: 0.5s; /* Animation duration, adjust as needed */
 }
-h1{
-    color: whitesmoke;
-}
 
-.logo {
+
+.find-logo {
     position: relative; /* Ensure proper positioning of the logo and tagline */
     display: inline-block; /* Treat the logo container as an inline block */
     cursor: pointer; /* Change cursor to pointer to indicate interactivity */
@@ -221,7 +219,7 @@ h1{
     cursor: pointer; /* Indicate clickable action */
 }
 
-body, html {
+.find-body, .find-html {
     height: 100%;
     margin: 0;
     overflow: hidden; /* Prevents scrolling */

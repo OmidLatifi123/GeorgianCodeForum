@@ -1,9 +1,16 @@
-<html class="find-html">
-<body class="find-body">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugger Form</title>
+    <link rel="stylesheet" href="../Client/Content/CSS/findBugStylesheet.css">
+</head>
+<body>
     <canvas id="matrixEffect"></canvas>
 
     <div class="container">
-        <div class="find-logo">
+        <div class="logo">
             <img src="../Images/Logo.png" alt="Debugger Logo">
             <h1 class="tagline">Find your bug</h1> <!-- Added tagline under the logo -->
         </div>
@@ -113,7 +120,7 @@ const drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
     setTimeout(() => {
-        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        context.fillStyle = 'rgba(40, 40, 40, 0.05)';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         context.fillStyle = '#444'; // Green text
@@ -133,35 +140,6 @@ function draw() {
 }
 
 draw();
-
-        // Event listener for the search button
-        document.getElementById('searchBtn').onclick = function() {
-            // Create a dummy post section
-            createDummyPost();
-        };
-
-        // Function to create a dummy post
-        function createDummyPost() {
-            // Dummy post content
-            var dummyPostContent = `
-                <div class="dummy-post">
-                    <h3>Username: JohnDoe</h3>
-                    <h4>Post ID: 123456</h4>
-                    <p class="tags">Tags: <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span></p>
-                    <div>
-                        <h2>Post Title</h2>
-                        <p>Here goes the content of the post...</p>
-                    </div>
-                    <div>
-                        <h4>Reply Section</h4>
-                        <button>Upvote</button>
-                        <button>Downvote</button>
-                    </div>
-                </div>
-            `;
-            // Append dummy post to the document
-            document.body.insertAdjacentHTML('beforeend', dummyPostContent);
-        }
     </script>
 </body>
 </html>
