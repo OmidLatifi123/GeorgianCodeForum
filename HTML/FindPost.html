@@ -93,6 +93,14 @@ window.onclick = function(event) {
 };
 
     </script>
+<script>
+    document.getElementById('applyFilters').onclick = function() {
+        // Hide the filter modal
+        document.getElementById('filterModal').style.display = "none";
+        // Hide the overlay, removing the dim effect
+        document.getElementById('pageOverlay').style.display = "none";
+    };
+</script>
 
     <script>
         const canvas = document.getElementById('matrixEffect');
