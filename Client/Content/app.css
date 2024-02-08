@@ -798,52 +798,55 @@ font-size: 50px;
 /* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 
 .create-post{
-    margin: 20px 0;
-      padding: 10px;
-      background-color: #005D99; /* Blue color */
-      color: #ffffff; /* White text color */
-      display: inline-block; /* Make the background color cover the entire width */
-      border-radius: 8px; /* Optional: Add rounded corners */
-  }
-  button:hover {
-    background-color: #45a049;
-  }
-  .form-style{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-  }
-  form {
-    max-width: 600px;
-    margin: auto;
-    color: #ffffff; 
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  input, textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-  }
-  
-  .create-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .create-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: rgb(40, 40, 40);
-  }
+  margin: 20px 0;
+    padding: 10px;
+    background-color: #005D99; /* Blue color */
+    color: #ffffff; /* White text color */
+    display: inline-block; /* Make the background color cover the entire width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+button:hover {
+  background-color: #45a049;
+}
+.form-style{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: #222; /* Dark background */
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff; 
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  background-color: #222; /* Dark background */
+}
+
+.create-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: rgb(40, 40, 40);
+}
   
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
