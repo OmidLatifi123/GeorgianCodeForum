@@ -27,9 +27,11 @@ body {
 
 /* Home CSS Goes Here */
 
+h2 {
+    color: #000000;
+}
 
   .header {
-    background-color: rgb(40, 40, 40);
     font-size: 24px; 
     margin-bottom: 10px; 
   }
@@ -140,7 +142,6 @@ display: block;
   .introIcon {
     filter: invert(1);
     transform: scale(4);
-    margin: 5%;
   }
 
   .introh1 {
@@ -201,13 +202,10 @@ color: #fff;
 
 
 .introTitle {
-    font-weight: 800;
-font-size: 40px;
+font-size: 50px;
 }
 
 .loginBtn {
-    margin: 1%;
-    color: #fff;
     align-items: center;
     justify-content: center;
     padding: 2%;
@@ -255,17 +253,14 @@ font-size: 40px;
     color: #fff; 
     padding: 0.8%;
     margin: 0.8%;
-    padding-top: 1%;
+    padding-top: 0%;
     margin-top: 0%;
     flex-direction: column;
 }
 
 .sub-header {
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 50px; 
-    margin-bottom: 1%;
-    padding-bottom: 1%;
+    font-size: 40px; 
   }
 
   .subHeaderLogo {
@@ -281,12 +276,12 @@ font-size: 40px;
   }
 
   .description {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .description2 {
     padding-left: 5%;
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .logo {
@@ -302,17 +297,7 @@ font-size: 40px;
     transform: scale(0.6);
   }
 
-.linkText {
-    text-decoration: none;
-    color: #fff; 
-    padding-left: 20%;
-    font-size: 20px;
-    transition: background-color 0.6s ease, transform 0.3s ease; 
-}
-
   .aboutLink {
-    text-decoration: none;
-    color: #fff; 
     padding-left: 20%;
     font-size: 30px;
     transition: background-color 0.6s ease, transform 0.3s ease; 
@@ -320,20 +305,13 @@ font-size: 40px;
 
   .aboutLink:hover {
     border-color: #ffffff solid 5px; 
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 
 /* Section 2 */
 
 .userIcon, .codeIcon, .devIcon {
-    padding-top: 0%;
-    margin: 7%;
-    transform: scale(4);
-}
-
-.sec2h2 {
-    font-size: 30px;
-    color: #000000;
+    transform: scale(3);
 }
 
 .stats, .users, .devs {
@@ -446,138 +424,418 @@ font-size: 40px;
     margin: 1%
 }
 
-
-
 /* About CSS Goes Here */
-
-
-/* Privacy Policy CSS */
-.Privacy-image{
-  display: flex;
-  justify-content: space-between; 
-  max-width: 32%;
+.about-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: rgb(40, 40, 40);
 }
 
-.privacy-Link{
-  color: #fd7e14;
-}
 
-.privacy-Link:hover{
-   color: #4CAF50;
-}
-
-.Privacy-Section-Odd { 
-    border-radius: 20px;
-    margin: 0.8%;
-    padding: 0.8%;
-    background-color: #58AD40; 
-}
-
-.Privacy-Section-Even { 
-    border-radius: 20px;
-    margin: 0.8%;
-    padding: 0.8%;
-    background-color: #005D99;
- }
-/* Privacy Policy CSS Ends here */
-
-/* Contact Us CSS */
-.form-style{
-  font-weight: bold;
-  font-size: 18px;
-  color: #000;
- background-color: #4CAF50;
- border-radius: 30px;
-}
-
-.ContactUscontainer {
-  justify-content: space-between;
+.about-section {
   padding: 20px;
+  border-radius: 8px;
+  color: #000; /*(Original was #fff) I changed this so I could see better*/
+  height: 50vh; /* Make each section take up the entire viewport height */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  margin-bottom: 10px; /* Add a slight white gap between sections */
+}
+.about-h2 {
+  color: #333;
 }
 
-.input-container {
+p {
+  color: #000; /*(Original was #e1e1e1) I changed this so I could see better*/
+}
+
+.right {
+  border: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 400px;
+}
+.left {
+  border: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 400px;
+}
+
+      /* Add a class for elements to be animated*/
+      .fade-in {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      /* Add styles for elements with class 'visible' */
+      .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+.fixed-gradient-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #282828); /* White gradient to transparent */
+}
+
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
+}
+      /* Text container style */
+      .text-container {
+          width: 50%;
+          margin: auto;
+      }
+
+    /* Colors for each section */
+    .section-about-us { background-color: #58AD40; }
+    .section-our-mission { background-color: #005D99; }
+    .section-meet-the-team { background-color: #58AD40; }
+    .section-join-community { background-color: #005D99; }
+
+      /* Image style */
+      .section img {
+          max-width: 50%; /* Resize image to take up half of the section */
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+      }
+
+      /* Image positioning for alternating sections */
+      .section img.left { left: 0; }
+      .section img.right { right: 0; }
+
+      /* Add or modify styles in your stylesheet */
+
+/* Add or modify styles in your stylesheet */
+.section-meet-the-team {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  align-items: center;
+  text-align: center;
+  height: 600px; /* Adjusted height for the entire section */
+  }
+  
+  .team-members {
+      display: flex;
+      justify-content: space-evenly;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px; /* Add a gap between team members */
+  }
+  .team-member h3 {
+      white-space: nowrap; /* Ensure the name stays on one line */
+      overflow: hidden;
+      text-overflow: ellipsis; /* Add an ellipsis (...) if the text overflows */
+  }
+  
+  .member-image {
+    max-width: 100%;
+    height: 150px; /* Set a fixed height for the images */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  
+  /* Center the header */
+  .text-container {
+  text-align: center;
+  }
+
+  /* Find Post */
+  .find-body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    background-position: top left;
+    background-color: rgb(40, 40, 40);
 }
 
-.input-container input,
-.input-container textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+.find-html{
+    height: 100%;
+}
+.container {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.input-container button {
-  padding: 10px 20px;
-  background-color:#4CAF50;
+.logo img {
+    max-width: 300px;
+}
+
+.search input[type=text] {
+    padding: 10px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.search button {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search input[type=text] {
+    padding: 10px;
+    width: 50%;
+    margin-top: 20px;
+    background-color: #111; /* Dark background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+}
+
+/* Styling for the search button */
+.search button#searchBtn {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for the filters button */
+.search button#filterBtn {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Optional: Add hover effects for visual feedback */
+.search button#searchBtn:hover {
+    background-color: #45a049; /* Slightly darker or lighter green for hover */
+}
+
+.search button#filterBtn:hover {
+    background-color: #0056b3; /* Slightly darker or lighter blue for hover */
+}
+
+/* Define fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply fade-in animation to the modal */
+.modal {
+    display: none; /* Keep modal hidden by default */
+    position: fixed;
+    z-index: 3; /* Ensure modal is above overlay */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+    animation-name: fadeIn; /* Reference the fade-in animation */
+    animation-duration: 0.5s; /* Animation duration, adjust as needed */
+}
+
+
+.find-logo {
+    position: relative; /* Ensure proper positioning of the logo and tagline */
+    display: inline-block; /* Treat the logo container as an inline block */
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+.logo img {
+    max-width: 300px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.logo:hover img {
+    transform: scale(1.1); /* Scale up the logo on hover */
+}
+
+.tagline {
+    color: white; /* White text for dark mode */
+    font-size: 36px; /* Adjust size as needed */
+    margin-top: 10px; /* Space between logo and text */
+}
+
+/* Apply fade-in animation to the overlay as well, for consistency */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+/* Modal Content - Dark Mode Styling */
+.modal-content {
+    background-color: #333; /* Darker background for the modal */
+    color: white; /* White text for contrast */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #444; /* Subtle border for some depth */
+    width: 30%;
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Style form elements within the modal for dark mode */
+.modal-content input[type="text"],
+.modal-content select,
+.modal-content button {
+    width: 90%; /* Adjust width to fit modal */
+    padding: 10px;
+    margin-bottom: 10px; /* Space out elements */
+    background-color: #222; /* Even darker for inputs/selects */
+    color: white; /* Ensure text is easily readable */
+    border: 1px solid #555; /* Slightly lighter border for definition */
+    border-radius: 5px; /* Consistent rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Adjust the button specific styles */
+.modal-content button {
+    background-color: #4CAF50; /* Reuse the green from the search button for consistency */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width: auto; /* Allow the button to shrink/grow as needed */
+    display: inline-block; /* Place next to other inline or inline-block elements */
+}
+
+/* Button hover effect for better user interaction */
+.modal-content button:hover {
+    background-color: #45a049; /* A slightly darker green for hover state */
+}
+
+/* Close button specific styling for better visibility */
+.close {
+    color: #aaa; /* Light gray for contrast against dark background */
+    float: right; /* Position it to the right */
+    font-size: 28px; /* Sizable close icon */
+}
+
+.close:hover,
+.close:focus {
+    color: #ddd; /* Lighter shade for hover/focus state */
+    text-decoration: none; /* Override default styles */
+    cursor: pointer; /* Indicate clickable action */
+}
+
+.find-body, .find-html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+#matrixEffect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it stays behind the content */
+}
+
+
+/* Create Post CSS */
+.create-post{
+  margin: 20px 0;
+    padding: 10px;
+    background-color: #005D99; /* Blue color */
+    color: #ffffff; /* White text color */
+    display: inline-block; /* Make the background color cover the entire width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+button:hover {
+  background-color: #45a049;
+}
+.form-style{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff; 
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.create-button {
+  background-color: #4CAF50;
   color: #fff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
-
-.input-container button:hover {
-  background-color: #0056b3;
+.create-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: rgb(40, 40, 40);
 }
-
-.Contact-Instructions{
-    color: aliceblue;
-  }
-
-  .Privacy-content{
-    color: aliceblue;
-  }
-  
-  .Contact-Instructions{
-    color: aliceblue;
-  }
-
-/* Contact Us Ends here */
-
-
-/* Login CSS */
-form {
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-  }
-
-  button {
-    background-color: #005D99;;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #58AD40;
-  }
-  
-  .container{
-    background-color: #58AD40;
-    padding: 3%;
-    border-radius: 50px;
-  }
-
-  /* END of Login */
-
-
-  
