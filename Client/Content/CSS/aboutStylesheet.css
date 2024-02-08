@@ -1,18 +1,12 @@
-body {
+.about-body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 20px;
     background-color: rgb(40, 40, 40);
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #4CAF50;
-    color: #fff;
-}
 
-section {
+.about-section {
     padding: 20px;
     border-radius: 8px;
     color: #000; /*(Original was #fff) I changed this so I could see better*/
@@ -21,7 +15,7 @@ section {
     align-items: center; /* Center content vertically */
     margin-bottom: 10px; /* Add a slight white gap between sections */
 }
-h1, h2 {
+.about-h2 {
     color: #333;
 }
 
