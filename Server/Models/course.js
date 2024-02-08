@@ -1,4 +1,4 @@
-/* Course Model */
+/* course Model */
 
 module.exports = class UserModel 
 {

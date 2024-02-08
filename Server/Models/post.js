@@ -4,9 +4,9 @@ module.exports = class UserModel
 {
     // Model implementation
     id = "";
-    userId = "";
     content = "";
     course = "";
+    poster = "";
     title = "";
     comments = "";
 }

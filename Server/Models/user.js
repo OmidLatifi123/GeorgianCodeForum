@@ -7,6 +7,7 @@ module.exports = class UserModel
     username = "";
     password = "";
     email = "";
+    posts = "";
 }
 
 
