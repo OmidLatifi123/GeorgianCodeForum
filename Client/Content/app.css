@@ -892,6 +892,58 @@ font-size: 50px;
 }
 /* Privacy Policy CSS Ends here */
 
+ /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
 
+.Login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  background-color: #005D99; 
+}
 
+.Login-form {
+  width: 40%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #58AD40;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+/* / Style form inputs / */
+.Login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* / Style the login button / */
+.Login-form > button {
+  width: 100%;
+  padding: 10px;
+  background-color: #005D99; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* / Hover effect for the button / */
+.Login-form button:hover {
+  background-color: #58AD40; 
+}
+
+.Login-container h1{
+  color: black;
+}
+
+.Login-form > a{
+  text-decoration: none;
+  color: white;
+}
+
+ /* ////////////////////////////////////////////////////////////////////// END Login CSS ///////////////////////////////////////////////// */
