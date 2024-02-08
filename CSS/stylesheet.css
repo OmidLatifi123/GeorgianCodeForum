@@ -47,9 +47,6 @@ footer {
 .PrivPolicyHeader {
     background-color: #fff;
 }
-/* Delete this part of CSS */
-
-/* This code is for the scroll behaviour, I don't know if it's working fully yet. */
 
 
   /* Responsive screen for Samsung S8+ */
@@ -118,52 +115,3 @@ footer {
       width: 100%;
     }
   }
-
-
-  /* CONTACT US */
-
-  .ContactUscontainer { /* This container is specific for the Contact us containers*/
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-}
-
-.input-container input,
-.input-container textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.input-container button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.input-container button:hover {
-    background-color: #0056b3;
-}
-
-.login-item{
-
-  align-items: center;
-  padding: 5%;
-
-}
-a{
-  color: #faf9f6;
-  text-decoration: none;
-  font-weight: bold;
-}
-
