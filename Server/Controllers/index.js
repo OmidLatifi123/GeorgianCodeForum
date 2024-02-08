@@ -44,10 +44,10 @@ function DisplayPrivacy(req, res, next)
 module.exports = {
  DisplayHome: DisplayHome,
  DisplayAbout: DisplayAbout,
- DisplayProducts: DisplayCreate,
- DisplayServices: DisplayFind,
- DisplayServices: DisplayLogin,
- DisplayServices: DisplayPrivacy,
+ DisplayCreate: DisplayCreate,
+ DisplayFind: DisplayFind,
+ DisplayLogin: DisplayLogin,
+ DisplayPrivacy: DisplayPrivacy,
  DisplayContact: DisplayContact
 }
 
