@@ -435,16 +435,18 @@ font-size: 50px;
 .about-body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    margin: 1%;
     background-color: rgb(40, 40, 40);
+    height: fit-content;
   }
   
   
   .about-section {
-    padding: 20px;
+    margin: 0.8%;
+    padding: 0.8%;
     border-radius: 8px;
     color: #000; /*(Original was #fff) I changed this so I could see better*/
-    height: 50vh; /* Make each section take up the entire viewport height */
+    height: fit-content; /* Make each section take up the entire viewport height */
     display: flex;
     align-items: center; /* Center content vertically */
     margin-bottom: 10px; /* Add a slight white gap between sections */
@@ -453,7 +455,7 @@ font-size: 50px;
     color: #333;
   }
   
-  p {
+  .about-p {
     color: #000; /*(Original was #e1e1e1) I changed this so I could see better*/
   }
   
@@ -487,7 +489,7 @@ font-size: 50px;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* Adjust the height as needed */
+    height: fit-content; /* Adjust the height as needed */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #282828); /* White gradient to transparent */
   }
   
@@ -498,16 +500,31 @@ font-size: 50px;
     color: #888;
   }
         /* Text container style */
-        .text-container {
+        .container {
             width: 50%;
             margin: auto;
         }
   
       /* Colors for each section */
-      .section-about-us { background-color: #58AD40; }
-      .section-our-mission { background-color: #005D99; }
-      .section-meet-the-team { background-color: #58AD40; }
-      .section-join-community { background-color: #005D99; }
+      .section-about-us { 
+        background-color: #58AD40; 
+    }
+      .section-our-mission {
+         background-color: #005D99; 
+         padding: 0.8%;
+         margin: 0.8%;
+        }
+      .section-meet-the-team { 
+        padding: 0.8%;
+        margin: 0.8%;
+        background-color: #58AD40; 
+    }
+
+      .section-join-community { 
+        padding: 0.8%;
+        margin: 0.8%;
+        background-color: #005D99; 
+    }
   
         /* Image style */
         .section img {
@@ -531,13 +548,12 @@ font-size: 50px;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 600px; /* Adjusted height for the entire section */
+    height:fit-content; /* Adjusted height for the entire section */
     }
     
     .team-members {
         display: flex;
         justify-content: space-evenly;
-        max-width: 1200px;
         margin: 0 auto;
         gap: 20px; /* Add a gap between team members */
     }
