@@ -280,8 +280,8 @@ font-size: 60px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 3px 3px #5e5e5e; 
     font-weight: 600;
-    font-size: 50px; 
-    margin-bottom: 3%;
+    font-size: 60px; 
+    margin-bottom: 1%;
   }
 
   .subHeaderLogo {
@@ -445,6 +445,7 @@ font-size: 40px;
     margin: 1%;
 }
 .clickableImage {
+    height: 75vh;
     transform: scale(0.9); 
     text-align: center;
     align-items: center;
@@ -453,7 +454,7 @@ font-size: 40px;
 }
 
 .clickableImage:hover {
-    transform: scale(1.1); 
+    transform: scale(1); 
     text-shadow: 0 0 5px  #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff; 
     background-color: rgba(0, 0, 0, 0);
 }
