@@ -358,6 +358,16 @@ font-size: 60px;
     background-color: rgba(0, 0, 0, 0);
 }
 
+.sec2h2 {
+color: #000;
+font-size: 40px;
+}
+
+.sec2h3 {
+    font-size: 20px;
+    color: #000;
+}
+
 .introPart1 {
     width: 80%;
     padding-top: 0%;
@@ -453,7 +463,7 @@ font-size: 60px;
 .about-body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 1%;
+    margin: 0%;
     background-color: rgb(40, 40, 40);
     height: fit-content;
   }
@@ -832,73 +842,65 @@ font-size: 60px;
 /* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 
 .create-post{
-  margin: 20px 0;
-    padding: 10px;
-    background-color: #005D99; /* Blue color */
-    color: #ffffff; /* White text color */
-    display: inline-block; /* Make the background color cover the entire width */
-    border-radius: 8px; /* Optional: Add rounded corners */
-}
-button:hover {
-  background-color: #45a049;
-}
-.form-style{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background-color: #222; /* Dark background */
-}
-
-form {
-  max-width: 600px;
-  margin: auto;
-  color: #ffffff; 
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-  background-color: #222; /* Dark background */
-}
-
-.create-button {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.create-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
-  background-color: rgb(40, 40, 40);
-}
+    margin: 20px 0;
+      padding: 10px;
+      background-color: #005D99; /* Blue color */
+      color: #ffffff; /* White text color */
+      display: inline-block; /* Make the background color cover the entire width */
+      border-radius: 8px; /* Optional: Add rounded corners */
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  .form-style{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  form {
+    max-width: 600px;
+    margin: auto;
+    color: #ffffff; 
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .create-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .create-body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: rgb(40, 40, 40);
+  }
   
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.Privacy-image{
-  display: flex;
-  justify-content: space-between; 
-}
-
-.Privacy-image > img{
+.PrivImages{
   max-width: 10%;
-  padding-left: 0.8%;
-  padding-right: 0.8%;
+  justify-content: space-between;
+  padding: 20px;
+  
 }
 
 .privacy-Link{
-<<<<<<< HEAD
     transition: 0.3s ease;
 color: #fff;
 }
@@ -906,15 +908,6 @@ color: #fff;
 .privacy-Link:hover{
     font-size: larger;
     transform: scale(1.5);
-=======
-  color: #fd7e14;
-  text-decoration: none;
-}
-
-.privacy-Link:hover{
-   color: #4CAF50;
-   font-size: 20px;
->>>>>>> 7f193b6c9a89a8c04de25e123bb4608ac891e7f6
 }
 
 .Privacy-Section-Odd { 
@@ -922,6 +915,7 @@ color: #fff;
     margin: 0.8%;
     padding: 0.8%;
     background-color: #58AD40; 
+    color: #000000;
 }
 
 .Privacy-Section-Even { 
@@ -929,12 +923,11 @@ color: #fff;
     margin: 0.8%;
     padding: 0.8%;
     background-color: #005D99;
+    color: #000;
  }
 
- .Privacy-Section-Even > h1{ 
- color: black;
- text-align: center;
- font-weight: bold;
+ .Privacy-content{
+  color: aliceblue;
 }
 /* Privacy Policy CSS Ends here */
 
