@@ -153,14 +153,16 @@ display: block;
   .introIcon {
     margin: 5%;
     filter: invert(1);
-    transform: scale(4);
+    transform: scale(8);
   }
 
   .introh1 {
+    font-size: 60px;
 color: #fff;
   }
 
   .introh2 {
+    font-size: 30px;
     display: none;
     color: #fff;
   }
@@ -227,7 +229,7 @@ font-size: 60px;
     border-radius: 50px;
     width: fit-content;
     height: fit-content;
-    font-size: larger;
+    font-size: 50px;
     width: 30%;
     background-color: #008616;
     border: 2px solid #ffffff; 
@@ -242,7 +244,7 @@ font-size: 60px;
 }
 
   .loginLogo {
-    transform: scale(2.5);
+    transform: scale(4);
     margin-right: 10%;
     filter: invert(1);
   }
@@ -298,6 +300,7 @@ font-size: 60px;
   }
 
   .description {
+    line-height: 200%;
     font-size: 45px;
   }
 
@@ -325,6 +328,7 @@ font-size: 60px;
   }
 
   .aboutLink {
+    margin-top: 2%;
     padding-left: 20%;
     font-size: 30px;
     text-decoration: none;
@@ -341,7 +345,7 @@ font-size: 60px;
 
 .userIcon, .codeIcon, .devIcon {
     margin: 5%;
-    transform: scale(4);
+    transform: scale(5);
 }
 
 .stats, .users, .devs {
@@ -370,11 +374,11 @@ font-size: 60px;
 
 .sec2h2 {
 color: #000;
-font-size: 40px;
+font-size: 60px;
 }
 
 .sec2h3 {
-    font-size: 20px;
+    font-size: 30px;
     color: #000;
 }
 
