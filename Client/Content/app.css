@@ -857,10 +857,12 @@ font-size: 50px;
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .PrivImages{
-  max-width: 10%;
   justify-content: space-between;
   padding: 20px;
-  
+}
+
+.PrivImages{
+  max-width: 10%;
 }
 
 .privacy-Link{
@@ -955,3 +957,72 @@ font-weight: 600;
 }
 
  /* ////////////////////////////////////////////////////////////////////// END Login CSS ///////////////////////////////////////////////// */
+
+ /* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Contact///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+ .Container-Contact-Container{
+  height: 90vh; 
+  padding: 40px;
+  background-color: #005D99;
+ }
+
+ .Contact-Container {
+  background-color: #4CAF50;
+  padding: 20px;
+  border-radius: 30px;
+  color: aliceblue;
+  margin: 0.8%;
+  margin-left: 25%;
+  width: 50%;
+}
+
+.Contact-h1{
+  color: aliceblue;
+}
+
+.Contact-P{
+  color: aliceblue;
+}
+
+
+.Contact-Us-Form {
+  border-radius: 30px;
+  width: 50%;
+  margin-left: 25%;
+  background-color: #4CAF50;
+  padding: 10px;
+}
+
+.Contact-label {
+  padding-top: 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.Contact-input {
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+.Contact-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  cursor: pointer;
+  width: 30%;
+}
+
+.Contact-btn:hover {
+  background-color: #046ddd;
+}
+
+/*Contact us Ends================================================================*/

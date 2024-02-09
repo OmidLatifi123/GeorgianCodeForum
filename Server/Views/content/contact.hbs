@@ -1,22 +1,22 @@
-<div class="container">
+<div class="Container-Contact-Container">
 
-    <header>
-        <h1>Contact us!</h1>
+    <header class="Contact-Container">
+        <h1 class="Contact-h1">Contact us!</h1>
             <h3>Contacting us should be used if you have questions about the 
                 privacy policy or further inquries about the website.</h3>
-    </header>
-    <p class="Contact-Instructions">
+                    <p class="Contact-P">
         Please input your email address and the your inquries pleace.
-    </p>
-    <div class= "form-style">
-                <div class="ContactUscontainer">
-                    <form class="input-container" id="contact" action="app.js" method="post">
-                        <label for="name">Name: </label>
-                        <input type="text" id="name" required><br>
-                        <label for="email">E-Mail: </label>
-                        <input type="email" id="email" required><br>
-                        <textarea id="issue" placeholder="Input your issue(s) here"></textarea>
-                        <button onclick="sendEmails()">Submit</button>
+        </p>
+    </header>
+    <div class= "Contact-From-Section">
+                <div class="Contact-Us-Form">
+                    <form class="Contact-form" id="contact" action="app.js" method="post">
+                        <label class="Contact-label" for="name">Name: </label>
+                        <input class="Contact-input" type="text" id="name" required><br>
+                        <label class="Contact-label" for="email">E-Mail: </label>
+                        <input class="Contact-input" type="email" id="email" required><br>
+                        <textarea class="Contact-input" id="issue" placeholder="Input your issue(s) here"></textarea>
+                        <button class="Contact-btn" onclick="sendEmails()">Submit</button>
                     </form>
                 </div>
     </div>
