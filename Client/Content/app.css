@@ -494,11 +494,6 @@ font-size: 50px;
   }
   
   
-  footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #888;
-  }
         /* Text container style */
         .container {
             width: 50%;
@@ -820,6 +815,8 @@ font-size: 50px;
     color: #ffffff; /* White text color */
     display: inline-block; /* Make the background color cover the entire width */
     border-radius: 8px; /* Optional: Add rounded corners */
+    font-size: 90px;
+    font-weight: bold;
 }
 button:hover {
   background-color: #45a049;
@@ -828,25 +825,49 @@ button:hover {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   background-color: #222; /* Dark background */
+  border: #000;
 }
 
-form {
+.background-container form {
   max-width: 600px;
   margin: auto;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
+.background-container label {
+    background-color: #222; /* Green background */
+    color: #fff; /* Black text color */
+    padding: 2px 2px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure each label is displayed on its own line */
+    margin-bottom: 5px; /* Add some space between labels */
+    text-shadow: 1px 1px 1px #000; /* Black text outline */
+    font-size: larger;
 }
 
-input, textarea, select {
+.background-container input,
+.background-container textarea,
+.background-container select {
   width: 100%;
   padding: 8px;
   margin-bottom: 16px;
   box-sizing: border-box;
   background-color: #222; /* Dark background */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded edges */
+}
+
+.create-textarea {
+  background-color: #222; /* Dark background */
+  color: #ffffff; /* White text color */
+  padding: 8px; /* Add padding for better appearance */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded edges */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  resize: none; /* Disable resizing */
+  min-height: 100px; /* Set a minimum height to prevent the textarea from collapsing */
 }
 
 .create-button {
@@ -856,6 +877,13 @@ input, textarea, select {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-shadow: 2px 2px 2px #000; /* Black text outline */
+  transition: transform 0.2s ease; /* Add transition effect */
+  font-size: larger;
+}
+
+.create-button:hover {
+    transform: scale(1.05); /* Increase the scale on hover */
 }
 .create-body {
   font-family: Arial, sans-serif;
@@ -863,6 +891,33 @@ input, textarea, select {
   margin: 20px;
   background-color: rgb(40, 40, 40);
 }
+
+.background-container {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+  border-radius: 20px; /* Rounded edges */
+  padding: 20px; /* Add padding */
+  max-width: 600px; /* Set a maximum width to contain the content */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin: auto;
+  margin-top: 1%;
+  max-width: 800px; /* Set a maximum width to contain the content */
+}
+
+.create-container {
+  position: relative;
+  z-index: 1; /* Ensure the form is on top of the background */
+  text-align: center; /* Center align its children */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.create-container form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff;
+}
+
   
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -964,6 +1019,80 @@ font-weight: 600;
 .Login-form > a{
   text-decoration: none;
   color: white;
+}
+
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.footer-col {
+  margin-bottom: 30px;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  color: #ccc;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link {
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer-flex-container {
+  display: flex;
+  justify-content: center; /* Center flex items horizontally */
+}
+
+.footer-flex-item {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each flex item */
+}
+
+.footer-flex-item:not(:last-child) {
+  margin-right: 25%; /* Adjust spacing between flex items */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px; /* Adjust spacing from the sections */
 }
 
  /* ////////////////////////////////////////////////////////////////////// END Login CSS ///////////////////////////////////////////////// */
