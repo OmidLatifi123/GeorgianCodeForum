@@ -23,6 +23,15 @@ body {
     font-size: 20px;
 }
 
+.nav-link1, .nav-link2, .nav-link3{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width:30vw;
+
+
+}
+
 /* Custom CSS Goes Here */
 
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -142,6 +151,7 @@ display: block;
   }
 
   .introIcon {
+    margin: 5%;
     filter: invert(1);
     transform: scale(4);
   }
@@ -204,10 +214,13 @@ color: #fff;
 
 
 .introTitle {
-font-size: 50px;
+font-weight: 600;
+font-size: 60px;
 }
 
 .loginBtn {
+    margin: 1%;
+    color: #fff;
     align-items: center;
     justify-content: center;
     padding: 2%;
@@ -261,8 +274,13 @@ font-size: 50px;
 }
 
 .sub-header {
+    padding-top: 2%;
+    padding-bottom: 2%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px; 
+    text-shadow: 3px 3px #5e5e5e; 
+    font-weight: 600;
+    font-size: 50px; 
+    margin-bottom: 2%;
   }
 
   .subHeaderLogo {
@@ -275,15 +293,16 @@ font-size: 50px;
   .subHeaderColumn {
     display: flex;
     flex-direction: column;
+
   }
 
   .description {
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .description2 {
     padding-left: 5%;
-    font-size: 30px;
+    font-size: 50px;
   }
 
   .logo {
@@ -299,21 +318,29 @@ font-size: 50px;
     transform: scale(0.6);
   }
 
+  .linkText {
+    text-decoration: none;
+    color: #fff;
+  }
+
   .aboutLink {
     padding-left: 20%;
     font-size: 30px;
+    text-decoration: none;
+    color: #fff;
     transition: background-color 0.6s ease, transform 0.3s ease; 
   }
 
   .aboutLink:hover {
     border-color: #ffffff solid 5px; 
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 
 /* Section 2 */
 
 .userIcon, .codeIcon, .devIcon {
-    transform: scale(3);
+    margin: 5%;
+    transform: scale(4);
 }
 
 .stats, .users, .devs {
@@ -338,6 +365,16 @@ font-size: 50px;
     transform: scale(1.2); 
     text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
     background-color: rgba(0, 0, 0, 0);
+}
+
+.sec2h2 {
+color: #000;
+font-size: 40px;
+}
+
+.sec2h3 {
+    font-size: 20px;
+    color: #000;
 }
 
 .introPart1 {
@@ -435,16 +472,18 @@ font-size: 50px;
 .about-body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0%;
     background-color: rgb(40, 40, 40);
+    height: fit-content;
   }
   
   
   .about-section {
-    padding: 20px;
+    margin: 0.8%;
+    padding: 0.8%;
     border-radius: 8px;
     color: #000; /*(Original was #fff) I changed this so I could see better*/
-    height: 50vh; /* Make each section take up the entire viewport height */
+    height: fit-content; /* Make each section take up the entire viewport height */
     display: flex;
     align-items: center; /* Center content vertically */
     margin-bottom: 10px; /* Add a slight white gap between sections */
@@ -453,7 +492,7 @@ font-size: 50px;
     color: #333;
   }
   
-  p {
+  .about-p {
     color: #000; /*(Original was #e1e1e1) I changed this so I could see better*/
   }
   
@@ -487,27 +526,37 @@ font-size: 50px;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* Adjust the height as needed */
+    height: fit-content; /* Adjust the height as needed */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #282828); /* White gradient to transparent */
   }
   
   
-  footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #888;
-  }
         /* Text container style */
-        .text-container {
+        .container {
             width: 50%;
             margin: auto;
         }
   
       /* Colors for each section */
-      .section-about-us { background-color: #58AD40; }
-      .section-our-mission { background-color: #005D99; }
-      .section-meet-the-team { background-color: #58AD40; }
-      .section-join-community { background-color: #005D99; }
+      .section-about-us { 
+        background-color: #58AD40; 
+    }
+      .section-our-mission {
+         background-color: #005D99; 
+         padding: 0.8%;
+         margin: 0.8%;
+        }
+      .section-meet-the-team { 
+        padding: 0.8%;
+        margin: 0.8%;
+        background-color: #58AD40; 
+    }
+
+      .section-join-community { 
+        padding: 0.8%;
+        margin: 0.8%;
+        background-color: #005D99; 
+    }
   
         /* Image style */
         .section img {
@@ -531,13 +580,12 @@ font-size: 50px;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 600px; /* Adjusted height for the entire section */
+    height:fit-content; /* Adjusted height for the entire section */
     }
     
     .team-members {
         display: flex;
         justify-content: space-evenly;
-        max-width: 1200px;
         margin: 0 auto;
         gap: 20px; /* Add a gap between team members */
     }
@@ -563,241 +611,234 @@ font-size: 50px;
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-.find-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    height: 100%;
-    background-position: top left;
-    background-color: rgb(40, 40, 40);
-}
 
-.find-html{
-    height: 100%;
-}
 .container {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  text-align: center;
+  position: relative;
+  top: 50%;
+  padding-top: 5%;
 }
 
 .logo img {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .search input[type=text] {
-    padding: 10px;
-    width: 50%;
-    margin-top: 20px;
+  padding: 10px;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .search button {
-    padding: 10px 20px;
-    margin-left: 10px;
+  padding: 10px 20px;
+  margin-left: 10px;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search input[type=text] {
-    padding: 10px;
-    width: 50%;
-    margin-top: 20px;
-    background-color: #111; /* Dark background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
+  padding: 10px;
+  width: 50%;
+  margin-top: 20px;
+  background-color: #111; /* Dark background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
 }
 
 /* Styling for the search button */
 .search button#searchBtn {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Styling for the filters button */
 .search button#filterBtn {
-    background-color: #007BFF; /* Blue background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #007BFF; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Optional: Add hover effects for visual feedback */
 .search button#searchBtn:hover {
-    background-color: #45a049; /* Slightly darker or lighter green for hover */
+  background-color: #45a049; /* Slightly darker or lighter green for hover */
 }
 
 .search button#filterBtn:hover {
-    background-color: #0056b3; /* Slightly darker or lighter blue for hover */
+  background-color: #0056b3; /* Slightly darker or lighter blue for hover */
 }
 
 /* Define fade-in animation */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Apply fade-in animation to the modal */
 .modal {
-    display: none; /* Keep modal hidden by default */
-    position: fixed;
-    z-index: 3; /* Ensure modal is above overlay */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
-    animation-name: fadeIn; /* Reference the fade-in animation */
-    animation-duration: 0.5s; /* Animation duration, adjust as needed */
+  display: none; /* Keep modal hidden by default */
+  position: fixed;
+  z-index: 3; /* Ensure modal is above overlay */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+  animation-name: fadeIn; /* Reference the fade-in animation */
+  animation-duration: 0.5s; /* Animation duration, adjust as needed */
 }
 
 
 .find-logo {
-    position: relative; /* Ensure proper positioning of the logo and tagline */
-    display: inline-block; /* Treat the logo container as an inline block */
-    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+  position: relative; /* Ensure proper positioning of the logo and tagline */
+  display: inline-block; /* Treat the logo container as an inline block */
+  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
 
 .logo img {
-    max-width: 300px;
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  max-width: 300px;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 .logo:hover img {
-    transform: scale(1.1); /* Scale up the logo on hover */
+  transform: scale(1.1); /* Scale up the logo on hover */
 }
 
 .tagline {
-    color: white; /* White text for dark mode */
-    font-size: 36px; /* Adjust size as needed */
-    margin-top: 10px; /* Space between logo and text */
+  color: white; /* White text for dark mode */
+  font-size: 36px; /* Adjust size as needed */
+  margin-top: 10px; /* Space between logo and text */
 }
 
 /* Apply fade-in animation to the overlay as well, for consistency */
 .overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 2;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 
 /* Modal Content - Dark Mode Styling */
 .modal-content {
-    background-color: #333; /* Darker background for the modal */
-    color: white; /* White text for contrast */
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #444; /* Subtle border for some depth */
-    width: 30%;
-    border-radius: 10px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #333; /* Darker background for the modal */
+  color: white; /* White text for contrast */
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #444; /* Subtle border for some depth */
+  width: 30%;
+  border-radius: 10px; /* Rounded corners for modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 /* Style form elements within the modal for dark mode */
 .modal-content input[type="text"],
 .modal-content select,
 .modal-content button {
-    width: 90%; /* Adjust width to fit modal */
-    padding: 10px;
-    margin-bottom: 10px; /* Space out elements */
-    background-color: #222; /* Even darker for inputs/selects */
-    color: white; /* Ensure text is easily readable */
-    border: 1px solid #555; /* Slightly lighter border for definition */
-    border-radius: 5px; /* Consistent rounded corners */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 90%; /* Adjust width to fit modal */
+  padding: 10px;
+  margin-bottom: 10px; /* Space out elements */
+  background-color: #222; /* Even darker for inputs/selects */
+  color: white; /* Ensure text is easily readable */
+  border: 1px solid #555; /* Slightly lighter border for definition */
+  border-radius: 5px; /* Consistent rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Adjust the button specific styles */
 .modal-content button {
-    background-color: #4CAF50; /* Reuse the green from the search button for consistency */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow the button to shrink/grow as needed */
-    display: inline-block; /* Place next to other inline or inline-block elements */
+  background-color: #4CAF50; /* Reuse the green from the search button for consistency */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: auto; /* Allow the button to shrink/grow as needed */
+  display: inline-block; /* Place next to other inline or inline-block elements */
 }
 
 /* Button hover effect for better user interaction */
 .modal-content button:hover {
-    background-color: #45a049; /* A slightly darker green for hover state */
+  background-color: #45a049; /* A slightly darker green for hover state */
 }
 
 /* Close button specific styling for better visibility */
 .close {
-    color: #aaa; /* Light gray for contrast against dark background */
-    float: right; /* Position it to the right */
-    font-size: 28px; /* Sizable close icon */
+  color: #aaa; /* Light gray for contrast against dark background */
+  float: right; /* Position it to the right */
+  font-size: 28px; /* Sizable close icon */
 }
 
 .close:hover,
 .close:focus {
-    color: #ddd; /* Lighter shade for hover/focus state */
-    text-decoration: none; /* Override default styles */
-    cursor: pointer; /* Indicate clickable action */
+  color: #ddd; /* Lighter shade for hover/focus state */
+  text-decoration: none; /* Override default styles */
+  cursor: pointer; /* Indicate clickable action */
 }
 
 .find-body, .find-html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden; /* Prevents scrolling */
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevents scrolling */
 }
 
 #matrixEffect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensures it stays behind the content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures it stays behind the content */
 }
 
 /* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
@@ -805,6 +846,117 @@ font-size: 50px;
 /* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 
 .create-post{
+<<<<<<< HEAD
+  margin: 20px 0;
+    padding: 10px;
+    background-color: #005D99; /* Blue color */
+    color: #ffffff; /* White text color */
+    display: inline-block; /* Make the background color cover the entire width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    font-size: 90px;
+    font-weight: bold;
+}
+button:hover {
+  background-color: #45a049;
+}
+.form-style{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: #222; /* Dark background */
+  border: #000;
+}
+
+.background-container form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff;
+}
+
+.background-container label {
+    background-color: #222; /* Green background */
+    color: #fff; /* Black text color */
+    padding: 2px 2px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure each label is displayed on its own line */
+    margin-bottom: 5px; /* Add some space between labels */
+    text-shadow: 1px 1px 1px #000; /* Black text outline */
+    font-size: larger;
+}
+
+.background-container input,
+.background-container textarea,
+.background-container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  background-color: #222; /* Dark background */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded edges */
+}
+
+.create-textarea {
+  background-color: #222; /* Dark background */
+  color: #ffffff; /* White text color */
+  padding: 8px; /* Add padding for better appearance */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded edges */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  resize: none; /* Disable resizing */
+  min-height: 100px; /* Set a minimum height to prevent the textarea from collapsing */
+}
+
+.create-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px #000; /* Black text outline */
+  transition: transform 0.2s ease; /* Add transition effect */
+  font-size: larger;
+}
+
+.create-button:hover {
+    transform: scale(1.05); /* Increase the scale on hover */
+}
+.create-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: rgb(40, 40, 40);
+}
+
+.background-container {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+  border-radius: 20px; /* Rounded edges */
+  padding: 20px; /* Add padding */
+  max-width: 600px; /* Set a maximum width to contain the content */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin: auto;
+  margin-top: 1%;
+  max-width: 800px; /* Set a maximum width to contain the content */
+}
+
+.create-container {
+  position: relative;
+  z-index: 1; /* Ensure the form is on top of the background */
+  text-align: center; /* Center align its children */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.create-container form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff;
+}
+
+=======
     margin: 20px 0;
       padding: 10px;
       background-color: #005D99; /* Blue color */
@@ -851,6 +1003,7 @@ font-size: 50px;
     margin: 20px;
     background-color: rgb(40, 40, 40);
   }
+>>>>>>> c78671e34a1a0a570fc05a38e9368413012e3234
   
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -866,11 +1019,13 @@ font-size: 50px;
 }
 
 .privacy-Link{
-  color: #fd7e14;
+    transition: 0.3s ease;
+color: #fff;
 }
 
 .privacy-Link:hover{
-   color: #4CAF50;
+    font-size: larger;
+    transform: scale(1.5);
 }
 
 .Privacy-Section-Odd { 
@@ -954,6 +1109,80 @@ font-weight: 600;
 .Login-form > a{
   text-decoration: none;
   color: white;
+}
+
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+ /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.footer-col {
+  margin-bottom: 30px;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  color: #ccc;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link {
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer-flex-container {
+  display: flex;
+  justify-content: center; /* Center flex items horizontally */
+}
+
+.footer-flex-item {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each flex item */
+}
+
+.footer-flex-item:not(:last-child) {
+  margin-right: 25%; /* Adjust spacing between flex items */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px; /* Adjust spacing from the sections */
 }
 
  /* ////////////////////////////////////////////////////////////////////// END Login CSS ///////////////////////////////////////////////// */
