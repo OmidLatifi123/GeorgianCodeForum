@@ -1,4 +1,5 @@
 body {
+  overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     margin: 0%;
     background-color: rgb(40, 40, 40);
@@ -27,9 +28,7 @@ body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  width:30vw;
-
-
+  width:25vw;
 }
 
 /* Custom CSS Goes Here */
@@ -118,13 +117,15 @@ h2 {
   }
 
   .introPart1:hover {
+    overflow-x: hidden;
     transform: scale(1.5); 
     text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
     background-color: rgba(0, 0, 0, 0);
   }
 
   .introPart1:hover .introh2{
-    font-size: 20px;
+    overflow-x: hidden;
+    font-size: 15px;
 display: block;
   }
 
@@ -140,29 +141,29 @@ display: block;
   }
 
   .introPart2:hover {
+    overflow-x: hidden;
     transform: scale(1.5); 
     text-shadow: 0 0 5px  #ffffff, 0 0 10px #646464, 0 0 15px #000000; 
     background-color: rgba(0, 0, 0, 0);
   }
 
   .introPart2:hover .introh2{
-    font-size: 20px;
+    overflow-x: hidden;
+    font-size: 15px;
 display: block;
   }
 
   .introIcon {
     margin: 5%;
     filter: invert(1);
-    transform: scale(8);
+    transform: scale(4);
   }
 
   .introh1 {
-    font-size: 60px;
 color: #fff;
   }
 
   .introh2 {
-    font-size: 30px;
     display: none;
     color: #fff;
   }
@@ -217,7 +218,7 @@ color: #fff;
 
 .introTitle {
 font-weight: 600;
-font-size: 60px;
+font-size: 50px;
 }
 
 .loginBtn {
@@ -229,7 +230,7 @@ font-size: 60px;
     border-radius: 50px;
     width: fit-content;
     height: fit-content;
-    font-size: 50px;
+    font-size: larger;
     width: 30%;
     background-color: #008616;
     border: 2px solid #ffffff; 
@@ -244,7 +245,7 @@ font-size: 60px;
 }
 
   .loginLogo {
-    transform: scale(4);
+    transform: scale(2.5);
     margin-right: 10%;
     filter: invert(1);
   }
@@ -275,15 +276,25 @@ font-size: 60px;
     flex-direction: column;
 }
 
-.sub-header {
-    margin: 1%;
+.sub-headerTitle {
+  font-weight: 800;
+  color: #000;
     padding-top: 2%;
     padding-bottom: 2%;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 3px 3px #5e5e5e; 
-    font-weight: 600;
-    font-size: 60px; 
-    margin-bottom: 1%;
+    font-weight: 300;
+    font-size: 50px; 
+    margin-bottom: 2%;
+  }
+
+  .sub-header {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 30px; 
+    margin-bottom: 2%;
   }
 
   .subHeaderLogo {
@@ -300,13 +311,14 @@ font-size: 60px;
   }
 
   .description {
-    line-height: 200%;
-    font-size: 45px;
+    line-height: 320%;
+    font-size: 25px;
   }
 
   .description2 {
+    line-height: 120%;
     padding-left: 5%;
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .logo {
@@ -328,7 +340,6 @@ font-size: 60px;
   }
 
   .aboutLink {
-    margin-top: 2%;
     padding-left: 20%;
     font-size: 30px;
     text-decoration: none;
@@ -345,7 +356,7 @@ font-size: 60px;
 
 .userIcon, .codeIcon, .devIcon {
     margin: 5%;
-    transform: scale(5);
+    transform: scale(4);
 }
 
 .stats, .users, .devs {
@@ -374,11 +385,11 @@ font-size: 60px;
 
 .sec2h2 {
 color: #000;
-font-size: 60px;
+font-size: 30px;
 }
 
 .sec2h3 {
-    font-size: 30px;
+    font-size: 15px;
     color: #000;
 }
 
@@ -449,7 +460,9 @@ font-size: 60px;
     margin: 1%;
 }
 .clickableImage {
-    height: 75vh;
+  margin-top: 3%;
+  margin-inline: 5%;
+  height: 50vh;
     transform: scale(0.9); 
     text-align: center;
     align-items: center;
@@ -458,7 +471,7 @@ font-size: 60px;
 }
 
 .clickableImage:hover {
-    transform: scale(1); 
+    transform: scale(1.1); 
     text-shadow: 0 0 5px  #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff; 
     background-color: rgba(0, 0, 0, 0);
 }
@@ -623,6 +636,8 @@ font-size: 60px;
 
 
 .container {
+  justify-content: center;
+  text-align: center;
   text-align: center;
   position: relative;
   top: 50%;
@@ -852,7 +867,6 @@ font-size: 60px;
 /* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 
 .create-post{
-<<<<<<< HEAD
   margin: 20px 0;
     padding: 10px;
     background-color: #005D99; /* Blue color */
@@ -962,7 +976,7 @@ button:hover {
   color: #ffffff;
 }
 
-=======
+.create-post{
     margin: 20px 0;
       padding: 10px;
       background-color: #005D99; /* Blue color */
@@ -977,39 +991,32 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
-  form {
-    max-width: 600px;
-    margin: auto;
-    color: #ffffff; 
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  input, textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-  }
-  
-  .create-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .create-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: rgb(40, 40, 40);
-  }
->>>>>>> c78671e34a1a0a570fc05a38e9368413012e3234
+form {
+  max-width: 600px;
+  margin: auto;
+  color: #ffffff; 
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+.create-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: rgb(40, 40, 40);
+}
   
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
