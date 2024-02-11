@@ -6,10 +6,13 @@
  * @param {Response} res
  * @param {NextFunction} next
  */
+
 function DisplayHome(req, res, next)
 {
   res.render('index', {title: 'Home', page: 'home'});
 }
+
+// Repeat above for all pages
 
 function DisplayAbout(req, res, next)
 {
@@ -41,6 +44,8 @@ function DisplayPrivacy(req, res, next)
   res.render('index', {title: 'Privacy Policy', page: 'privacy'});
 }
 
+
+// FUNCTIONS MUST BE EXPORTED HERE OR CANNOT BE ACCESSED BY ROUTES
 module.exports = {
  DisplayHome: DisplayHome,
  DisplayAbout: DisplayAbout,

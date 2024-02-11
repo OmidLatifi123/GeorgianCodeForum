@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return array;
     }
-
+// The texts which will be shown
     var strings = [
         " center a div?",
         " clone a git repo?",
@@ -139,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Shuffle the array randomly
     strings = shuffleArray(strings);
 
+    // Vertical Cursor ICon shown, 125ms to write a letter, 80ms to delete a letter 
     var type = new Typed(".auto-type", {
         strings: strings,
         typeSpeed: 125,
