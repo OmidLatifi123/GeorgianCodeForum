@@ -119,6 +119,7 @@ async function sendMailClient(name, email){
 }
 
 /* AUTOTYPE CODE */
+// SOURCE: https://chat.openai.com/
 
 document.addEventListener("DOMContentLoaded", function () {
     // Function to shuffle the array randomly
