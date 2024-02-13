@@ -15,6 +15,32 @@
 
 /* EMAIL CODE */
 
+let contactForm = document.getElementById("contact")
+let formName = document.getElementById("name")
+let formEmail = document.getElementById("email")
+let formIssue = document.getElementById("issue")
+console.log(formName.value)
+
+contactForm.addEventListener('submit', function(event){
+    event.preventDefault()
+
+    let json = {
+        name: formName.value,
+        email: formEmail.value,
+        issue: formIssue.value
+    }
+
+    let http = new XMLHttpRequest();
+    http.open('POST', '/contact/send_email');
+    http.setRequestHeader('content-type', 'application/json');
+    http.onload = function(){
+        alert('Email has been sent')
+    }
+
+    http.send(JSON.stringify(json))
+    }
+)
+
 /* AUTOTYPE CODE */
 // SOURCE: https://chat.openai.com/
 
