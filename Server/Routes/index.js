@@ -52,7 +52,7 @@ router.post("/contact/send_email", function(req, res){
         service: 'gmail',
         auth: {
             type: 'OAuth2',
-            user: 'gcfhelpdesk1@gmail.com', //We can't change this yet
+            user: 'gcfhelpdesk1@gmail.com', 
             clientId: CLIENT_ID,
             clientSecret: CLIENT_SECRET,
             refreshToken: REFRESH_TOKEN,
@@ -61,10 +61,10 @@ router.post("/contact/send_email", function(req, res){
     })
   
     const mailOptions = {
-        from: email,
+        from: 'gcfhelpdesk1@gmail.com',
         to: 'kaiic6@gmail.com',
-        subject: name + "Support Ticket",
-        text: issue,
+        subject: "Support Ticket",
+        text: "Your Support Ticket Has Been Sent",
     };
   
      transport.sendMail(mailOptions)
