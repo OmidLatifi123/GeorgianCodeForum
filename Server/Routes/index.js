@@ -3,6 +3,16 @@
 
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer')
+const {google} = require ('googleapis')
+
+const CLIENT_ID = '849012406795-0d8t4e9l146fs38dqsk7c3joam4c4b4l.apps.googleusercontent.com'
+const CLIENT_SECRET = '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'
+const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
+const REFRESH_TOKEN = '1//04E4tpUzrs4XNCgYIARAAGAQSNwF-L9IrKhTXZ6LlGNCb7iPEWPE5CCcnD-GBOVDMk6jdqeB_ufVpOzsUZdO28xUOd1ZxI1xunTs'
+
+const oAuth2Client =  new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
+oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
 // import the index controller
 const IndexController = require('../Controllers/index');
@@ -30,6 +40,37 @@ router.get('/privacy', (req, res, next)=>{IndexController.DisplayPrivacy(req, re
 
 /* GET login Page */
 router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, next);});
+
+router.post("/contact/send_email", function(req, res){
+    let name = req.body.name;
+    let email = req.body.email;
+    let issue = req.body.issue;
+  
+    const accessToken = oAuth2Client.getAccessToken()
+  
+    const transport = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            type: 'OAuth2',
+            user: 'gcfhelpdesk1@gmail.com', //We can't change this yet
+            clientId: CLIENT_ID,
+            clientSecret: CLIENT_SECRET,
+            refreshToken: REFRESH_TOKEN,
+            accessToken: accessToken
+        }
+    })
+  
+    const mailOptions = {
+        from: email,
+        to: 'kaiic6@gmail.com',
+        subject: name + "Support Ticket",
+        text: issue,
+    };
+  
+     transport.sendMail(mailOptions)
+  
+     res.redirect('/')
+  })
 
 
 module.exports = router;
