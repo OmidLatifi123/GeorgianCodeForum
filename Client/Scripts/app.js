@@ -13,6 +13,46 @@
     window.addEventListener('load', Start);
 })(); 
 
+/* DYNAMIC NUMBER COUNTER
+SOURCE: https://www.youtube.com/watch?v=zC86L6UzcR4&ab_channel=CoderPrync */
+
+let valueDisplays = document.querySelectorAll(".num");
+let interval = 2000;
+
+valueDisplays.forEach((valueDisplay) => {
+  let startValue = 0;
+  let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+  let duration = Math.floor(interval / endValue);
+
+  let counter;
+
+  function startCounter() {
+    counter = setInterval(() => {
+      startValue++;
+      let remainingDistance = endValue - startValue;
+      duration = Math.floor(interval / remainingDistance);
+      valueDisplay.textContent = startValue;
+
+      if (startValue === endValue) {
+        clearInterval(counter);
+      }
+    }, duration);
+  }
+
+  // Check for visibility using the Intersection Observer API
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(); // Start the counter when the element is visible
+        observer.disconnect(); // Disconnect to avoid unnecessary checks
+      }
+    });
+  });
+
+  observer.observe(valueDisplay); // Observe the visibility of the valueDisplay element
+});
+
+
 // / AUTOTYPE CODE /
 // SOURCE: https://chat.openai.com/
 
@@ -74,4 +114,6 @@ contactForm.addEventListener('submit', function(event){
 
     http.send(JSON.stringify(json))
     }
-)
+);
+
+
