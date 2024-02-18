@@ -1133,8 +1133,8 @@ label {
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
 
-.Loginh1 {
-    color: #fff;
+ .Loginh1 {
+  color: black;
     font-size: 50px;
     text-align: center;
     justify-content: center;
@@ -1150,14 +1150,16 @@ font-weight: 600;
 }
 
 .Login-form {
+  color: black;
   width: 40%;
   padding: 20px;
   border-radius: 20px;
-  background-color: #58AD40;
+  background-color: #4CAF50;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
-/* / Style form inputs / */
+/* / Style form inputs / /
 .Login-form input {
   width: 100%;
   padding: 10px;
@@ -1166,7 +1168,7 @@ font-weight: 600;
   border-radius: 4px;
 }
 
-/* / Style the login button / */
+/ / Style the login button / /
 .Login-form > button {
   width: 100%;
   padding: 10px;
@@ -1177,13 +1179,9 @@ font-weight: 600;
   cursor: pointer;
 }
 
-/* / Hover effect for the button / */
+/ / Hover effect for the button / */
 .Login-form button:hover {
-  background-color: #58AD40; 
-}
-
-.Login-container h1{
-  color: black;
+  background-color: #046ddd; 
 }
 
 .Login-form > a{
@@ -1271,7 +1269,7 @@ font-weight: 600;
 /* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Contact///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
- .Container-Contact-Container{
+.Container-Contact-Container{
   height: 90vh; 
   padding: 40px;
   background-color: #005D99;
@@ -1281,18 +1279,27 @@ font-weight: 600;
   background-color: #4CAF50;
   padding: 20px;
   border-radius: 30px;
-  color: aliceblue;
+  color: black;
   margin: 0.8%;
   margin-left: 25%;
   width: 50%;
 }
 
+.Contact-From-Section{
+  padding: 25vh;
+  background-color: #005D99;
+
+ }
+
 .Contact-h1{
-  color: aliceblue;
+  text-align: center;
+  color: black;
+  font-weight: bold;
 }
 
 .Contact-P{
-  color: aliceblue;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -1308,6 +1315,7 @@ font-weight: 600;
   padding-top: 5px;
   font-weight: bold;
   font-size: 18px;
+  color: black;
 }
 
 .Contact-input {
@@ -1318,20 +1326,16 @@ font-weight: 600;
 }
 
 .Contact-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  border-radius: 30px;
-  padding: 10px 20px;
-  background-color: #0056b3;
+  width: 100%;
+  padding: 10px;
+  background-color: #005D99; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 30%;
 }
 
 .Contact-btn:hover {
   background-color: #046ddd;
 }
-
 /*Contact us Ends================================================================*/
