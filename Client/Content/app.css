@@ -578,7 +578,6 @@ font-size: 30px;
     align-items: center;
     justify-items: center;
     text-align: center;
-    width: fit-content;
     font-size: 20px;
     color: #000; /*(Original was #e1e1e1) I changed this so I could see better*/
   }
@@ -1173,6 +1172,9 @@ font-weight: 600;
   justify-content: center;
   height: 100vh; 
   background-color: #005D99; 
+  background-image: url('/Assets/images/Images/Logo-Background.png');
+  background-repeat: repeat;
+  background-size: 100px
 }
 
 .Login-form {
@@ -1314,6 +1316,9 @@ font-weight: 600;
 .Contact-From-Section{
   padding: 25vh;
   background-color: #005D99;
+  background-image: url('/Assets/images/Images/Logo-Background.png');
+  background-repeat: repeat;
+  background-size: 100px
 
  }
 
