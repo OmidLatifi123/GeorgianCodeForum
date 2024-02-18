@@ -9,7 +9,7 @@
     <script src="/Client/Scripts/app.js"></script>
 
 {{!-- Intro section with Login Button --}}
-    <section class="introSec">
+    <section class="introSec fade-in">
         <span class="introSecPart1">
              <h1 class="introTitle"> Join an ever-growing Community of Developers</h1>
              {{!-- Login button --}}
@@ -21,7 +21,7 @@
 </section>
 
 {{!-- Second part of Intro section with hoverable Icons + texts --}}
-<section class="introSec2">       
+<section class="introSec2 fade-in">       
         <span class="introPart1">
             <img class="introIcon" src="/Assets/images/Images/headset.svg" alt="headset Icon">
         <h1 class="introh1"> 24/7 Customer Support </h2>
@@ -38,7 +38,7 @@
 
  {{!-- Third part of intro section with 2nd row of hoverable Icons + text --}}
 
-     <span class="introSec3">
+     <span class="introSec3 fade-in">
 
         
         <span class="introPart2">
@@ -74,7 +74,7 @@
                 <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
                     </span>
 
-                <h2 class="descriptionh2"> lines of code uploaded</h2> 
+                <h2 class="descriptionh2"> Lines of code uploaded</h2> 
 
                     <span class="subHeaderCenter"> 
                 <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/person-add.svg" alt="Members"> <span class="num" data-val="40">00</span> </h1>
@@ -162,3 +162,34 @@
                 <img class="loginLogo" src="/Assets/images/Images/headset.svg"> Contact Us
              </button>
     </section>
+
+    <!-- JavaScript for fade-in animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to check if an element is in the viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Function to handle scroll events and trigger animations
+            function handleScroll() {
+                document.querySelectorAll('.fade-in').forEach(function (element) {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+
+            // Attach the handleScroll function to the scroll event
+            window.addEventListener('scroll', handleScroll);
+
+            // Trigger the initial animations on page load
+            handleScroll();
+        });
+    </script>
