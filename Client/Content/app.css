@@ -396,9 +396,9 @@ margin-right: 5%;
   }
   
   .aboutLink:hover {
-    background-color:  #009f00;
-    transform: scale(1.1); /* More subtle enlargement */
-    color:  #3498db;
+    transform: scale(1.2); 
+    text-shadow: 0 0 5px  #ffffff, 0 0 5px #ffffff, 0 0 10px #ffffff; 
+    background-color: rgba(0, 0, 0, 0);
   }
     
 
