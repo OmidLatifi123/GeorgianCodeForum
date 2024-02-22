@@ -1,61 +1,40 @@
-// required node modules
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-
-const hbs = require('hbs');
-
-// Routing modules
-const indexRouter = require('../Routes');
-
-const app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, '../Views'));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_errors_1 = __importDefault(require("http-errors"));
+const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const morgan_1 = __importDefault(require("morgan"));
+const hbs_1 = __importDefault(require("hbs"));
+const Routes_1 = __importDefault(require("../Routes"));
+const app = (0, express_1.default)();
+app.set('views', path_1.default.join(__dirname, '../Views'));
 app.set('view engine', 'hbs');
-
-// register hbs helpers
-hbs.registerPartials(path.join(__dirname, '../Views/components/'));
-hbs.registerPartials(path.join(__dirname, '../Views/content/'));
-
-hbs.registerHelper('loadPage', function (pageName) 
-{
-  console.log("pageName: " + pageName);
-  return pageName
+hbs_1.default.registerPartials(path_1.default.join(__dirname, '../Views/components/'));
+hbs_1.default.registerPartials(path_1.default.join(__dirname, '../Views/content/'));
+hbs_1.default.registerHelper('loadPage', function (pageName) {
+    console.log("pageName: " + pageName);
+    return pageName;
 });
-
-
-// middleware configuration
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../Client')));
-app.use(express.static(path.join(__dirname, '../../node_modules')));
-
-app.use('/', indexRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) 
-{
-  next(createError(404));
+app.use((0, morgan_1.default)('dev'));
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+app.use((0, cookie_parser_1.default)());
+app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
+app.use('/', Routes_1.default);
+app.use(function (req, res, next) {
+    next((0, http_errors_1.default)(404));
 });
-
-// Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
-//     1199455, 1191123, 1186384 , 1207799
-
-// error handler
-app.use(function(err, req, res, next) 
-{
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error', {title: `Error: ${err.status}`, page: 'error'});
+app.use(function (err, req, res, next) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.status(err.status || 500);
+    res.render('error', { title: `Error: ${err.status}`, page: 'error' });
 });
-
+exports.default = app;
 module.exports = app;
+//# sourceMappingURL=app.js.map
