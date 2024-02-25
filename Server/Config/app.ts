@@ -20,6 +20,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, '../Views/components/'));
 hbs.registerPartials(path.join(__dirname, '../Views/content/'));
 
+
 hbs.registerHelper('loadPage', function (pageName) 
 {
   console.log("pageName: " + pageName);
