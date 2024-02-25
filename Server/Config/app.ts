@@ -4,11 +4,13 @@ import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import mongoose from 'mongoose';
 
 import hbs from 'hbs';
 
 // Routing modules
 import indexRouter from '../Routes';
+import postsRouter from '../Routes/posts';
 
 const app = express();
 
@@ -19,6 +21,7 @@ app.set('view engine', 'hbs');
 // register hbs helpers
 hbs.registerPartials(path.join(__dirname, '../Views/components/'));
 hbs.registerPartials(path.join(__dirname, '../Views/content/'));
+hbs.registerPartials(path.join(__dirname, '../Views/posts'))
 
 
 hbs.registerHelper('loadPage', function (pageName) 
@@ -27,7 +30,9 @@ hbs.registerHelper('loadPage', function (pageName)
   return pageName
 });
 
-
+mongoose.connect('mongodb+srv://olatifi:GCF2024@cluster0.5aift5d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{})
+.then((res) => { console.log('Connected to MongoDB') })
+.catch((err) => { console.log(`Connection failure: ${err}`) });
 // middleware configuration
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,6 +42,7 @@ app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
+app.use('/posts', postsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
