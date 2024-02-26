@@ -12,7 +12,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const hbs_1 = __importDefault(require("hbs"));
 const mongoose_1 = __importDefault(require("mongoose"));
-mongoose_1.default.connect(DB.DB_URI);
+const db_1 = __importDefault(require("./db"));
+mongoose_1.default.connect(db_1.default.DB_URI);
 mongoose_1.default.connection.on('connected', () => {
     console.log('Connected to GeorgianCodeForum Database');
 });

@@ -6,8 +6,8 @@
 import mongoose from "mongoose";
 
 const commentSchema = new mongoose.Schema({
-    author: {type: mongoose.Schema.Types.ObjectId, refPath: 'type'},
-    date: {type: String},
+    author: String,
+    date: String,
     likes: Number,
     code: String,
     description: String,

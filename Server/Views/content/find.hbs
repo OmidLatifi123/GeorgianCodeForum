@@ -136,3 +136,34 @@ function draw() {
 draw();
 
     </script>
+
+
+
+    {{!//////////////////////////////////////////-- VIEW ALL POSTS IN TABLE FORMAT ///////////////////////////////////////////////////////////--}}
+
+<div class="container">
+    <h1> <i class="fa-solid fa-post fa-lg"></i> Post List</h1>
+
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th> Title </th>
+                <th> Author </th>
+                <th> Description </th>
+            </tr>
+        </thead>
+            <tbody>
+                {{#each posts}}
+                <tr>
+                    <td> {{this.title}}</td>
+                    <td> {{this.author}}</td>
+                    <td> {{this.description}}</td>
+                    <td>
+                        <a href="/post/edit/{{this.id}}" class="btn btn-primary">Edit</a>
+                        <a href="/post/delete/{{this.id}}" class="btn btn-primary">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+    </table>
+</div>

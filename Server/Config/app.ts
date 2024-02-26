@@ -13,7 +13,7 @@ import hbs from 'hbs';
 import mongoose from 'mongoose';
 
 //db connection
-import DB_URI from './db'
+import DB from './db'
 
 mongoose.connect(DB.DB_URI);
 

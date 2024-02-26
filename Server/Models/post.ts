@@ -6,9 +6,9 @@
 import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    author: {type: mongoose.Schema.Types.ObjectId, refPath: 'type'},
-    date: {type: String},
+    title: String,
+    author: String,
+    date: String,
     likes: Number,
     code: String,
     description: String,
