@@ -116,25 +116,4 @@ contactForm.addEventListener('submit', function(event){
     }
 );
 
-let createPost = document.getElementById("create-post")
-let postTitle = document.getElementById("postTitle")
-let postCode = document.getElementById("postCode")
-let postContent = document.getElementById("postContent")
-let postLanguage = document.getElementById("codingLanguage")
 
-createPost.addEventListener('submit', function(event){
-  event.preventDefault()
-
-  let json = {
-    title: postTitle.value,
-    code: postCode.value,
-    description: postContent.value,
-    language: postLanguage.value
-  }
-
-  let http2 = newXMLHttpRequest();
-  http2.open('POST', '/create/add');
-  http2.setRequestHeader('content-type', 'application/json')
-
-  http2.send(JSON.stringify(json))
-})

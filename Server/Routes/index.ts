@@ -5,8 +5,6 @@ import express from 'express';
 const router = express.Router();
 const nodemailer = require('nodemailer')
 const {google} = require ('googleapis')
-//const Post = require('../models/post')
-
 
 const CLIENT_ID = '849012406795-0d8t4e9l146fs38dqsk7c3joam4c4b4l.apps.googleusercontent.com'
 const CLIENT_SECRET = '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'
@@ -42,16 +40,6 @@ router.get('/privacy', (req, res, next)=>{DisplayPrivacy(req, res, next);});
 
 /* GET login Page */
 router.get('/login', (req, res, next)=>{DisplayLogin(req, res, next);});
-
-//router.post('/create/add', (req, res) =>{
-    //const post = new Post({
-       // title: req.body.postTitle,
-       // code: req.body.postCode,
-       // description: req.body.postContent,
-       // language:req.body.codingLanguage
-   // });
-   // post.save()
-//})
 
 router.post("/contact/send_email", function(req, res){
     let name = req.body.name;
