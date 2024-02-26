@@ -18,6 +18,7 @@ mongoose_1.default.connection.on('connected', () => {
     console.log('Connected to GeorgianCodeForum Database');
 });
 const Routes_1 = __importDefault(require("../Routes"));
+const media_1 = __importDefault(require("../Routes/media"));
 const app = (0, express_1.default)();
 app.set('views', path_1.default.join(__dirname, '../Views'));
 app.set('view engine', 'hbs');
@@ -34,6 +35,7 @@ app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
 app.use('/', Routes_1.default);
+app.use('/media', media_1.default);
 app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));
 });
@@ -41,7 +43,7 @@ app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
-    res.render('error', { title: `Error: ${err.status}`, page: 'error' });
+    res.render('index', { title: `Error: ${err.status}`, page: 'error' });
 });
 exports.default = app;
 module.exports = app;

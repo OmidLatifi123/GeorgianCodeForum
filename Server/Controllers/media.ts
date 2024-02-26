@@ -19,7 +19,7 @@ export function DisplayPostList(req: Request, res: Response, next: NextFunction)
 
     Post.find()
     .then((postCollection) => {
-        res.render('index', {title: 'Post List', page: 'postList', posts: postCollection});
+        res.render('index', {title: 'Post List', page: 'find', posts: postCollection});
     })
     .catch((err) => {
         console.error(err);

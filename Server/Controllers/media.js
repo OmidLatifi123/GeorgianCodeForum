@@ -8,7 +8,7 @@ const post_1 = __importDefault(require("../Models/post"));
 function DisplayPostList(req, res, next) {
     post_1.default.find()
         .then((postCollection) => {
-        res.render('index', { title: 'Post List', page: 'postList', posts: postCollection });
+        res.render('index', { title: 'Post List', page: 'find', posts: postCollection });
     })
         .catch((err) => {
         console.error(err);
