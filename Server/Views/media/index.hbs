@@ -1,0 +1,22 @@
+<h1>Media Library</h1>
+<a href="/media/create">Add New Media</a>
+<ul class="row card-group">
+    {{#each media}}
+        <li class="card m-4 text-center col-lg-4">
+            <h5>{{this.title}}</h5>
+            <h6>{{this.type}}</h6>
+            <p>{{this.releaseYear}}</p>
+            <p>{{this.provider}}</p>
+            <p>{{this.status}}</p>
+            <p>{{this.rating}}</p>
+            <p>{{this.username}}</p>
+            <a href="/media/edit/{{this._id}}" class="btn btn-primary">
+                Edit
+            </a>
+            <a href="/media/delete/{{this._id}}" class="btn btn-primary"
+                onclick="return confirm('For real??');">
+                Delete
+            </a>
+        </li>
+    {{/each}}
+</ul>

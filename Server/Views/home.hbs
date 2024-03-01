@@ -1,0 +1,195 @@
+{{!-- Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
+1199455, 1191123, 1186384, 1207799 --}}
+
+
+
+{{!-- "How Do I..." and then auto-type generated from app.js appears --}}
+    <h1 class="dynamicText">How do I...<span class="auto-type"></span></h1>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="/Client/Scripts/app.js"></script>
+
+{{!-- Intro section with Login Button --}}
+    <section class="introSec fade-in">
+        <span class="introSecPart1">
+             <h1 class="introTitle"> Join an ever-growing Community of Developers</h1>
+             {{!-- Login button --}}
+            <button class="loginBtn" type="button" onclick="location.href='/login'">
+               <img class="loginLogo" src="./Assets/images/Images/box-arrow-in-right.svg"> Login
+            </button>
+        </span> 
+        <h1 class="introTitle">Gain Access to the Full-Suite of Features</h1>
+</section>
+
+{{!-- Second part of Intro section with hoverable Icons + texts --}}
+<section class="introSec2 fade-in">       
+        <span class="introPart1">
+            <img class="introIcon" src="/Assets/images/Images/headset.svg" alt="headset Icon">
+        <h1 class="introh1"> 24/7 Customer Support </h2>
+        <h2 class="introh2">Contact Us Anytime for Assistance</h2>
+        </span>
+
+        <span class="introPart1">
+            <img class="introIcon" src="/Assets/images/Images/ui-checks.svg" alt="Lightbulb Icon">
+        <h1 class="introh1"> Efficient Workflow </h2>
+        <h2 class="introh2">Streamline Your Processes and Boost Productivity</h2>
+
+        </span>
+ </section>   
+
+ {{!-- Third part of intro section with 2nd row of hoverable Icons + text --}}
+
+     <span class="introSec3 fade-in">
+
+        
+        <span class="introPart2">
+            <img class="introIcon" src="/Assets/images/Images/cloud-check.svg" alt="Cloud Icon">
+        <h1 class="introh1"> Online and Accessible </h2>
+        <h2 class="introh2">Access Resources Anywhere, Anytime with Ease</h2>
+
+        </span>
+
+        <span class="introPart2">
+            <img class="introIcon" src="/Assets/images/Images/lightbulb.svg" alt="User Icon">
+        <h1 class="introh1"> Developer Oriented </h2>
+        <h2 class="introh2">Designed to Empower Developers and Enhance Productivity</h2>
+        </span>
+        
+    </span>
+
+{{!-- Green title transition text, hoverable --}}
+<section class="titleText">
+   <h1 class="textGreen"> Welcome to</h1> 
+   <h1 class="textGreen">Georgian Code Forum</h1> 
+
+</section>
+
+{{!-- First section, web and team description with link to about us page --}}
+<section class="sec1">
+    <h2 class="sub-header"> Everyday There Are... </h2>
+    <span class="subHeaderLogo">
+        <img class="logo" src="/Assets/images/Images/Logo.png" alt="GCF logo">
+        <span class="subHeaderColumn"> 
+
+                    <span class="subHeaderCenter"> 
+                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
+                    </span>
+
+                <h2 class="descriptionh2"> Lines of code uploaded</h2> 
+
+                    <span class="subHeaderCenter"> 
+                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/person-add.svg" alt="Members"> <span class="num" data-val="40">00</span> </h1>
+                    </span>
+
+                <h2 class="descriptionh2"> New Members Joined </h2> 
+
+                    <span class="subHeaderCenter"> 
+                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/check-circle.svg" alt="code"> <span class="num" data-val="16">00</span> </h1>
+                 </span>
+                
+                <h2 class="descriptionh2"> Bugs Resolved</h2> 
+
+
+    
+         </span>
+    </span>
+{{!-- 3-bits text --}}
+    <span class="teamLogo">
+    <span class="teamLogoText">
+        <h3 class="description2"> As Georgian students, we understand the frustrations that come along with coding. 
+            Countless hours spent debugging can be incredibly annoying. That's why we're here! </h3>
+            {{!-- Link to about us --}}
+          <h3 class="aboutLink"><a class="linkText" href="/about"> Learn more about our team and mission statement</a> </h3>  
+    </span>
+    <img class="teamLogoImg" src="/Assets/images/Images/TeamLogo.jpg">
+</span>
+
+</section>
+
+{{!-- Section 2, row of 3 Icons and text, hoverable --}}
+<section class="sec2">
+
+    <span class="devs">
+        <img class="devIcon" src="/Assets/images/Images/lightbulb.svg" alt="User Icon">
+    <h2 class="sec2h2"> For Developers, By Developers </h2>
+    <h3 class="sec2h3"> Built Exclusively for Code and Application Development</h3>    
+    </span>
+
+    <span class="stats">
+        <img class="codeIcon" src="/Assets/images/Images/code2.svg" alt="User Icon">
+        <h2 class="sec2h2"> +50% Code Speed </h2>
+        <h3 class="sec2h3"> Users report a significant increase in development speed</h3>    
+        </span>
+
+        <span class="users">
+            <img class="userIcon" src="/Assets/images/Images/user.svg" alt="User Icon">
+            <h2 class="sec2h2"> Hundreds of Daily Users  </h2>
+            <h3 class="sec2h3"> An active community of developers dedicated to their craft</h3>    
+            </span> 
+
+</section>
+
+{{!-- Blue title transition text, hoverable --}}
+<section class="titleText2"> 
+<h1 class="textBlue"> Contribute - Debug - Build </h1>
+</section>
+
+
+{{!-- Section 3, Portal section with clickable href images that send you to Find/Create post --}}
+<section class="sec3">
+    
+    <h1 class="sub-header"> Post Your Bug or Help Solve a Bug</h1>
+
+    <span class="posts"> 
+    <div class="post1">
+        <h2 class="sub-header2"> Create Post</h2>
+        <img class="clickableImage" src="/Assets/images/Images/CreatePost.png" alt="Create post screenshot" onclick="location.href='/create'">
+    </div>
+    
+    <div class="post2">
+        <h2 class="sub-header2"> Find post </h2>
+        <img class="clickableImage" src="/Assets/images/Images/FindPost.png" alt="Create post screenshot" onclick="location.href='/find'">
+    </div>
+
+    </span>
+</section>
+
+{{!-- Green title transition text, hoverable, with Contact us button --}}
+
+<section class="titleText"> 
+    <h1 class="textGreen"> Questions and Concerns? </h1>
+
+            <button class="loginBtn" type="button" onclick="location.href='/contact'">
+                <img class="loginLogo" src="/Assets/images/Images/headset.svg"> Contact Us
+             </button>
+    </section>
+
+    <!-- JavaScript for fade-in animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to check if an element is in the viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Function to handle scroll events and trigger animations
+            function handleScroll() {
+                document.querySelectorAll('.fade-in').forEach(function (element) {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+
+            // Attach the handleScroll function to the scroll event
+            window.addEventListener('scroll', handleScroll);
+
+            // Trigger the initial animations on page load
+            handleScroll();
+        });
+    </script>

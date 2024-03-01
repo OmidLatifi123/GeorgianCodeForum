@@ -1,0 +1,46 @@
+<h1>Update Media</h1>
+<form method="post">
+    <fieldset>
+        <label for="type">Type: *</label>
+        <select name="type" id="type">
+            {{selectOption 'Book' media.type}}
+            {{selectOption 'Game' media.type}}
+            {{selectOption 'Movie' media.type}}
+            {{selectOption 'Music' media.type}}
+            {{selectOption 'TV' media.type}}
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="title">Title: *</label>
+        <input name="title" id="title" required value="{{media.title}}" />
+    </fieldset>
+    <fieldset>
+        <label for="releaseYear">Release Year: </label>
+        <input type="number" name="releaseYear" id="releaseYear" min="1500" value="{{media.releaseYear}}" />
+    </fieldset>
+{{!-- <fieldset>
+        <label for="providers">Provider: *</label>
+        <select name="providers" id="providers">
+            {{#each providers}}
+            <option>{{this.name}}</option>
+            {{/each}}
+        </select>
+    </fieldset> --}}
+    <fieldset>
+        <label for="status">Status: *</label>
+        <select name="status" id="status">
+            {{selectOption 'Completed' media.status}}
+            {{selectOption 'In Progress' media.status}}
+            {{selectOption 'On My List' media.status}}
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="rating">5-Star Rating: *</label>
+        <input type="number" name="rating" id="rating" min="1" max="5" value="{{media.rating}}">
+    </fieldset>
+    <fieldset>
+        <label for="username">Username: *</label>
+        <input name="username" id="username" value="{{media.username}}" />
+    </fieldset>
+    <button class="btn btn-primary offset-2">Save</button>
+</form>

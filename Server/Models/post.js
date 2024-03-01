@@ -1,20 +1,32 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const postSchema = new mongoose_1.default.Schema({
-    title: String,
-    author: String,
-    date: String,
-    likes: Number,
-    code: String,
-    description: String,
-    language: String
-}, {
-    collection: 'post'
+// Omid Latifi
+//     1199455
+
+/* Post Model */
+
+const mongoose = require('mongoose');
+
+
+let postSchema = new mongoose.Schema ({
+
+    postTitle: {
+        type: String,
+        required: true
+    },
+    postContent: {
+        type: String,
+        required: true
+    },
+    codingLanguage: {
+        type: String
+    },
+    postCode: {
+        type: String,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now 
+      }
 });
-const Post = mongoose_1.default.model('Post', postSchema);
-exports.default = Post;
-//# sourceMappingURL=post.js.map
+
+let Post = mongoose.model('Post', postSchema);
+module.exports = Post;

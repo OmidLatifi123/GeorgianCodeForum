@@ -1,0 +1,27 @@
+<h1>Update Post</h1>
+<form method="post">
+    <fieldset>
+        <label for="codingLanguage">Coding Language: *</label>
+        <select name="codingLanguage" id="codingLanguage">
+            {{selectOption 'JavaScript' post.codingLanguage}}
+            {{selectOption 'Python' post.codingLanguage}}
+            {{selectOption 'Java' post.codingLanguage}}
+            {{selectOption 'C#' post.codingLanguage}}
+        </select>
+    </fieldset>
+    <fieldset>
+        <label for="postTitle">Title: </label>
+        <input name="postTitle" id="postTitle"  value="{{post.postTitle}}" />
+    </fieldset>
+   <fieldset>
+        <label for="postContent">Content: </label>
+        <input name="postContent" id="postContent"  value="{{post.postContent}}" />
+    </fieldset>
+
+    <fieldset>
+        <label for="postCode">Post Code: </label>
+        <input name="postCode" id="postCode" value="{{post.postCode}}">
+    </fieldset>
+ 
+    <button class="btn btn-primary offset-2">Save</button>
+</form>

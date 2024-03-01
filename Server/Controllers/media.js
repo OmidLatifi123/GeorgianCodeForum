@@ -1,18 +1,60 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayPostList = void 0;
-const post_1 = __importDefault(require("../Models/post"));
-function DisplayPostList(req, res, next) {
-    post_1.default.find()
-        .then((postCollection) => {
-        res.render('index', { title: 'Post List', page: 'find', posts: postCollection });
-    })
-        .catch((err) => {
-        console.error(err);
+// Media model for CRUD
+let Media = require('../Models/media');
+
+let index = async (req, res, next) => {
+    // fetch all media docs 
+    let media = await Media.find();
+
+    console.log(media);
+    res.render('media/index', { 
+        title: 'Media Library',
+        media: media
     });
-}
-exports.DisplayPostList = DisplayPostList;
-//# sourceMappingURL=media.js.map
+};
+
+let displayCreateForm = async(req, res, next) => {
+
+
+    res.render('media/create', { title: 'Add New Media' });
+
+};
+
+let createMedia = async (req, res, next) => {
+    // save new media to DB
+    await Media.create(req.body);
+
+
+
+    // redirect
+    res.redirect('/media');
+};
+
+let deleteMedia = async (req, res, next) => {
+    // remove selected doc
+    await Media.findByIdAndDelete(req.params._id);
+    // await Media.deleteOne({ _id: req.params._id }); - this works too
+
+    // redirect
+    res.redirect('/media');
+};
+
+let displayEditForm = async (req, res, next) => {
+    let media = await Media.findById(req.params._id);
+
+    res.render('media/edit', { 
+        title: 'Update Media',
+        media: media,
+    });
+};
+
+let updateMedia = async (req, res, next) => {
+    await Media.findByIdAndUpdate(req.params._id, req.body);
+
+    res.redirect('/media');
+};
+
+// make public
+module.exports = {
+    index, displayCreateForm, createMedia, deleteMedia, displayEditForm,
+    updateMedia
+};
