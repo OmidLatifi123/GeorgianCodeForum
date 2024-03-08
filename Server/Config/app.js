@@ -13,8 +13,6 @@ const mongoose = require('mongoose');
 // Routing modules
 const indexRouter = require('../Routes/index');
 const postRouter = require('../Routes/post');
-const mediaRouter = require('../Routes/media');
-
 
 const app = express();
 
@@ -52,8 +50,6 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/post', postRouter);
-app.use('/media', mediaRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
