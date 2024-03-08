@@ -5,7 +5,7 @@
 </section>
 
 <section class="nhTest">
-  <img class="personThree" src="/Assets/images/Images/personThinking1.png">
+  <img class="personThree fade-in" src="/Assets/images/Images/personThinking1.png">
 
   <span class="nhTestLogin">
     <h1 class="nhTesth1"> Debugging Made Simple</h1>
@@ -19,7 +19,7 @@
 </button>
   </span>
 
-    <img class="personThree" src="/Assets/images/Images/personThinking3.png">
+    <img class="personThree fade-in" src="/Assets/images/Images/personThinking3.png">
 
 </section>
 
@@ -67,8 +67,6 @@
     </svg>
 </div>
 </section>
-
-
 {{!-- <hr class="gradient"> --}}
 
 <section class="nhSec3"> 
@@ -124,10 +122,10 @@
 <section class="nhAboutUs">
   <span class="nhAboutUsText">
     <h1 class="nhAboutUsh1">
-      By Goergian Developers, for All Developers
+      By Georgian Developers, for All Developers
     </h1>
     <h2 class="nhAboutUsh2"> Learn More About Our Team and Mission Statement</h2>
-    <a href="/login"><button class="learn-more">
+    <a href="/login"><button class="learn-more-btn">
   <span class="circle" aria-hidden="true">
   <span class="icon arrow"></span>
   </span>
@@ -136,7 +134,7 @@
   </span>
 
 
-<img class="nhAboutUsIcon" src="/Assets/images/Images/TeamLogo.jpg" alt="3-Bits">
+<!--<img class="nhAboutUsIcon" src="/Assets/images/Images/TeamLogo.jpg" alt="3-Bits">  Logo kinda looked ugly floating in space-->
 
 </section>
 
@@ -190,3 +188,34 @@
 
 {{!-- </div> --}}
 </section>
+
+    <!-- JavaScript for fade-in animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Function to check if an element is in the viewport with an offset to trigger earlier
+    function isInViewport(element, offset = 200) { // offset in pixels; adjust as needed
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= (0 - offset) &&
+            rect.left >= (0 - offset) &&
+            rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) + offset) &&
+            rect.right <= ((window.innerWidth || document.documentElement.clientWidth) + offset)
+        );
+    }
+
+    // Function to handle scroll events and trigger animations
+    function handleScroll() {
+        document.querySelectorAll('.fade-in').forEach(function (element) {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    // Attach the handleScroll function to the scroll event
+    window.addEventListener('scroll', handleScroll);
+
+    // Trigger the initial animations on page load
+    handleScroll();
+});
+    </script>
