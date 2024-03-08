@@ -1,24 +1,27 @@
-{{!-- Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
-1199455, 1191123, 1186384, 1207799 --}}
-
 <div class="Contact-From-Section">
     <div class="Contact-Container">
-        <h1 class="Contact-h1">Contact us!</h1>
-            <h3>Contact us if you have questions about the 
+                  <h1 class="Contact-h1">Contact us!</h1>
+            <h3 class="Contact-h3">Contact us if you have questions about the 
                 privacy policy or further inquiries about the website.</h3>
                     <p class="Contact-P">
         Please input your email address and your inquiries below.
         </p>
-    </div>
-
                 <div class="Contact-Us-Form">
                     <form class="Contact-form" id="contact" action="/contact/send_email" method="post">
-                        <label class="Contact-label" for="name">Name: </label>
-                        <input class="Contact-input" type="text" id="name" required><br>
-                        <label class="Contact-label" for="email">E-Mail: </label>
-                        <input class="Contact-input" type="email" id="email" required><br>
+                    <div class="Contact-Input2">
+                        <input type="text" id="name" required autocomplete="off">
+                        <label for="name">Name: </label>
+                    </div>
+                    <div class="Contact-Input2">
+                        <input  type="email" id="email" required autocomplete="off">
+                        <label  for="email">E-Mail: </label>
+                        </div>
+                        <div class="Contact-Input2">
                         <textarea class="Contact-input" id="issue" placeholder="Input Your Inquiries Here"></textarea>
+                        </div>
                         <button class="Contact-btn" onclick="">Submit</button>
                     </form>
                 </div>
+                <img class="Contact-Image"src="/Assets/images/Images/Logo.png">
+             </div>
     </div>

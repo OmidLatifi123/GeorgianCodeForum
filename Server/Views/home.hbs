@@ -1,195 +1,192 @@
-{{!-- Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
-1199455, 1191123, 1186384, 1207799 --}}
-
-
-
-{{!-- "How Do I..." and then auto-type generated from app.js appears --}}
-    <h1 class="dynamicText">How do I...<span class="auto-type"></span></h1>
+<section class="newHomeSec1"> 
+  <h1 class="newHomeDynamicText">How do I...<span class="auto-type"></span></h1>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="/Client/Scripts/app.js"></script>
-
-{{!-- Intro section with Login Button --}}
-    <section class="introSec fade-in">
-        <span class="introSecPart1">
-             <h1 class="introTitle"> Join an ever-growing Community of Developers</h1>
-             {{!-- Login button --}}
-            <button class="loginBtn" type="button" onclick="location.href='/login'">
-               <img class="loginLogo" src="./Assets/images/Images/box-arrow-in-right.svg"> Login
-            </button>
-        </span> 
-        <h1 class="introTitle">Gain Access to the Full-Suite of Features</h1>
+    <script src="/Client/Scripts/app.js"></script>  
 </section>
 
-{{!-- Second part of Intro section with hoverable Icons + texts --}}
-<section class="introSec2 fade-in">       
-        <span class="introPart1">
-            <img class="introIcon" src="/Assets/images/Images/headset.svg" alt="headset Icon">
-        <h1 class="introh1"> 24/7 Customer Support </h2>
-        <h2 class="introh2">Contact Us Anytime for Assistance</h2>
-        </span>
+<section class="nhTest">
+  <img class="personThree" src="/Assets/images/Images/personThinking1.png">
 
-        <span class="introPart1">
-            <img class="introIcon" src="/Assets/images/Images/ui-checks.svg" alt="Lightbulb Icon">
-        <h1 class="introh1"> Efficient Workflow </h2>
-        <h2 class="introh2">Streamline Your Processes and Boost Productivity</h2>
+  <span class="nhTestLogin">
+    <h1 class="nhTesth1"> Debugging Made Simple</h1>
+    <button class="login">
+    <span class="circle1"></span>
+    <span class="circle2"></span>
+    <span class="circle3"></span>
+    <span class="circle4"></span>
+    <span class="circle5"></span>
+    <span class="text">Login</span>
+</button>
+  </span>
 
-        </span>
- </section>   
-
- {{!-- Third part of intro section with 2nd row of hoverable Icons + text --}}
-
-     <span class="introSec3 fade-in">
-
-        
-        <span class="introPart2">
-            <img class="introIcon" src="/Assets/images/Images/cloud-check.svg" alt="Cloud Icon">
-        <h1 class="introh1"> Online and Accessible </h2>
-        <h2 class="introh2">Access Resources Anywhere, Anytime with Ease</h2>
-
-        </span>
-
-        <span class="introPart2">
-            <img class="introIcon" src="/Assets/images/Images/lightbulb.svg" alt="User Icon">
-        <h1 class="introh1"> Developer Oriented </h2>
-        <h2 class="introh2">Designed to Empower Developers and Enhance Productivity</h2>
-        </span>
-        
-    </span>
-
-{{!-- Green title transition text, hoverable --}}
-<section class="titleText">
-   <h1 class="textGreen"> Welcome to</h1> 
-   <h1 class="textGreen">Georgian Code Forum</h1> 
+    <img class="personThree" src="/Assets/images/Images/personThinking3.png">
 
 </section>
 
-{{!-- First section, web and team description with link to about us page --}}
-<section class="sec1">
-    <h2 class="sub-header"> Everyday There Are... </h2>
-    <span class="subHeaderLogo">
-        <img class="logo" src="/Assets/images/Images/Logo.png" alt="GCF logo">
-        <span class="subHeaderColumn"> 
-
-                    <span class="subHeaderCenter"> 
-                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
-                    </span>
-
-                <h2 class="descriptionh2"> Lines of code uploaded</h2> 
-
-                    <span class="subHeaderCenter"> 
-                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/person-add.svg" alt="Members"> <span class="num" data-val="40">00</span> </h1>
-                    </span>
-
-                <h2 class="descriptionh2"> New Members Joined </h2> 
-
-                    <span class="subHeaderCenter"> 
-                <h1 class="description"><img class="IconDesc" src="/Assets/images/Images/check-circle.svg" alt="code"> <span class="num" data-val="16">00</span> </h1>
-                 </span>
-                
-                <h2 class="descriptionh2"> Bugs Resolved</h2> 
+<div class="custom-shape-divider-top-1709852544">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+    </svg>
+</div>
 
 
-    
-         </span>
+<section class="nhIntroSec">
+  <section class="nhIntroText">
+    <h1 class="nhIntroTexth1"> Code | Build | Debug</h1>
+    <img class="nhIntroSecLogo" src="/Assets/images/Images/MORE_Shadow.webp">
+  </section>
+ <img class="nhIntroSecLogo" src="/Assets/images/Images/Logo.png">
+
+</section>
+
+{{!-- <button class="cssbuttons-io">
+  <span>
+
+    Code
     </span>
-{{!-- 3-bits text --}}
-    <span class="teamLogo">
-    <span class="teamLogoText">
-        <h3 class="description2"> As Georgian students, we understand the frustrations that come along with coding. 
-            Countless hours spent debugging can be incredibly annoying. That's why we're here! </h3>
-            {{!-- Link to about us --}}
-          <h3 class="aboutLink"><a class="linkText" href="/about"> Learn more about our team and mission statement</a> </h3>  
-    </span>
-    <img class="teamLogoImg" src="/Assets/images/Images/TeamLogo.jpg">
+</button> --}}
+
+
+ <section class="newHomeSec2">
+<div class="custom-shape-divider-top-1709694937">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+
+
+<h1 class="newHomeSec2h2"> Welcome to </h1>
+<h1 class="newHomeSec2h1"> Georgian Code Forum</h1>
+{{!-- <img class="newHomeLogo" src="./Assets/images/Images/Logo.png"> --}}
+</div>
+
+<div class="custom-shape-divider-bottom-1709747220">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+</div>
+</section>
+
+
+{{!-- <hr class="gradient"> --}}
+
+<section class="nhSec3"> 
+  <h1 class="nhSec3Title"> Why Choose GCF?</h1>
+<div class="nhSec3FG">
+<span class="nhDynamic1"> 
+                <h1 class="nhDynamich1"><img class="nhIconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
+                    
+                     <h2 class="nhDynamich2"> Lines of code uploaded</h2> 
+                     <h3> Increasingly higher amount of problems and solutions</h3>
+                    
 </span>
 
+
+<span class="nhDynamic2"> 
+                <h1 class="nhDynamich1"><img class="nhIconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
+                    
+                     <h2 class="nhDynamich2"> New Daily Members</h2> 
+                     <h3> Increasingly higher amount of problems and solutions</h3>
+                    
+</span>
+
+</div>
+
+<div class="nhSec3SG">
+<span class="nhDynamic3"> 
+                <h1 class="nhDynamich1"><img class="nhIconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
+                    
+                     <h2 class="nhDynamich2"> Higher Coding Efficency</h2> 
+                     <h3> Increasingly higher amount of problems and solutions</h3>
+                    
+</span>
+
+
+<span class="nhDynamic4"> 
+                <h1 class="nhDynamich1"><img class="nhIconDesc" src="/Assets/images/Images/code-slash.svg" alt="code"> <span class="num" data-val="600">000</span>+ </h1>
+                    
+                     <h2 class="nhDynamich2"> Increase in Retained Knowledge</h2> 
+                     <h3> Accelarates Learning for all Developers</h3>
+                    
+</span>
+</div>
 </section>
 
-{{!-- Section 2, row of 3 Icons and text, hoverable --}}
-<section class="sec2">
+  {{!-- SHAPE DIVIDER  --}}
+<div class="custom-shape-divider-top-1709713044">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"></path>
+    </svg>
+</div>
 
-    <span class="devs">
-        <img class="devIcon" src="/Assets/images/Images/lightbulb.svg" alt="User Icon">
-    <h2 class="sec2h2"> For Developers, By Developers </h2>
-    <h3 class="sec2h3"> Built Exclusively for Code and Application Development</h3>    
-    </span>
 
-    <span class="stats">
-        <img class="codeIcon" src="/Assets/images/Images/code2.svg" alt="User Icon">
-        <h2 class="sec2h2"> +50% Code Speed </h2>
-        <h3 class="sec2h3"> Users report a significant increase in development speed</h3>    
-        </span>
+<section class="nhAboutUs">
+  <span class="nhAboutUsText">
+    <h1 class="nhAboutUsh1">
+      By Goergian Developers, for All Developers
+    </h1>
+    <h2 class="nhAboutUsh2"> Learn More About Our Team and Mission Statement</h2>
+    <a href="/login"><button class="learn-more">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">Learn More</span>
+</button></a>
+  </span>
 
-        <span class="users">
-            <img class="userIcon" src="/Assets/images/Images/user.svg" alt="User Icon">
-            <h2 class="sec2h2"> Hundreds of Daily Users  </h2>
-            <h3 class="sec2h3"> An active community of developers dedicated to their craft</h3>    
-            </span> 
+
+<img class="nhAboutUsIcon" src="/Assets/images/Images/TeamLogo.jpg" alt="3-Bits">
 
 </section>
 
-{{!-- Blue title transition text, hoverable --}}
-<section class="titleText2"> 
-<h1 class="textBlue"> Contribute - Debug - Build </h1>
-</section>
+
+<section class="nhSec4">
+{{!-- <div class="custom-shape-divider-top-1709747918">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+    </svg> --}}
 
 
-{{!-- Section 3, Portal section with clickable href images that send you to Find/Create post --}}
-<section class="sec3">
+
+
+  <span class="nhSec4G1">
     
-    <h1 class="sub-header"> Post Your Bug or Help Solve a Bug</h1>
-
-    <span class="posts"> 
-    <div class="post1">
-        <h2 class="sub-header2"> Create Post</h2>
-        <img class="clickableImage" src="/Assets/images/Images/CreatePost.png" alt="Create post screenshot" onclick="location.href='/create'">
+    <div class="nhContainer">
+  <div class="box">
+    <span class="title">24/7 Support</span>
+    <div>
+      <strong>Customer Support is always there</strong>
     </div>
+  </div>
+</div>
+
+  </span>
+   
+  <span class="nhSec4G1">
     
-    <div class="post2">
-        <h2 class="sub-header2"> Find post </h2>
-        <img class="clickableImage" src="/Assets/images/Images/FindPost.png" alt="Create post screenshot" onclick="location.href='/find'">
+    <div class="nhContainer">
+  <div class="box">
+    <span class="title">Efficient Workflow</span>
+    <div>
+      <strong>Allows Developers to Build Efficiently</strong>
     </div>
+  </div>
+</div>
+  </span>
 
-    </span>
+<span class="nhSec4G1">
+    
+    <div class="nhContainer">
+  <div class="box">
+    <span class="title">Always Accessible</span>
+    <div>
+      <strong>Online and Available Everyday</strong>
+    </div>
+  </div>
+</div>
+  </span>
+
+
+{{!-- </div> --}}
 </section>
-
-{{!-- Green title transition text, hoverable, with Contact us button --}}
-
-<section class="titleText"> 
-    <h1 class="textGreen"> Questions and Concerns? </h1>
-
-            <button class="loginBtn" type="button" onclick="location.href='/contact'">
-                <img class="loginLogo" src="/Assets/images/Images/headset.svg"> Contact Us
-             </button>
-    </section>
-
-    <!-- JavaScript for fade-in animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Function to check if an element is in the viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            // Function to handle scroll events and trigger animations
-            function handleScroll() {
-                document.querySelectorAll('.fade-in').forEach(function (element) {
-                    if (isInViewport(element)) {
-                        element.classList.add('visible');
-                    }
-                });
-            }
-
-            // Attach the handleScroll function to the scroll event
-            window.addEventListener('scroll', handleScroll);
-
-            // Trigger the initial animations on page load
-            handleScroll();
-        });
-    </script>

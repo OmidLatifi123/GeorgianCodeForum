@@ -40,7 +40,9 @@
 
 
 {{!-- Matrix Background INSPIRATION/SOURCE: https://www.youtube.com/watch?v=6Gn2KgKQVHU&ab_channel=QuickCodingTuts --}}
-   <script>
+</script>
+
+    <script>
         const canvas = document.getElementById('matrixEffect');
 const context = canvas.getContext('2d');
 
@@ -58,10 +60,10 @@ const drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
     setTimeout(() => {
-        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        context.fillStyle = 'rgba(240, 240, 240, 0.05)';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        context.fillStyle = '#444'; // Green text
+        context.fillStyle = '#777'; // Gray Text
         context.font = fontSize + 'px monospace';
 
         for(let i = 0; i < drops.length; i++) {
