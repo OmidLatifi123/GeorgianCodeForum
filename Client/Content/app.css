@@ -96,6 +96,7 @@ flex-direction: column;
   color: white;
   text-shadow: 3px 3px black;
   font-weight: bold;
+  text-align: center;
 }
 
 .personTwo, .personThree {
@@ -814,6 +815,10 @@ padding-left: 8%;
   display: inline-block; /* Or 'block', depending on your layout needs */
 }
 
+.blob-svg{
+  transform: scaleX(3);
+}
+
 svg{
   transform: scale(1.5);
 }
@@ -850,8 +855,8 @@ svg{
 .glow {
   background-color: #005D99;
   position: absolute;
-  width: 200px;
-  height: 290px;
+  width: 205px;
+  height: 295px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 20px;
@@ -1020,6 +1025,7 @@ svg{
     font-weight: bold;
     font-size: 75px; /* Adjust the font size as necessary */
     transition: transform 0.3s ease; /* Smooth transition for transform property */
+    white-space: nowrap;
   }
 
   .meet-about-h2:hover {
