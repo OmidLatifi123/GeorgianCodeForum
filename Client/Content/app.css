@@ -79,6 +79,7 @@ font-size: 80px;
   margin-bottom: 0%;
   border-radius: 0%;
   padding-bottom: 3%;
+  max-width: 100%;
 }
 
 .nhTestLogin {
@@ -102,7 +103,15 @@ flex-direction: column;
 .personTwo, .personThree {
   margin: 0%;
   padding: 0%;
-  scale: 0.8;
+  width: 357px;
+  height: 357px;
+  margin-right: 3%;
+}
+
+@media (max-width: 767px) {
+  .personTwo, .personThree {
+    display: none;
+  }
 }
 
 .newHomeDynamicText {
@@ -130,6 +139,16 @@ flex-direction: column;
   text-shadow: 2px 2px rgba(0,0,0,0.2);
   padding-left: 3%;
 }
+ 
+@media (max-width: 767px) {
+  .newHomeDynamicText > h1{
+    white-space: nowrap;
+    color: #000; /* Text color */
+    padding-left: 3%;
+    font-size: 14px;
+  }
+}
+
 .search-icon{
   position: absolute;
   right: 0;
@@ -137,6 +156,13 @@ flex-direction: column;
   width: 75px;
   height: 50px;
   transition: transform 0.3s ease;
+}
+@media (max-width: 767px) {
+  .search-icon{
+    transform: scale(.3);
+    top: -9px;
+    right: -9px;
+  }
 }
 
 .search-icon:hover {
@@ -305,11 +331,21 @@ transform: scale(1.1);
   font-style: normal;
   color: rgb(100, 167, 11);
   -webkit-text-stroke: 3px rgb(0, 75, 135);
-
   transition: transform 0.3s ease;
-
-
 }
+
+@media (max-width: 767px) {
+  .newHomeSec2h1 {
+    font-size: 60px;
+      font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(100, 167, 11);
+    -webkit-text-stroke: 3px rgb(0, 75, 135);
+    transition: transform 0.3s ease;
+  }
+  }
+
 
 .newHomeSec2h1:hover {
   transform: scale(1.1); 
@@ -412,6 +448,7 @@ transform: scale(1.1);
   padding-bottom: 5%;
   font-size: 60px;
   font-weight: bold;
+  text-align: center;
 }
 
 .nhSec3FG {
@@ -420,7 +457,6 @@ transform: scale(1.1);
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
 }
 
 .nhSec3SG {
@@ -511,6 +547,28 @@ padding: 4%;
     box-shadow:  20px 20px 20px #1e1e1e;
     transform: scale(1.1); 
     }
+
+    @media (max-width: 767px) {
+      .nhDynamic4, .nhDynamic3, .nhDynamic2, .nhDynamic1 {
+        transform: scale(.5);
+        width: 300px;
+        height: 300px;
+      }
+      }
+
+      @media (max-width: 767px) {
+      .nhSec3FG {
+        width: 400px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nhSec3SG {
+        width: 400px;
+      }
+    }
+
+
     .num{
       font-weight: bold;
     }
@@ -553,7 +611,6 @@ padding: 4%;
   margin: 2%;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
 }
@@ -562,6 +619,12 @@ padding: 4%;
   transform: scale(0.8); 
   border: 5px solid black;
   box-sizing: border-box
+}
+@media (max-width: 767px) {
+  .nhAboutUsIcon {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 
@@ -675,7 +738,7 @@ button {
   border-radius: 0%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
   background-color:  rgb(0, 13, 193);
   background-image: url("/Assets/images/Images/gc.jpg");
@@ -687,6 +750,13 @@ button {
 .nhSec4G1{
 width: 30%;
 padding-left: 8%;
+}
+
+@media (max-width: 767px) {
+  .nhSec4G1{
+    padding-right: 10%;
+    width: 30%;
+  }
 }
 
 .nhSec4G1, h1 {
@@ -760,12 +830,16 @@ padding-left: 8%;
   transition: all ease 0.3s;
 }
 
-.nhContainer .box {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 200px;
+@media (max-width: 767px) {
+  .nhContainer .box {
+    transform: scale(.5);
+    padding-left: 0%;
+    margin-left: 0%;
+    width: 200px;
+    padding: 0%;
+    align-content: center;
+    right: 1000px;
+  }
 }
 
 .nhContainer .box .title {
