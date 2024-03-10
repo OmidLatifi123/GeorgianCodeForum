@@ -217,7 +217,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
     // Function to check if an element is in the viewport with an offset to trigger earlier
-    function isInViewport(element, offset = 200) { // offset in pixels; adjust as needed
+    function isInViewport(element, offset = 500) { // offset in pixels; adjust as needed
         const rect = element.getBoundingClientRect();
         return (
             rect.top >= (0 - offset) &&
@@ -284,5 +284,4 @@ tween5.start();
   document.addEventListener('DOMContentLoaded', startAnimation);
 </script>
 
-    <div class="fixed-gradient-box"></div>
     </body>
