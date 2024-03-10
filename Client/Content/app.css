@@ -9,6 +9,12 @@
         background-color: rgb(255, 255, 255);
     }
 
+    a {
+      text-decoration: none;
+      color: #f2f2f2;
+        }
+
+
 .navbar {
     align-items: center;
     text-align: center;
@@ -753,6 +759,16 @@ button {
   align-items: center;
   height: fit-content;
   max-width: 100%;
+}
+
+.nhSec4Icon{
+  padding: 5%;
+fill: white;
+scale: 2;
+}
+
+.box div{
+  padding: 5%;
 }
 
 .nhSec4G1{
