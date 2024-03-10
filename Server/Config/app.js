@@ -9,10 +9,13 @@ const hbs = require('hbs');
 
 // additional dependencies
 const mongoose = require('mongoose');
+const passport = require('passport');
+const session = require('express-session');
 
 // Routing modules
 const indexRouter = require('../Routes/index');
 const postRouter = require('../Routes/post');
+const authRouter = require('../Routes/auth');
 
 const app = express();
 
@@ -48,8 +51,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// passport config BEFORE routers
+app.use(session({
+  secret: process.env.PASSPORT_SECRET,
+  resave: true,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// link passport to User model
+const User = require('../Models/user');
+passport.use(User.createStrategy());
+
+// link User model w/passport session mgmt
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use('/', indexRouter);
 app.use('/post', postRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

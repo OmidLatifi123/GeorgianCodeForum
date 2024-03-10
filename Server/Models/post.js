@@ -25,7 +25,11 @@ let postSchema = new mongoose.Schema ({
     createdAt: {
         type: Date,
         default: Date.now 
-      }
+      },
+      username: {
+        type: String,
+        required: true
+    }
 });
 
 let Post = mongoose.model('Post', postSchema);

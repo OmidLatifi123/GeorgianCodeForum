@@ -1,6 +1,9 @@
 // Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
 //     1199455, 1191123, 1186384 , 1207799
 
+
+const User = require('../Models/user');
+
 /**
  * This function will display the home page
  *
@@ -47,6 +50,11 @@ function DisplayPrivacy(req, res, next)
   res.render('privacy', {title: 'Privacy Policy', page: 'privacy'});
 }
 
+function DisplayRegister(req, res, next)
+{
+  res.render('register', {title: 'Register', page: 'register'});
+}
+
 
 // FUNCTIONS MUST BE EXPORTED HERE OR CANNOT BE ACCESSED BY ROUTES
 module.exports = {
@@ -56,7 +64,8 @@ module.exports = {
  DisplayFind: DisplayFind,
  DisplayLogin: DisplayLogin,
  DisplayPrivacy: DisplayPrivacy,
- DisplayContact: DisplayContact
+ DisplayContact: DisplayContact,
+ DisplayRegister: DisplayRegister
 }
 
   

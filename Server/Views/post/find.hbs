@@ -143,6 +143,8 @@ draw();
 <ul class="row card-group">
     {{#each post}}
         <li class="card m-4 text-center col-lg-4">
+            <p>{{this.username}}</p>            
+            <p>{{this.createdAt}}</p>
             <h5>{{this.postId}}</h5>
             <h6>{{this.postTitle}}</h6>
             <p>{{this.postContent}}</p>

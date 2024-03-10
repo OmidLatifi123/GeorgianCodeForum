@@ -1,6 +1,6 @@
 <h1>Update Post</h1>
 <form method="post">
-    <fieldset>
+    {{!-- <fieldset>
         <label for="codingLanguage">Coding Language: *</label>
         <select name="codingLanguage" id="codingLanguage">
             {{selectOption 'JavaScript' post.codingLanguage}}
@@ -8,7 +8,7 @@
             {{selectOption 'Java' post.codingLanguage}}
             {{selectOption 'C#' post.codingLanguage}}
         </select>
-    </fieldset>
+    </fieldset> --}}
     <fieldset>
         <label for="postTitle">Title: </label>
         <input name="postTitle" id="postTitle"  value="{{post.postTitle}}" />

@@ -15,8 +15,10 @@ let index = async (req, res, next) => {
 let displayCreateForm = async(req, res, next) => {
 
 
-    res.render('post/create', { title: 'Add New Post' });
-
+    res.render('post/create', { 
+        title: 'Add New Post',
+        user: req.user
+    });
 };
 
 let createPost = async (req, res, next) => {
@@ -42,6 +44,7 @@ let displayEditForm = async (req, res, next) => {
     res.render('post/edit', { 
         title: 'Update Post',
         post: post,
+        user: req.user
     });
 };
 

@@ -41,6 +41,9 @@ router.get('/privacy', (req, res, next)=>{IndexController.DisplayPrivacy(req, re
 /* GET login Page */
 router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, next);});
 
+/* GET register Page */
+router.get('/register', (req, res, next)=>{IndexController.DisplayRegister(req, res, next);});
+
 router.post("/contact/send_email", function(req, res){
     let name = req.body.name;
     let email = req.body.email;
