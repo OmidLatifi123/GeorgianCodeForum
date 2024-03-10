@@ -31,7 +31,7 @@ router.get('/edit/:_id', authCheck, (req, res, next) => {
 });
 
 /* POST: /post/edit/abc123 => process form submission for updating */
-router.post('/edit/:_id', authCheck,(req, res, next) => {
+router.post('/edit/:_id', authCheck, (req, res, next) => {
     postController.updatePost(req, res, next);
 });
 

@@ -5,8 +5,8 @@
 <div class="Login-container">
   <img src="Assets/images/Images/2020-11-10-georgian-college.jpg" alt="gerogian college barrie campus" class="login-image">
   
-  <form class="Login-form" method="post">
-    <h1 class="Loginh1">Register</h1>
+  <form class="Login-form" method="post" action="/auth/login">
+    <h1 class="Loginh1">Login</h1>
 
       {{#if messages}} 
          <h3 class="alert alert-danger">{{messages}}</h3>
@@ -19,8 +19,7 @@
     <label for="password">Password : </label>
     <input type="password" id="LoginPassword" name="password"required>
     <button type="submit">Submit</button>
-
-   <p>Already have an account?</p>
-  <a href="/auth/login" title="Register"> Sign-in </a>
+    <p>Don't have an account?</p>
+  <a href="/auth/register" title="Register"> Creat Account </a>
   </form>
 </div>
