@@ -44,6 +44,7 @@
 
 
 .newHomeSec1{
+  margin-bottom: 6%;
   border-radius: 0%;
   padding-top: 2%;
 
@@ -126,17 +127,17 @@ flex-direction: column;
   font-size: 3vw; /* Start with a base font-size and adjust as needed */
   white-space: nowrap;
   color: #000; /* Text color */
-  text-shadow: 2px 2px rgba(0,0,0,0.2);
+  /* text-shadow: 2px 2px rgba(0,0,0,0.2); */
   background-color: white;
   width: 1200px;
   margin-top: 3%;
   position: relative;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+  /* box-shadow: 0 0 5px 5px rgba(0,0,0,0.3); */
 }
 .newHomeDynamicText > h1{
   white-space: nowrap;
   color: #000; /* Text color */
-  text-shadow: 2px 2px rgba(0,0,0,0.2);
+  /* text-shadow: 2px 2px rgba(0,0,0,0.2); */
   padding-left: 3%;
 }
  
@@ -434,7 +435,7 @@ transform: scale(1.1);
   border-radius: 0%;
   background-color: rgb(0, 75, 135);
   padding-top: 2%;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
   margin-bottom: 0%;
   display: flex;
   flex-direction: column;
@@ -466,6 +467,11 @@ transform: scale(1.1);
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.nhIconDesc{
+  justify-content: center;
+scale: 1.7;
 }
 
 .nhDynamic1 {
@@ -1530,7 +1536,7 @@ svg{
   justify-content: center; /* Centers content horizontally */
   align-items: center; /* Centers content vertically */
   height: 100%; /* Makes the text container the same height as its parent */
-  color: blue; /* Text color */
+  color: rgb(250, 250, 250); /* Text color */
   text-shadow: 3px 3px #000000;
   font-weight: bold;
   font-size: 60px; /* Adjust the font size as necessary */
@@ -1718,450 +1724,91 @@ svg{
   fill: rgb(185, 51, 51);
 }
 
+@media screen and (max-width:820px){
+  .findLogoImg{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:90vw;
+  }
+
+  #searchBtn{
+    width: 45vw;
+  }
+
+  #filterBtn{
+    width: 45vw;
+  }
+  
+  #searchBar{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:100vw;
+  }
+
+  .card-group{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-right:1em;
+    width:90vw
+  }
+
+  .addbtn{
+    white-space: nowrap;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+  .modal-content{
+    width:100vw;
+  }
+}  
+
+@media screen and (max-width:490px){
+  .findLogoImg{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:90vw;
+  }
+
+  #searchBtn{
+    width: 40vw;
+  }
+
+  #filterBtn{
+    width: 40vw;
+  }
+  
+  #searchBar{
+    padding: 2%;
+    align-items: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:90vw;
+  }
+
+  .card-group{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:90vw
+  }
+
+  .modal-content{
+    width:100vw;
+  }
+
+}
+
+
 
 /* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 /* Create Post CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 /* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
-
-.create-post{
-  margin: 20px 0;
-    padding: 10px;
-    background-color: #005D99; /* Blue color */
-    text-shadow: #000 3px 3px;
-    color: #ffffff; /* White text color */
-    display: inline-block; /* Make the background color cover the entire width */
-    border-radius: 40px; /* Optional: Add rounded corners */
-    font-size: 90px;
-    font-weight: bold;
-}
-.create-button:hover {
-  background-color: #45a049;
-}
-.form-style{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background-color: #777; /* Dark background */
-  border: #000;
-}
-
-.background-container form {
-  max-width: 600px;
-  margin: auto;
-  color: #ffffff;
-}
-
-.background-container label {
-    background-color: #005D99; /* Green background */
-    color: #fff; /* Black text color */
-    padding: 5px 5px; /* Add padding */
-    border-radius: 5px; /* Rounded corners */
-    display: inline-block; /* Ensure each label is displayed on its own line */
-    margin-bottom: 5px; /* Add some space between labels */
-    text-shadow: 1px 1px 1px #000; /* Black text outline */
-    font-size: larger;
-}
-
-.background-container input,
-.background-container textarea,
-.background-container select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-  background-color: white; /* Dark background */
-  color: black; /* White text color */
-  border: none; /* Remove default border */
-  border-radius: 8px; /* Rounded edges */
-}
-
-.create-textarea {
-  background-color: #777; /* Dark background */
-  color: #ffffff; /* White text color */
-  padding: 8px; /* Add padding for better appearance */
-  border: #005D99; /* Remove default border */
-  border-radius: 8px; /* Rounded edges */
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  resize: none; /* Disable resizing */
-  min-height: 100px; /* Set a minimum height to prevent the textarea from collapsing */
-}
-
-.create-button {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-shadow: 2px 2px 2px #000; /* Black text outline */
-  transition: transform 0.2s ease; /* Add transition effect */
-  font-size: larger;
-}
-
-.create-button:hover {
-    transform: scale(1.05); /* Increase the scale on hover */
-}
-.create-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
-  background-color: rgb(40, 40, 40);
-}
-
-.background-container {
-  background-color: (240, 240, 240, 0.7); /* Darker background */
-  box-shadow:  -33px 33px 66px #777, 33px -33px 66px #777;
-  backdrop-filter: blur(5px);
-  border-radius: 20px; /* Rounded edges */
-  padding: 20px; /* Add padding */
-  max-width: 600px; /* Set a maximum width to contain the content */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 5%;
-  max-width: 800px; /* Set a maximum width to contain the content */
-}
-
-.create-container {
-  position: relative;
-  z-index: 1; /* Ensure the form is on top of the background */
-  text-align: center; /* Center align its children */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-}
-
-.create-container form {
-  max-width: 600px;
-  margin: auto;
-  color: #ffffff;
-}
-
-.create-post{
-    margin: 20px 0;
-      padding: 10px;
-      background-color: #005D99; /* Blue color */
-      color: #ffffff; /* White text color */
-      display: inline-block; /* Make the background color cover the entire width */
-      border-radius: 8px; /* Optional: Add rounded corners */
-  }
-
-  .form-style{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-  }
-form {
-  max-width: 600px;
-  margin: auto;
-  color: #ffffff; 
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-
-.create-button {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.create-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
-  background-color: rgb(40, 40, 40);
-}
-
-
-
-/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-/* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
-.container {
-  justify-content: center;
-  text-align: center;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  padding-top: 5%;
-}
-
-.col-lg-4{
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  backdrop-filter: blur(3px);
-}
-
-.col-lg-4 > h6{
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.col-lg-4 > p{
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.logo img {
-  max-width: 300px;
-}
-
-.search input[type=text] {
-  padding: 10px;
-  width: 50%;
-  margin-top: 20px;
-}
-
-.search button {
-  padding: 10px 20px;
-  margin-left: 10px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.search input[type=text] {
-  padding: 10px;
-  width: 50%;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  background-color: White; /* Dark background */
-  color: #111; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Rounded corners */
-  border: solid 3px #007BFF;
-}
-
-/* Styling for the search button */
-.search button#searchBtn {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Rounded corners */
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-/* Styling for the filters button */
-.search button#filterBtn {
-  background-color: #007BFF; /* Blue background */
-  color: white; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Rounded corners */
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.addbtn{
-  background-color: #007BFF; /* Blue background */
-  color: white; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Rounded corners */
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer; /* Change cursor to pointer on hover */
-  text-decoration: none;
-  align-items: center; /* Centers content vertically */
-  justify-content: center;
-  text-align: center;
-  display: flex; /* Enables flexbox properties */
-  max-width: 10%;
-  margin: auto;
-  font-weight: bold;
-}
-.addbtn:hover{
-  background-color: #0056b3; /* Slightly darker or lighter blue for hover */
-}
-
-/* Optional: Add hover effects for visual feedback */
-.search button#searchBtn:hover {
-  background-color: #45a049; /* Slightly darker or lighter green for hover */
-}
-
-.search button#filterBtn:hover {
-  background-color: #0056b3; /* Slightly darker or lighter blue for hover */
-}
-
-/* Define fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Apply fade-in animation to the modal */
-.modal {
-  display: none; /* Keep modal hidden by default */
-  position: fixed;
-  z-index: 3; /* Ensure modal is above overlay */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
-  animation-name: fadeIn; /* Reference the fade-in animation */
-  animation-duration: 0.5s; /* Animation duration, adjust as needed */
-}
-
-.btn-primary{
-  margin: auto;
-  padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-
-.find-logo {
-  position: relative; /* Ensure proper positioning of the logo and tagline */
-  display: inline-block; /* Treat the logo container as an inline block */
-  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
-}
-
-.logo img {
-  max-width: 300px;
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-.logo:hover img {
-  transform: scale(1.1); /* Scale up the logo on hover */
-}
-
-.tagline {
-  top: 0; /* Adjust these values as needed to place the text */
-  left: 0; /* Adjust these values as needed to place the text */
-  width: 100%; /* Ensures the text spans the width of the container */
-  text-align: center; /* Centers the text horizontally */
-  /* Add more styling here to suit your design */
-  margin: 1%; /* Removes default margins from <h2> */
-  display: flex; /* Enables flexbox properties */
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  height: 100%; /* Makes the text container the same height as its parent */
-  color: white; /* Text color */
-  text-shadow: 3px 3px #000000;
-  font-weight: bold;
-  font-size: 60px; /* Adjust the font size as necessary */
-  margin: auto;
-  margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-
-/* Apply fade-in animation to the overlay as well, for consistency */
-.overlay {
-  display: none; /* Hidden by default */
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.4);
-  z-index: 2;
-  animation-name: fadeIn;
-  animation-duration: 0.5s;
-}
-
-/* Modal Content - Dark Mode Styling */
-.modal-content {
-  border-radius: 19px;
-  background: #e0e0e0;
-  box-shadow:  -33px 33px 66px #aaaaaa, 33px -33px 66px #000000;
-  color: rgb(0, 0, 0); /* White text for contrast */
-  margin: 15% auto;
-  padding: 20px;
-  width: 30%;
-  border-radius: 10px; /* Rounded corners for modern look */
-}
-
-/* Style form elements within the modal for dark mode */
-.modal-content input[type="text"],
-.modal-content select,
-.modal-content button {
-  width: 90%; /* Adjust width to fit modal */
-  padding: 10px;
-  margin-bottom: 10px; /* Space out elements */
-  background-color: white; /* Even darker for inputs/selects */
-  color: black; /* Ensure text is easily readable */
-  border: 1px solid #555; /* Slightly lighter border for definition */
-  border-radius: 20px; /* Consistent rounded corners */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* Adjust the button specific styles */
-.modal-content button {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  border: none; /* Remove default border */
-  border-radius: 20px; /* Rounded corners */
-  padding: 10px 20px;
-  cursor: pointer; /* Change cursor to pointer on hover */
-  display: inline-block; /* Place next to other inline or inline-block elements */
-}
-
-.modal-content label {
-  color: black;
-}
-
-.modal-content h2 {
-  color: black;
-  font-weight: bold;
-}
-
-/* Button hover effect for better user interaction */
-.modal-content button:hover {
-  background-color: #45a049; /* A slightly darker green for hover state */
-}
-
-/* Close button specific styling for better visibility */
-.close {
-  color: #aaa; /* Light gray for contrast against dark background */
-  float: right; /* Position it to the right */
-  font-size: 28px; /* Sizable close icon */
-}
-
-.close:hover,
-.close:focus {
-  color: #ddd; /* Lighter shade for hover/focus state */
-  text-decoration: none; /* Override default styles */
-  cursor: pointer; /* Indicate clickable action */
-}
-
-.find-body, .find-html {
-  height: 100%;
-  margin: 0;
-  overflow: hidden; /* Prevents scrolling */
-}
-
 #matrixEffect {
   position: fixed;
   top: 0;
@@ -2171,9 +1818,6 @@ label {
   z-index: -1; /* Ensures it stays behind the content */
 }
 
-/* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
-/* Create Post CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
-/* Create Post CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 
 
 .create-post{
   margin: 20px 0;
@@ -2969,7 +2613,7 @@ label {
 .Contact-From-Section{
   padding: 15vh;
   background-color: #005d99;
-  background-image: url("/Assets/images/Images/ContactGeorgian.jpg");
+  background-image: url('/Assets/images/Images/ContactGeorgian.jpg');
   background-size: 50% auto;
   background-position: right top;
   background-repeat: no-repeat;
