@@ -2613,7 +2613,7 @@ label {
   background: #ffffff;
   padding: 20px;
   color: black;
-  width: 45%;
+  width: 40%;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
@@ -2627,10 +2627,10 @@ label {
 }
 
 .Contact-From-Section{
-  padding: 15vh;
+  padding: 5vh;
   background-color: #005d99;
   background-image: url('/Assets/images/Images/ContactGeorgian.jpg');
-  background-size: 50% auto;
+  background-size: 55% auto;
   background-position: right top;
   background-repeat: no-repeat;
  }
