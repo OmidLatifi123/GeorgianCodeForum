@@ -341,18 +341,6 @@ transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 767px) {
-  .newHomeSec2h1 {
-    font-size: 60px;
-      font-family: "Bungee", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: rgb(100, 167, 11);
-    -webkit-text-stroke: 3px rgb(0, 75, 135);
-    transition: transform 0.3s ease;
-  }
-  }
-
 
 .newHomeSec2h1:hover {
   transform: scale(1.1); 
@@ -552,7 +540,7 @@ padding: 4%;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     padding: 4%;
   }
-  
+   
   .nhDynamic4:hover {
     border-radius: 50px;
     background: #ffffff;
@@ -584,6 +572,27 @@ padding: 4%;
     .num{
       font-weight: bold;
     }
+
+/* Home page responsiveness starts here */
+@media (max-width: 767px) {
+    .newHomeSec2h1 {
+    font-size: 60px;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(100, 167, 11);
+    -webkit-text-stroke: 3px rgb(0, 75, 135);
+    transition: transform 0.3s ease;
+}
+    
+/*.nhIntroSecVideo {
+    width: 100vw;
+    height: 100vh; Slides the video up and down for some reason rather than simply making it take up the whole view height of parent
+    z-index: -1;
+    filter: brightness(50%);
+  }*/
+}
+/* Home page responsiveness ends here */
 
 /* THIRD SHAPE DIVIDER  */
 
@@ -920,7 +929,6 @@ padding-left: 5%;
 .blob-svg{
   transform: scaleX(3);
 }
-
 
   @media (max-width: 767px){
     .blob-svg{
@@ -1740,6 +1748,7 @@ svg{
   fill: rgb(185, 51, 51);
 }
 
+/* Find post responsiveness starts here */
 @media screen and (max-width:820px){
   .findLogoImg{
     display:flex;
@@ -1994,24 +2003,22 @@ label {
   margin: 20px;
   background-color: rgb(40, 40, 40);
 }
-  
+  /* Create post was already responsive so nothing was needed */
+
+
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Privacy Policy CSS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.Privacy-images{
+.Privacy-image{
   display: flex;
   justify-content: space-between; 
 }
 
-.Privacy-images  > img{
-  max-width: 10%;
+.Privacy-image  > img{
+  max-width: 50%;
   padding-left: 0.8%;
   padding-right: 0.8%;
-}
-
-.PrivImagesGFC{
-  margin-right: auto; /* Add this line */
 }
 
 .privacy-Link{
@@ -2052,7 +2059,32 @@ label {
   color: #000;
   text-align: center;
 }
-/* Privacy Policy CSS Ends here */
+
+/* Privacy responsiveness starts here */
+@media screen and (min-width: 490px){
+  .Privacy-Section-Odd { 
+    border-radius: 20px;
+    margin: 0.8%;
+    background-color: #58AD40; 
+    color: #000000;
+}
+
+.Privacy-Section-Even { 
+    border-radius: 20px;
+    margin: 0.8%;
+    background-color: #005D99;
+    color: #000;
+ }
+
+  .Privacy-content{
+    color: #000;
+    margin: 0.8%;
+    background-color: #005D99;
+    border-radius: 20px;
+    font-size:18px;
+  }
+}
+/* Privacy responsiveness Ends here */
 
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
@@ -2111,7 +2143,7 @@ label {
   padding: 10px;
   border-radius: 9999px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #fff;
+  color: #000;
 }
 
 .Login-form > button {
@@ -2150,6 +2182,7 @@ label {
   box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
 }
 
+/* Login responsiveness starts here */
 @media screen and (min-width: 430px){
   .Login-container{
     display: flex;
@@ -2287,6 +2320,8 @@ label {
     box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
   }
 }
+
+/* Login responsiveness ends here */
 
 /* ////////////////////////////////////////////////////////////////////// Register CSS ///////////////////////////////////////////////// */
  /* ///////////////////////////////////////////////////////////////////// Register CSS ///////////////////////////////////////////////// */
@@ -2343,7 +2378,7 @@ label {
   padding: 10px;
   border-radius: 9999px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #fff;
+  color: #000;
 }
 
 .register-form > button {
@@ -2382,6 +2417,7 @@ label {
   box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
 }
 
+/* Register responsiveness starts here */
 @media screen and (min-width: 430px){
   .register-container{
     display: flex;
@@ -2519,7 +2555,7 @@ label {
     box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
   }
 }
-
+/* Register responsiveness ends here */
 
  /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
  /* ////////////////////////////////////////////////////////////////////// FOOTER CSS ///////////////////////////////////////////////// */
@@ -2611,7 +2647,7 @@ label {
 
  /* ////////////////////////////////////////////////////////////////////// END Login CSS ///////////////////////////////////////////////// */
 
- /* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Contact////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Contact///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -2785,6 +2821,7 @@ label {
   padding-top: 10px;
  }
 
+ /* Contact us responsiveness starts here */
   @media screen and (max-width: 1500px) {
     .Contact-From-Section{
       background-image: none;
@@ -2839,4 +2876,4 @@ label {
     justify-content: center;
   }
  }
-/*Contact us Ends================================================================*/
+ /* Contact us responsiveness ends here */
