@@ -1874,7 +1874,7 @@ svg{
     width:90vw;
   }
 
-  .card-group{
+  .card-body{
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -1886,7 +1886,11 @@ svg{
   }
 
 }
-/* Find Post responsiveness ends here */
+
+.card-body {
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 

@@ -27,9 +27,11 @@ let postSchema = new mongoose.Schema ({
         default: Date.now 
       },
       username: {
-        type: String,
-        required: true
-    }
+        type: String
+    }, comment: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 });
 
 let Post = mongoose.model('Post', postSchema);

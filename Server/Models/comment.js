@@ -1,18 +1,24 @@
 
-const Comment = mongoose_1.default.model('Comment', commentSchema);
-exports.default = Comment;
-//# sourceMappingURL=comment.js.map//     1199455, 1191123, 1186384 , 1207799
 
-/* Comment Model */
+const mongoose = require('mongoose');
 
-module.exports = class UserModel 
-{
-    // Model implementation
-    id = "";
-    userId = "";
-    post = "";
-    content = "";
-}
+let commentSchema = new mongoose.Schema ({
+    content: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now 
+    },
+    username: {
+        type: String
+    },
+    post: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Post'
+    }
+});
 
-
-  
+let Comment = mongoose.model('Comment', commentSchema);
+module.exports = Comment;
