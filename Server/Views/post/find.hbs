@@ -137,8 +137,9 @@ draw();
 
     </script>
 
-
+<div class="Posts">
     <h1 class="tagline">Post Library</h1>
+    </div>
 <a class="addbtn" href="/post/create">Add New Post</a>
 <ul class="row card-group">
     {{#each post}}
@@ -178,3 +179,12 @@ draw();
         </li>
     {{/each}}
 </ul>
+
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+    </script> 

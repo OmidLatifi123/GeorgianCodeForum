@@ -272,6 +272,23 @@ transform: scale(1.1);
 
 /* INTRO section */
 
+.nhVideoSec{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  position: absolute;
+  top: 500px;
+  z-index: -10;
+  width: 100%;
+}
+
+.darkmode--activated .nhVideoSec{
+  filter: invert(100%);
+}
+
 .nhIntroSec{
   margin-top: 1%;
   display: flex;
@@ -290,13 +307,13 @@ transform: scale(1.1);
 }
 
 .nhIntroSecVideo {
-  width: 1280;
-  height: 720;
+  width: 300%;
+  height: 300%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 60%;
+  position: static;
+  top: -300px;
   left: 0;
   z-index: -1;
   filter: brightness(50%);
@@ -417,6 +434,12 @@ transform: scale(1.1);
   height: 148px;
 }
 
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1709747220 {
+    display: none;
+  }
+}
+
 .custom-shape-divider-bottom-1709747220 .shape-fill {
   fill: rgb(0, 75, 135);
 }
@@ -486,6 +509,12 @@ background: #ffffff;
 box-shadow:  -20px -20px 14px #1e1e1e;
 transform: scale(1.1); 
 }
+
+
+.newHomeSec1, .nhTest, .newHomeSec2, .nhSec3, .nhSec4, .nhIntroSec{
+  filter: invert(0%);
+}
+
 
 .nhDynamich1 {
   color: black;
@@ -661,8 +690,6 @@ button {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
-
-  background-color: #fff;
  }
  
  .learn-more-btn {
@@ -781,11 +808,10 @@ scale: 2;
 }
 
 .nhSec4G1{
-  justify-content: space-between;
+justify-content: space-between;
 width: fit-content;
-
-padding-right: 5%;
-padding-left: 5%;
+padding-right: 0%;
+padding-left: 0%;
 /* padding-left: 8%; */
 }
 
@@ -833,6 +859,9 @@ padding-left: 5%;
   color: rgb(21, 21, 21);
   position: relative;
   font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nhContainer::before,
@@ -872,7 +901,7 @@ padding-left: 5%;
     transform: scale(.5);
     padding-left: 0%;
     margin-left: 0%;
-    width: 200px;
+    width: 150px;
     padding: 0%;
     align-content: center;
     right: 1000px;
@@ -956,6 +985,18 @@ svg{
 
 .about-card-container {
   display: flex;
+}
+
+.about-card .fa-linkedin-in{
+  background-color: #0077B5;
+  padding: 5px;
+  border-radius: 2px;
+  transform: scale(1.75);
+  transition: ease-in .2s;
+}
+
+.about-card .fa-linkedin-in:hover{
+  transform: scale(2);
 }
 
 .about-card-container > div {
@@ -1280,9 +1321,6 @@ svg{
         }
       }
   
-      .section-our-mission {
-         background-color: #005D99; 
-        }
       .section-meet-the-team { 
         padding: 0.8%;
         margin: 0.8%;
@@ -1291,7 +1329,12 @@ svg{
       .section-join-community { 
         background-color: #4CAF50; 
         padding-bottom: 4%;
+        filter: invert(0%);
     }
+    .darkmode--activated .section-join-community{
+      filter: invert(0%);
+     }
+
   
         /* Image style */
         .section img {
@@ -1371,11 +1414,22 @@ svg{
       color: white;
     }
 
+    .section-our-mission {
+      background-color: #005D99; 
+      filter: invert(0%);
+     }
+     .darkmode--activated .section-our-mission{
+      filter: invert(0%);
+     }
+
     .section-our-mission li{
       list-style: none;
       margin: 1%;
     }
 
+    .darkmode--activated .about-p{
+      color: #ffffff; /* Or any color you prefer for dark mode */
+    }
 
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -1489,7 +1543,9 @@ svg{
   max-width: 10%;
   margin: auto;
   font-weight: bold;
+  filter: invert(0%);
 }
+
 .addbtn:hover{
   background-color: #0056b3; /* Slightly darker or lighter blue for hover */
 }
@@ -1568,6 +1624,7 @@ svg{
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  filter: invert(0%);
 }
 
 
@@ -1785,6 +1842,7 @@ svg{
     padding-left: 5em;
     padding-right: 5em;
   }
+  
 
   .modal-content{
     width:100vw;
@@ -1931,7 +1989,7 @@ svg{
 
 .background-container {
   background-color: (240, 240, 240, 0.7); /* Darker background */
-  box-shadow:  -33px 33px 66px #777, 33px -33px 66px #777;
+  box-shadow:  -33px 33px 66px rgba(0,0,0,0.5), 33px -33px 66px rgba(0,0,0,0.5);
   backdrop-filter: blur(5px);
   border-radius: 20px; /* Rounded edges */
   padding: 20px; /* Add padding */
@@ -1955,8 +2013,13 @@ svg{
 .create-container form {
   max-width: 600px;
   margin: auto;
-  color: #ffffff;
+  color: #eee;
 }
+
+.darkmode--activated .create-container form{
+  color: #111;
+}
+
 
 .create-post{
     margin: 20px 0;
@@ -1971,11 +2034,6 @@ svg{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
-form {
-  max-width: 600px;
-  margin: auto;
-  color: #ffffff; 
-}
 
 label {
   display: block;
@@ -2563,6 +2621,7 @@ label {
   padding: 10px 0;
   text-align: center;
   max-width: 100%;
+  filter: invert(0%);
 }
 
 .footer-col {
@@ -2648,13 +2707,19 @@ label {
 /* Find Contact///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .Contact-Container {
-  background: #ffffff;
+  background: #eeeeee;
   padding: 20px;
   color: black;
   width: 40%;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
+    filter: invert(0%);
+}
+
+.darkmode--activated .Contact-Container, .darkmode--activated .Contact-h1, .darkmode--activated .Contact-h3{
+  background: #111111;
+  color: #eee;
 }
 
 .Contact-Container img{
@@ -2671,7 +2736,18 @@ label {
   background-size: 55% auto;
   background-position: right top;
   background-repeat: no-repeat;
+  filter: invert(0%);
  }
+
+ .darkmode--activated .Contact-From-Section{
+  background-image: url('/Assets/images/Images/ContactGeorgianNight.jpg');
+ }
+
+
+ .darkmode--activated .Contact-From-Section{
+  background-color: #050505;
+ }
+
 
 .Contact-h1{
   text-align: center;
@@ -2705,12 +2781,16 @@ label {
   background-color: #4CAF50;
   padding: 10px;
   background: #ffffff;
-  box-shadow:  13px 13px 22px #666666,
-               -13px -13px 22px #ffffff;
+  box-shadow:  13px 13px 22px rgba(0,0,0,.3);
                align-items: center;
                justify-content: center;
                list-style: none;
                border-radius: 25px;
+}
+
+.darkmode--activated .Contact-Us-Form{
+  filter: invert(100%);
+  box-shadow:  13px 13px 22px rgba(255,255,255,.3);
 }
 
 .Contact-Input2 {
@@ -2764,10 +2844,17 @@ label {
 
 .Contact-Input2  :is(input:focus, input:valid) {
   border-color: #005d99;
+  filter: invert(0%);
 }
-
+.darkmode--activated .Contact-Input2  :is(input:focus, input:valid){
+  border-color: #ffa266;
+}
 .Contact-Input2  :is(textarea:focus) {
   border-color: #005d99;
+  filter: invert(0%);
+}
+.darkmode--activated .Contact-Input2  :is(textarea:focus){
+  border-color: #ffa266;
 }
 /*Button Code https://uiverse.io/Custyyyy/short-lizard-47*/
 .Contact-btn {
@@ -2797,6 +2884,14 @@ label {
   width: 100%;
 }
 
+.darkmode--activated .Contact-btn{
+  filter: invert(100%);
+}
+
+.darkmode--activated .Contact-P{
+  color: #eee;
+}
+
 .Contact-btn:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #005d99 0 -3px 0 inset;
  }
@@ -2820,6 +2915,12 @@ label {
  /* Contact us responsiveness starts here */
   @media screen and (max-width: 1500px) {
     .Contact-From-Section{
+      background-image: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .darkmode--activated .Contact-From-Section{
       background-image: none;
       display: flex;
       align-items: center;
@@ -2873,3 +2974,8 @@ label {
   }
  }
  /* Contact us responsiveness ends here */
+
+ /* DARK MODE BUTTON*/
+.darkmode-toggle{
+z-index: 1000;
+}

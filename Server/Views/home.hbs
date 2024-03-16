@@ -36,13 +36,15 @@
 </div>
 
 
-<section class="nhIntroSec">
-  <video class="nhIntroSecVideo" autoplay loop muted>
+<section class="nhVideoSec">
+  <video class="nhIntroSecVideo darkmode-ignore" autoplay loop muted>
     <source src="/Assets/images/Images/backgroundvid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  
-  <section class="nhIntroText">
+</section>
+
+<section class="nhIntroSec">
+    <section class="nhIntroText">
     <!--<h1 class="nhIntroTexth1">Code | Build | Debug</h1>-->
   </section>
 </section>
@@ -224,3 +226,10 @@
     handleScroll();
 });
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+    </script> 
