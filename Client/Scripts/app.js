@@ -52,6 +52,35 @@ valueDisplays.forEach((valueDisplay) => {
   observer.observe(valueDisplay); // Observe the visibility of the valueDisplay element
 });
 
+// //TIME POSTED CODE TEST:
+// // Helper function to calculate time elapsed since creation
+// Handlebars.registerHelper('timeSinceCreation', function(createdAt) {
+//   // Calculate the time difference between now and the creation time
+//   const timeDiff = Date.now() - new Date(createdAt).getTime();
+
+//   // Convert milliseconds to seconds
+//   const seconds = Math.floor(timeDiff / 1000);
+
+//   // Define time intervals
+//   const intervals = {
+//       year: 31536000,
+//       month: 2592000,
+//       week: 604800,
+//       day: 86400,
+//       hour: 3600,
+//       minute: 60
+//   };
+
+//   // Iterate through intervals to find the appropriate unit
+//   for (let unit in intervals) {
+//       const interval = Math.floor(seconds / intervals[unit]);
+//       if (interval > 0) {
+//           return `${interval} ${unit}${interval === 1 ? '' : 's'} ago`;
+//       }
+//   }
+
+//   return 'Just now'; // If the post was created less than a minute ago
+// });
 
 // / AUTOTYPE CODE /
 // SOURCE: https://chat.openai.com/

@@ -4,6 +4,8 @@ const router = express.Router();
 // global auth check middleware we built
 let authCheck = require('../Config/authCheck');
 const postController = require('../Controllers/post');
+const commentController = require('../Controllers/comment');
+
 
 /* GET: default route */
 router.get('/', (req, res, next) => {
@@ -34,5 +36,23 @@ router.get('/edit/:_id', authCheck, (req, res, next) => {
 router.post('/edit/:_id', authCheck, (req, res, next) => {
     postController.updatePost(req, res, next);
 });
+
+///////////////////////////////////////////////////
+// Routes for Comments
+//////////////////////////////////////////////////
+
+router.get('/comment/:postId', (req, res, next) => {
+    commentController.getComment(req, res, next);
+});
+
+router.post('/comment/:postId', (req, res, next) => {
+    commentController.createComment(req, res, next);
+});
+
+router.delete('/:postId/comment/:commentId', (req, res, next) => {
+    commentController.deleteComment(req, res, next);
+});
+
+
 
 module.exports = router;

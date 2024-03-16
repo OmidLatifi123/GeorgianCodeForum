@@ -1807,7 +1807,7 @@ svg{
     width:90vw;
   }
 
-  .card-group{
+  .card-body{
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -1820,6 +1820,10 @@ svg{
 
 }
 
+.card-body {
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* Create Post CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */ 

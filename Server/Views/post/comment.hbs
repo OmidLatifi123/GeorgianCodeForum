@@ -1,0 +1,68 @@
+{{!-- Omid Latifi
+1199455
+ --}}
+
+<canvas id="matrixEffect"></canvas>
+
+<div class="background-container">
+    <div class="create-container">
+        <form method="post">
+            <!-- Add enctype="multipart/form-data" for handling file uploads -->
+            <h1 class="create-post">Comment</h1>
+     
+            <label for="postCode">Add Comment:</label>
+            <textarea class="create-textarea" id="comment" name="comment" rows="6"></textarea>
+
+             <input name="username" id="username" type="hidden" value="{{user.username}}" />
+             <input name="postId" id="postId" type="hidden" value="{{postId}}" />
+
+            <button class="create-button" type="submit">Submit Comment</button>
+        </form>
+    </div>
+</div>
+
+
+
+{{!-- Matrix Background INSPIRATION/SOURCE: https://www.youtube.com/watch?v=6Gn2KgKQVHU&ab_channel=QuickCodingTuts --}}
+</script>
+
+    <script>
+        const canvas = document.getElementById('matrixEffect');
+const context = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const katakana = '';
+const latin = '';
+const nums = '01';
+const matrixChars = nums;
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function draw() {
+    setTimeout(() => {
+        context.fillStyle = 'rgba(240, 240, 240, 0.05)';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = '#777'; // Gray Text
+        context.font = fontSize + 'px monospace';
+
+        for(let i = 0; i < drops.length; i++) {
+            const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+            context.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+        requestAnimationFrame(draw);
+    }, 50); // Adjust the frame rate
+}
+
+draw();
+
+    </script>
