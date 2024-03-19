@@ -60,13 +60,16 @@
   width: 50%;
   height: 500px;
   margin-right: 10px;
-  background: #8C8;
-  counter-increment: gallery-cell;
+  background: #005D99;
   filter: blur(4px);
   transition: ease-in-out .2s;
   opacity: .9;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(500px);
+}
+
+.darkmode--activated .gallery-cell{
+  background: #1e1e1e;
 }
 
 .is-selected{
@@ -77,10 +80,15 @@
 .gallery-cell:before {
   display: block;
   text-align: center;
-  content: counter(gallery-cell);
   line-height: 200px;
   font-size: 80px;
   color: white;
+}
+
+.gallery-cell > h1{
+  text-align: center;
+  padding-top: 3%;
+  font-size: 80px;
 }
 
 
