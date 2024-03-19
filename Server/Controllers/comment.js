@@ -1,5 +1,6 @@
 // Import the Comment model
 const Comment = require('../Models/comment');
+const Post = require('../Models/post');
 
 // Controller method to create a new comment
 const createComment = async (req, res, next) => {
@@ -40,6 +41,13 @@ const deleteComment = async (req, res, next) => {
 };
 
 let getComment = async (req, res, next) => {
+
+
+
+    // let post = await Post.findById{
+    //     req.params.postId
+    // }
+
     res.render('post/comment', { 
         title: 'Add New Comment',
         postId: req.params.postId
