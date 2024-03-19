@@ -5,7 +5,6 @@
 
 const mongoose = require('mongoose');
 
-
 let postSchema = new mongoose.Schema ({
 
     postTitle: {
