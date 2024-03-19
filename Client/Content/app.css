@@ -90,7 +90,10 @@
   padding-top: 3%;
   font-size: 80px;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 69aa074f8c325b4a495d72c02ffdecb1a44d1596
 
 .newHomeSec1{
   margin-bottom: 6%;
@@ -2496,18 +2499,6 @@ label {
   position: relative;
   top: 0;
   left: 0;
-  border-radius: 5px;
-}
-
-Login CSS
- .login-image{
-  border-radius: 0%;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  border-radius: 5px;
 }
 
 .Loginh1 {
@@ -2550,7 +2541,6 @@ Login CSS
   border-radius: 20px;
   font-weight: bold;
 }
-
 
 .Login-form {
   position:absolute;

@@ -1,8 +1,7 @@
 {{!-- Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
 1199455, 1191123, 1186384, 1207799 --}}
 
-<div class="Login-container">
-  
+<div class="Login-container">  
   <form class="Login-form" method="post" action="/auth/login">
     <h1 class="Loginh1">Login</h1>
 
@@ -14,12 +13,13 @@
     <input type="email" id="LoginEmail" name="email"required> --}}
                 <div class="Login-Form">
                     <div class="Login-Input2">
+                      <label for="username">Username: </label>
                         <input type="text" id="Username" required autocomplete="off">
-                        <label for="username">Username: </label>
+                        
                     </div>
-                    <div class="Login-Input2">
+                    <div class="Login-Input2">                        
+                      <label  for="password">Password: </label>
                         <input  type="password" id="password" required autocomplete="off">
-                        <label  for="password">Password: </label>
                         </div>
                         <button class="Contact-btn" onclick="">Submit</button>
                         <a href="/auth/google" class="Google-Login-button">
@@ -49,4 +49,11 @@
       <script>
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
+<<<<<<< HEAD
+    }
+    window.addEventListener('load', addDarkmodeWidget);
     </script>
+
+=======
+    </script>
+>>>>>>> 69aa074f8c325b4a495d72c02ffdecb1a44d1596
