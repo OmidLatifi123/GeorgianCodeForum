@@ -6,13 +6,15 @@
         font-family: 'Roboto', sans-serif;
         margin: 0%;
         padding: 0%;
-        background-color: rgb(255, 255, 255);
+        background-color: #ddd;
+        position: relative
     }
 
     a {
       text-decoration: none;
       color: #f2f2f2;
         }
+
 
 
 .navbar {
@@ -47,6 +49,39 @@
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+.gallery {
+  outline: none;
+  border: none;
+}
+
+.gallery-cell {
+  width: 50%;
+  height: 500px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+  filter: blur(4px);
+  transition: ease-in-out .2s;
+  opacity: .9;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(500px);
+}
+
+.is-selected{
+  filter: blur(0px);
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
 
 
 .newHomeSec1{
@@ -115,7 +150,7 @@ flex-direction: column;
   margin-right: 3%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 997px) {
   .personTwo, .personThree {
     display: none;
   }
@@ -283,6 +318,21 @@ transform: scale(1.1);
   top: 500px;
   z-index: -10;
   width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .nhVideoSec {
+    top: 550px;
+    width: 110%;
+  }
+}
+
+@media (max-width: 360px) {
+  .nhVideoSec {
+    top: 550px;
+    width: 120%;
+  }
 }
 
 .darkmode--activated .nhVideoSec{
@@ -291,11 +341,9 @@ transform: scale(1.1);
 
 .nhIntroSec{
   margin-top: 1%;
-  display: flex;
-  flex-direction: row;
   margin-bottom: 0%;
   padding-bottom: 0%;
-  height: 500px;
+  height: 700px;
 }
 
 .nhIntroSecLogo {
@@ -357,6 +405,7 @@ transform: scale(1.1);
   -webkit-text-stroke: 3px rgb(0, 75, 135);
   transition: transform 0.3s ease;
 }
+
 
 
 .newHomeSec2h1:hover {
@@ -422,7 +471,7 @@ transform: scale(1.1);
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  max-width: 100%;
   line-height: 0;
   transform: rotate(180deg);
 }
@@ -442,6 +491,11 @@ transform: scale(1.1);
 
 .custom-shape-divider-bottom-1709747220 .shape-fill {
   fill: rgb(0, 75, 135);
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .custom-shape-divider-bottom-1709747220 .shape-fill{
+  fill: #1e1e1e;
 }
 
 
@@ -459,14 +513,26 @@ transform: scale(1.1);
   line-height: 130%;
   height: fit-content;
   align-items: center;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .nhSec3{
+  background-color: #1e1e1e;
 }
 
 .nhSec3Title {
   font-family: Arial, Helvetica, sans-serif;
-  padding-bottom: 5%;
+  margin-bottom: 5%;
+  padding: 1%;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .nhSec3Title{
+  background-color: #005D99;
+  border-radius: 60px;
 }
 
 .nhSec3FG {
@@ -497,16 +563,28 @@ scale: 1.7;
   text-align: center;
   align-items: center;
   width: 450px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease; /*i know its highlighted red but it works i swear*/
   border-radius: 50px;
   background: #ffffff;
   height: 300px;
   padding: 4%;
 } 
 
+.darkmode--activated .nhDynamic1, .darkmode--activated .nhDynamic2, .darkmode--activated .nhDynamic3 ,.darkmode--activated .nhDynamic4{
+  background: #005D99;
+  color: #fff;
+}
+
+.darkmode--activated .nhDynamich1{
+  color: #fff;
+}
+
+.darkmode--activated .nhIconDesc{
+  filter: invert(100%);
+}
+
 .nhDynamic1:hover {
-background: #ffffff;
-box-shadow:  -20px -20px 14px #1e1e1e;
+box-shadow:  -20px -20px 14px rgba(0, 0, 0, 0.5);
 transform: scale(1.1); 
 }
 
@@ -528,13 +606,12 @@ transform: scale(1.1);
   height: 300px;
   border-radius: 50px;
   background: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease; /*i know its highlighted red but it works i swear*/
   padding: 4%;
 }
 
 .nhDynamic2:hover {
-background: #ffffff;
-box-shadow:  20px -20px 14px #1e1e1e;
+box-shadow:  20px -20px 14px rgba(0, 0, 0, 0.5);
 transform: scale(1.1); 
 }
 
@@ -547,14 +624,13 @@ transform: scale(1.1);
   height: 300px;
 border-radius: 50px;
 background: #ffffff;
-transition: transform 0.3s ease, box-shadow 0.3s ease; 
+transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease; /*i know its highlighted red but it works i swear*/
 padding: 4%;
 }
 
 .nhDynamic3:hover {
   border-radius: 50px;
-  background: #ffffff;
-  box-shadow:  -20px 20px 20px #1e1e1e;
+  box-shadow:  -20px 20px 20px rgba(0, 0, 0, 0.5);
   transform: scale(1.1); 
 }
 
@@ -566,14 +642,13 @@ padding: 4%;
     height: 300px;
     border-radius: 50px;
     background: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease; /*i know its highlighted red but it works i swear*/
     padding: 4%;
   }
    
   .nhDynamic4:hover {
     border-radius: 50px;
-    background: #ffffff;
-    box-shadow:  20px 20px 20px #1e1e1e;
+    box-shadow:  20px 20px 20px rgba(0, 0, 0, 0.5);
     transform: scale(1.1); 
     }
 
@@ -605,13 +680,14 @@ padding: 4%;
 /* Home page responsiveness starts here */
 @media (max-width: 767px) {
     .newHomeSec2h1 {
-    font-size: 60px;
+    font-size: 20px;
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: rgb(100, 167, 11);
-    -webkit-text-stroke: 3px rgb(0, 75, 135);
+    -webkit-text-stroke: 2px rgb(0, 75, 135);
     transition: transform 0.3s ease;
+  }
 }
     
 /*.nhIntroSecVideo {
@@ -620,7 +696,6 @@ padding: 4%;
     z-index: -1;
     filter: brightness(50%);
   }*/
-}
 /* Home page responsiveness ends here */
 
 /* THIRD SHAPE DIVIDER  */
@@ -643,6 +718,11 @@ padding: 4%;
 
 .custom-shape-divider-top-1709713044 .shape-fill {
   fill: rgb(0, 75, 135);
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .custom-shape-divider-top-1709713044 .shape-fill {
+  fill: #1e1e1e;
 }
 
 /* ABOUT US SECTION */
@@ -795,6 +875,11 @@ button {
   align-items: center;
   height: fit-content;
   max-width: 100%;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .nhSec4{
+  background-image: url("/Assets/images/Images/gcnight.jpg");
 }
 
 .nhSec4Icon{
@@ -808,19 +893,27 @@ scale: 2;
 }
 
 .nhSec4G1{
-justify-content: space-between;
-width: fit-content;
-padding-right: 0%;
-padding-left: 0%;
+width: 100%;
+padding-right: 5%;
+padding-left: 5%;
 /* padding-left: 8%; */
 }
 
+
+
 @media (max-width: 767px) {
-  .nhSec4G1{
-    padding-right: 10%;
-    width: 30%;
+  .nhContainer{
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 200px;
+  }
+  .nhContainer > .box{
+    padding-left: 5%;
+    padding-right: 5%;
+    position: absolute;
   }
 }
+
 
 .nhSec4G1, h1 {
   color: #ffffff;
@@ -862,6 +955,7 @@ padding-left: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 16.875em;
 }
 
 .nhContainer::before,
@@ -869,13 +963,7 @@ padding-left: 0%;
   content: "";
 }
 
-.nhContainer::before {
-  border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
-  top: 30%;
-  right: 7%;
-}
+
 
 .nhContainer::after {
   content: "";
@@ -894,17 +982,12 @@ padding-left: 0%;
   backdrop-filter: blur(10px);
   border-radius: 0.7rem;
   transition: all ease 0.3s;
+  position: absolute;
 }
 
 @media (max-width: 767px) {
   .nhContainer .box {
-    transform: scale(.5);
-    padding-left: 0%;
-    margin-left: 0%;
-    width: 150px;
-    padding: 0%;
-    align-content: center;
-    right: 1000px;
+    scale: 50%;
   }
 }
 
@@ -1115,6 +1198,7 @@ svg{
 
 .custom-shape-divider-bottom-1709771436 .shape-fill {
   fill: #005D99;
+  transition: ease-in-out .2s;
 }
 
 .custom-shape-divider-bottom-1709771878 {
@@ -1136,6 +1220,11 @@ svg{
 
 .custom-shape-divider-bottom-1709771878 .shape-fill {
   fill: #005D99; ;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .custom-shape-divider-bottom-1709771878 .shape-fill, .darkmode--activated .custom-shape-divider-bottom-1709771436 .shape-fill{
+  fill: #004B7A
 }
 
 .custom-shape-divider-bottom-1709771871 {
@@ -1157,6 +1246,11 @@ svg{
 
 .custom-shape-divider-bottom-1709771871 .shape-fill {
   fill: #4CAF50;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .custom-shape-divider-bottom-1709771871 .shape-fill {
+  fill: #357A36;
 }
 
 .about-body {
@@ -1166,6 +1260,7 @@ svg{
     background-color: rgb(220, 220, 220);
     height: fit-content;
   }
+
   
   
   .about-section {
@@ -1230,8 +1325,13 @@ svg{
     justify-items: center;
     text-align: center;
     font-size: 20px;
-    color: #000; /*(Original was #e1e1e1) I changed this so I could see better*/
+    color: #000;
     font-weight: bolder;
+    transition: ease-in-out .2s;
+  }
+
+  .darkmode--activated .about-p{
+    color: #ffffff;
   }
 
   @media (max-width: 767px){
@@ -1330,9 +1430,11 @@ svg{
         background-color: #4CAF50; 
         padding-bottom: 4%;
         filter: invert(0%);
+        transition: ease-in-out .2s;
     }
     .darkmode--activated .section-join-community{
       filter: invert(0%);
+      background-color: #357A36;
      }
 
   
@@ -1417,18 +1519,16 @@ svg{
     .section-our-mission {
       background-color: #005D99; 
       filter: invert(0%);
+      transition: ease-in-out .2s;
      }
      .darkmode--activated .section-our-mission{
       filter: invert(0%);
+      background-color: #004B7A
      }
 
     .section-our-mission li{
       list-style: none;
       margin: 1%;
-    }
-
-    .darkmode--activated .about-p{
-      color: #ffffff; /* Or any color you prefer for dark mode */
     }
 
 /* Find Post////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -2164,6 +2264,11 @@ label {
   text-align: center;
   justify-content: center;
   font-weight: 600;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .Loginh1{
+  color: #e1e1e1;
 }
 
 .Login-container {
@@ -2171,15 +2276,24 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
+  height: 850px; 
+  background-image: url('/Assets/images/Images/2020-11-10-georgian-college.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: invert(0%);
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .Login-container{
+  background-image: url('/Assets/images/Images/2020-11-10-georgian-college-night.jpg');
 }
 
 .Login-form {
   position: absolute;
   display: flex;
   flex-direction: column;
-  color: #0e0e0e;
-  width: 40%;
+  color: hsl(0, 0%, 5%);
+  width: 200px;
   padding: 20px;
   border-radius: 20px;
   font-weight: bold;
@@ -2188,20 +2302,33 @@ label {
   transition: all .3s ease-in-out; 
 }
 
-.Login-form:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
+.darkmode--activated .Login-form > a{
+  color: #e1e1e1;
+}
+
+.darkmode--activated .Login-form {
+  color: #e1e1e1;
+}
+
+.darkmode--activated .Login-form{
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
 }
 
 .Login-form input {
   width: 100%;
-  margin-bottom: 10px;
-  background: rgba(234,233,232, 0.47);
-  outline: none;
+  margin-bottom: 2%;
+  background: rgba(234,233,232, 0.5);
   padding: 10px;
-  border-radius: 9999px;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  border-radius: 20px;
+  border: 2px solid #000;
   color: #000;
+}
+
+.darkmode--activated .Login-form input {
+  color: #e1e1e1;
+  background: rgba(30,30,30, 0.5);
+  border: 2px solid #111;
 }
 
 .Login-form > button {
@@ -2228,7 +2355,7 @@ label {
    display: flex;
   flex-direction: column;
   color: #0e0e0e;
-  width: 100vw;
+  width: 50%;
   padding: 20px;
   border-radius: 20px;
   font-weight: bold;
@@ -2236,148 +2363,6 @@ label {
   background-color: rgba(229,228,226, 0.6);
 }
 
-.Login-form:active {
-  box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-}
-
-/* Login responsiveness starts here */
-@media screen and (min-width: 430px){
-  .Login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh; 
-  }
-  .Login-form{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.0);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-@media screen and (min-width: 540px){
-  .Login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.0);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-
-@media screen and (min-width: 932px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-@media screen and (max-width: 765px) and (min-width: 1025px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-
-@media screen and (min-width: 1280px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
 
 /* Login responsiveness ends here */
 
@@ -2719,6 +2704,7 @@ label {
     align-items: center;
     border-radius: 25px;
     filter: invert(0%);
+    transition: ease-in .2s;
 }
 
 .darkmode--activated .Contact-Container, .darkmode--activated .Contact-h1, .darkmode--activated .Contact-h3{
@@ -2731,6 +2717,7 @@ label {
   height: 75px;
   width: auto;
   padding-top: 20px;
+  transition: ease-in .2s;
 }
 
 .Contact-From-Section{
@@ -2741,15 +2728,18 @@ label {
   background-position: right top;
   background-repeat: no-repeat;
   filter: invert(0%);
+  transition: ease-in .2s;
  }
 
  .darkmode--activated .Contact-From-Section{
   background-image: url('/Assets/images/Images/ContactGeorgianNight.jpg');
+  transition: ease-in .2s;
  }
 
 
  .darkmode--activated .Contact-From-Section{
   background-color: #050505;
+  transition: ease-in .2s;
  }
 
 
@@ -2757,24 +2747,28 @@ label {
   text-align: center;
   color: #004b87;
   font-weight: bold;
+  transition: ease-in .2s;
 }
 
 .Contact-h3{
   text-align: center;
   color: #004b87;
   font-weight: bold;
+  transition: ease-in .2s;
 }
 
 .Contact-P{
   color: #004b87;
   font-weight: bold;
   text-align: center;
+  transition: ease-in .2s;
 }
 
 .Contact-text{
    text-align: center;
   color: #004b87;
   font-weight: bold;
+  transition: ease-in .2s;
 }
 
 
@@ -2790,11 +2784,13 @@ label {
                justify-content: center;
                list-style: none;
                border-radius: 25px;
+               transition: ease-in .2s;
 }
 
 .darkmode--activated .Contact-Us-Form{
   filter: invert(100%);
   box-shadow:  13px 13px 22px rgba(255,255,255,.3);
+  transition: ease-in .2s;
 }
 
 .Contact-Input2 {
@@ -2804,6 +2800,7 @@ label {
   align-items: center;
   justify-content: center;
   padding-bottom: 10px;
+  transition: ease-in .2s;
 }
 
 .Contact-Input2  input {
@@ -2814,6 +2811,7 @@ label {
   background-color: transparent;
   border-radius: 20px;
   width: 100%;
+  transition: ease-in .2s;
 }
 
 .Contact-Input2  textarea {
@@ -2824,6 +2822,7 @@ label {
   background-color: transparent;
   border-radius: 20px;
   width: 100%;
+  transition: ease-in .2s;
 }
 
 .Contact-Input2  label {
@@ -2836,6 +2835,7 @@ label {
   pointer-events: none;
   transition: all 0.3s ease;
   color: rgb(100, 100, 100);
+  transition: ease-in .2s;
 }
 
 .Contact-Input2  :is(input:focus, input:valid)~label {
@@ -2981,5 +2981,21 @@ label {
 
  /* DARK MODE BUTTON*/
 .darkmode-toggle{
-z-index: 1000;
+  z-index: 1000;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M43.139 2a29.885 29.885 0 0 1 5.121 16.756c0 16.701-13.686 30.24-30.57 30.24a30.656 30.656 0 0 1-15.689-4.285C7.209 54.963 17.93 62 30.318 62C47.816 62 62 47.969 62 30.66C62 17.867 54.246 6.871 43.139 2z" fill="%23000"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M43.139 2a29.885 29.885 0 0 1 5.121 16.756c0 16.701-13.686 30.24-30.57 30.24a30.656 30.656 0 0 1-15.689-4.285C7.209 54.963 17.93 62 30.318 62C47.816 62 62 47.969 62 30.66C62 17.867 54.246 6.871 43.139 2z" fill="%23000"/></svg>');
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
+
+.darkmode-layer--button{
+  transition: ease-in-out .2s;
+}
+
+.darkmode-layer{
+  transition: ease-in-out .2s;
+}
+

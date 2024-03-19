@@ -43,10 +43,28 @@
   </video>
 </section>
 
+<!-- GALLERY SECTION -->
 <section class="nhIntroSec">
     <section class="nhIntroText">
-    <!--<h1 class="nhIntroTexth1">Code | Build | Debug</h1>-->
+    <h1 class="nhIntroTexth1">Code | Build | Debug</h1>
   </section>
+    <div class="gallery js-flickity"
+    data-flickity-options='{ "wrapAround": true }'>
+    <div class="gallery js-flickity"
+    data-flickity-options='{ "wrapAround": true }'>
+        {{#each post}}
+        <div class="gallery-cell">
+        <li class="card m-4 text-center col-lg-4">
+            <p>{{this.username}}</p>            
+           <p>{{this.createdAt}}</p> 
+            <h5>{{this.postId}}</h5>
+            <h6>{{this.postTitle}}</h6>
+            <p>{{this.postContent}}</p>
+            <p>{{this.postCode}}</p>
+            </div>
+    {{/each}}
+    </div>
+    </div>
 </section>
 
 
@@ -229,11 +247,10 @@
     // Trigger the initial animations on page load
     handleScroll();
 });
-    </script>
-        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-    function addDarkmodeWidget() {
+</script>
+      <script src="darkmode-js/lib/darkmode-js.js"></script>
+      <script>
+        // Initialize Darkmode.js here
         new Darkmode().showWidget();
-    }
-    window.addEventListener('load', addDarkmodeWidget);
-    </script> 
+    </script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
