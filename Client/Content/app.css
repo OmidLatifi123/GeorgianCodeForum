@@ -2351,7 +2351,47 @@ label {
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
  /* ////////////////////////////////////////////////////////////////////// Login CSS ///////////////////////////////////////////////// */
- 
+
+ .Google-Login-button {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .6s ease;
+  margin-top: 1%;
+}
+
+.Google-Login-button svg {
+  height: 26px;
+}
+
+.Google-Login-button:hover {
+  transform: scale(1.02);
+}
+
+.login-image{
+  border-radius: 0%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
+
+Login CSS
  .login-image{
   border-radius: 0%;
   width: 100%;
@@ -2378,35 +2418,74 @@ label {
   height: 100vh; 
 }
 
-.Login-form {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  color: #0e0e0e;
-  width: 40%;
-  padding: 20px;
-  border-radius: 20px;
+.Loginh1{
+  text-align: center;
+  color: #000;
   font-weight: bold;
+}
+
+
+.Login-form {
+  position:absolute;
   backdrop-filter: blur(4px);
   background-color: rgba(229,228,226, 0.6);
-  transition: all .3s ease-in-out; 
-}
-
-.Login-form:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-}
-
-.Login-form input {
-  width: 100%;
-  margin-bottom: 10px;
-  background: rgba(234,233,232, 0.47);
-  outline: none;
+  width: 40%;
+  margin-left: 3%;
+  margin-right: 1%;
   padding: 10px;
-  border-radius: 9999px;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #000;
+  box-shadow:  13px 13px 22px rgba(0,0,0,.3);
+               align-items: center;
+               justify-content: center;
+               list-style: none;
+               border-radius: 25px;
 }
+
+
+.Login-Input2 {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Login-Input2  input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.Login-Input2  label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  top: 0;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.Login-Input2  :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: rgba(229,228,226,0.8);
+  border-radius: 50px;
+}
+
+.Login-Input2  :is(input:focus, input:valid) {
+  border-color: #005d99;
+  filter: invert(0%);
+}
+
 
 .Login-form > button {
   width: 25%;
@@ -2426,164 +2505,6 @@ label {
   text-decoration: none;
   color: #0e0e0e;
 }
-
-.Login-form{
-  position: absolute;
-   display: flex;
-  flex-direction: column;
-  color: #0e0e0e;
-  width: 100vw;
-  padding: 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  backdrop-filter: blur(3px);
-  background-color: rgba(229,228,226, 0.6);
-}
-
-.Login-form:active {
-  box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-}
-
-/* Login responsiveness starts here */
-@media screen and (min-width: 430px){
-  .Login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh; 
-  }
-  .Login-form{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.0);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-@media screen and (min-width: 540px){
-  .Login-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.0);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-
-@media screen and (min-width: 932px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-@media screen and (max-width: 765px) and (min-width: 1025px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-
-@media screen and (min-width: 1280px){
-  .Login-container{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-  }
-
-  .Login-form{
-    font-size: 20px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    color: #0e0e0e;
-    width: 94vw;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    backdrop-filter: blur(3px);
-    background-color: rgba(229,228,226, 0.6);
-  }
-  .Login-form:active {
-    transform: scale(1.1);
-    box-shadow: 3px 5px 10px 3px rgb(0, 0, 0);
-  }
-}
-
-/* Login responsiveness ends here */
 
 /* ////////////////////////////////////////////////////////////////////// Register CSS ///////////////////////////////////////////////// */
  /* ///////////////////////////////////////////////////////////////////// Register CSS ///////////////////////////////////////////////// */
