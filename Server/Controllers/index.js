@@ -3,7 +3,7 @@
 
 
 const User = require('../Models/user');
-
+let Post = require('../Models/post');
 /**
  * This function will display the home page
  *
@@ -13,9 +13,11 @@ const User = require('../Models/user');
  * @param {NextFunction} next
  */
 
-function DisplayHome(req, res, next)
-{
-  res.render('home', {title: 'Home', page: 'home'});
+
+
+async function DisplayHome(req, res, next) {
+  let post = await Post.find().sort({ createdAt: -1 }).limit(5);
+  res.render('home', { title: 'Home', page: 'home', post: post });
 }
 
 // Repeat above for all pages

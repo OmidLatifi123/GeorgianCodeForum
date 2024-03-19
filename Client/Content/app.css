@@ -50,6 +50,44 @@
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Home CSS Goes Here /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
+.nhIntroTexth1{
+  color: rgb(255, 255, 255);
+  font-size: 80px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px #000000;
+  background-color: white;
+}
+
+@media (max-width: 997px) {
+  .nhIntroTexth1{
+    font-size: 40px;
+  }
+}
+
+.stats {
+  position: relative;
+  width: 100%;
+  color: #9fa4aa;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.stats div {
+  margin-right: 1rem;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stats svg {
+  margin-right: 5px;
+  height: 100%;
+  stroke: #9fa4aa;
+}
 
 .gallery {
   outline: none;
@@ -60,12 +98,11 @@
   width: 50%;
   height: 500px;
   margin-right: 10px;
-  background: #005D99;
-  filter: blur(4px);
+  background: #e1e1e1;
+  filter: blur(3px);
   transition: ease-in-out .2s;
   opacity: .9;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(500px);
+  border-radius: 20px;
 }
 
 .darkmode--activated .gallery-cell{
@@ -74,6 +111,8 @@
 
 .is-selected{
   filter: blur(0px);
+  box-shadow:  0px 0px 40px rgba(0, 0, 0, 0.75);
+  transform: scale(1.5);
 }
 
 /* cell number */
@@ -82,13 +121,41 @@
   text-align: center;
   line-height: 200px;
   font-size: 80px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .gallery-cell > h1{
-  text-align: center;
-  padding-top: 3%;
-  font-size: 80px;
+  margin-top: 3%;
+  padding-left: 3%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  background-color: #005D99;
+}
+
+.gallery-cell > h2{
+  padding-left: 3%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.gallery-cell > p{
+  padding-left: 3%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.gallery-cell > h5{
+  padding-left: 3%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-style: italic;
+  padding-top: 8%;
+}
+
+.flickity-page-dots{
+  display: none;
 }
 
 .newHomeSec1{
@@ -326,6 +393,7 @@ transform: scale(1.1);
   z-index: -10;
   width: 100%;
   overflow: hidden;
+  filter: blur(4px);
 }
 
 @media (max-width: 767px) {
