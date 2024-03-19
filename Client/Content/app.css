@@ -65,6 +65,10 @@
   }
 }
 
+.darkmode--activated .gallery-cell > p, .darkmode--activated .gallery-cell > h5, .darkmode--activated .gallery-cell > h2{
+  color: white;
+}
+
 .stats {
   position: relative;
   width: 100%;
