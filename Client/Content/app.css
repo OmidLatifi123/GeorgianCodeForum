@@ -2967,15 +2967,16 @@ Login CSS
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    filter: invert(0%);
     transition: ease-in .2s;
+    mix-blend-mode: normal;
 }
 
-.darkmode--activated .Contact-Container, .darkmode--activated .Contact-h1, .darkmode--activated .Contact-h3{
+.darkmode--activated .Contact-Container{
   background: #111111;
+}
+.darkmode--activated .Contact-h1, .darkmode--activated .Contact-h3{
   color: #eee;
 }
-
 .Contact-Container img{
   align-items: center;
   height: 75px;
