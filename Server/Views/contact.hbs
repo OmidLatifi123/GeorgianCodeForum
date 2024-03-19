@@ -25,9 +25,35 @@
                 <img class="Contact-Image"src="/Assets/images/Images/Logo.png">
              </div>
     </div>
-    </script>
       <script src="/darkmode-js/lib/darkmode-js.js"></script>
       <script>
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
+
+        let contactForm = document.getElementById("contact");
+let formName = document.getElementById("name");
+let formEmail = document.getElementById("email");
+let formIssue = document.getElementById("issue");
+console.log(formName.value);
+
+contactForm.addEventListener('submit', function(event){
+    event.preventDefault()
+
+    let json = {
+        name: formName.value,
+        email: formEmail.value,
+        issue: formIssue.value
+    }
+
+    let http = new XMLHttpRequest();
+    http.open('POST', '/contact/send_email');
+    http.setRequestHeader('content-type', 'application/json');
+    http.onload = function(){
+        alert('Email has been sent')
+    }
+
+    http.send(JSON.stringify(json))
+    }
+);
+
     </script>
