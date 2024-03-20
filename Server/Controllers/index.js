@@ -4,6 +4,7 @@
 
 const User = require('../Models/user');
 let Post = require('../Models/post');
+let comment = require('../Models/comment');
 /**
  * This function will display the home page
  *
@@ -32,9 +33,23 @@ function DisplayCreate(req, res, next)
   res.render('create', {title: 'Create Post', page: 'create'});
 }
 
-function DisplayFind(req, res, next)
-{
-  res.render('find', {title: 'Find Post', page: 'find'});
+// function DisplayFind(req, res, next)
+// {
+//   res.render('find', {title: 'Find Post', page: 'find'});
+// }
+async function DisplayFind(req, res, next) {
+  try {
+    let posts = await Post.find().populate({
+      path: 'comments',
+      populate: { path: 'username' } 
+    }).sort({ createdAt: -1 }).limit(5);
+
+    res.render('find', { title: 'Find Post', page: 'find', posts: posts });
+    res.render('find', { title: 'Find Post', page: 'find', comments: comments });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
 }
 
 function DisplayContact(req, res, next)

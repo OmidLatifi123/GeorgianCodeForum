@@ -188,11 +188,11 @@ draw();
     Comment
 </a>  
 
-                {{#if this.comment}}
+                {{#if comments}}
             <p>Comments:</p>
             <ul>
-                {{#each this.comment}}
-                    <li>{{comment}}</li>
+                {{#each this.comments}}
+                    <li>{{comments}}</li>
                 {{/each}}
             </ul>
                  {{else}}
