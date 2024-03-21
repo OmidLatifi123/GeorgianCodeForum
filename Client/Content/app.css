@@ -930,6 +930,7 @@ button {
   align-items: center;
   font-weight: 600;
   color: black;
+  text-wrap: balance;
 }
 
 .nhAboutUsh2 {

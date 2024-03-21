@@ -54,8 +54,21 @@ let updatePost = async (req, res, next) => {
     res.redirect('/post');
 };
 
+//SEARCH BAR 
+let searchPost = async (req, res, next) => {
+    try {
+        const searchTerm = req.query.term; // Get the search term from the query parameters
+        const searchResults = await Post.find({ $text: { $search: searchTerm } }); // Perform the search query
+
+        res.render('post/searchResults', { title: 'Search Results', searchResults: searchResults });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+};
+
 // make public
 module.exports = {
     index, displayCreateForm, createPost, deletePost, displayEditForm,
-    updatePost
+    updatePost, searchPost
 };
