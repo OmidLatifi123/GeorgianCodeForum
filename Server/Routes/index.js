@@ -63,21 +63,21 @@ router.post("/contact/send_email", function(req, res){
         }
     })
   
-    // const mailOptions = {
-    //     from: 'gcfhelpdesk1@gmail.com',
-    //     to: 'gcfhelpdesk1@gmail.com',
-    //     subject: "GCF Support Ticket: " + name,
-    //     text:  email +":" + issue,
-    // };
+    const mailOptions = {
+        from: 'gcfhelpdesk1@gmail.com',
+        to: 'gcfhelpdesk1@gmail.com',
+        subject: "GCF Support Ticket: " + name,
+        text:  email +":" + issue,
+    };
 
     const mailOptions2 ={
         from:'gcfhelpdesk1@gmail.com',
-        to: 'omidlatifi2002@gmail.com',
+        to: email,
         subject: "Support Ticket Issued",
         text: "Your Support Ticket Has Been Sent. Our Team Will Contact You About Your Issues As Soon As Possible"
     };
   
-    //  transport.sendMail(mailOptions)
+     transport.sendMail(mailOptions)
     
      transport.sendMail(mailOptions2)
      res.redirect('/')
