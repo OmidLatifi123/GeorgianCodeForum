@@ -169,34 +169,29 @@ draw();
 <ul class="card-body center">
     {{#each post}}
         <li class="card m-4 text-center col-lg-4">
-            <p class="username">{{this.username}}</p>         
+            <p class="username">{{this.username}}</p>  
+            <p>{{this.createdAt}}</p>       
             {{!-- <H3> Post ID: </H3>
             <h5>{{this.postId}}</h5> --}}
             <h6>{{this.postTitle}}</h6>
-            <H3> Description: </H3>
-            <p>{{this.postContent}}</p>
-            <H3> Code: </H3>
+            <p>{{{this.postContent}}}</p>
             <span class="preCode">
             <pre><code class="language-{{this.codingLanguage}}">{{this.postCode}}</code></pre>
              </span>
-           <p>{{this.createdAt}}</p> 
+            <div class="btn-primary-container">
             <a href="/post/edit/{{this._id}}" class="btn btn-primary">
-                Edit
+                ✎ Edit
             </a>
             <br>
-
-            
-
             <a href="/post/delete/{{this._id}}" class="btn btn-primary"
                 onclick="return confirm('Are you sure you want to delete this post?');">
-                Delete
+                🗑 Delete
             </a>
             <br>
-             <a href="/post/comment/{{this._id}}" class="btn btn-primary">
-    Comment
-</a>  
-
-                {{#if comments}}
+             <a href="/post/comment/{{this._id}}" class="btn btn-primary">🗨 Comment</a> 
+             </div>  
+             <div class="comment-section">
+            {{#if comments}}
             <p>Comments:</p>
             <ul>
                 {{#each this.comments}}
@@ -204,9 +199,9 @@ draw();
                 {{/each}}
             </ul>
                  {{else}}
-            <p>NO COMMENTS</p>
+            <p>Nothing to see here...</p>
                 {{/if}}
-
+            </div>
 
             <br>
 <span class="reactionBtns">
@@ -244,3 +239,9 @@ draw();
     // Initialize highlight.js
     hljs.highlightAll();
 </script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+/>
+<script>hljs.addPlugin(new CopyButtonPlugin());</script>

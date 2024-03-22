@@ -45,20 +45,24 @@
 
 <!-- GALLERY SECTION -->
 <section class="nhIntroSec">
+    <div class="flick-buttons"></div>
+      <button class="button--previous">&lt;</button>
+      <button class="button--next">&gt;</button>
+    </div>
     <section class="nhIntroText">
     <h1 class="nhIntroTexth1">Recent Posts</h1>
   </section>
-    <div class="gallery js-flickity"
-    data-flickity-options='{ "wrapAround": true }'>
-    
+    <div class="gallery" data-flickity='{ "cellAlign": "center", "contain": true , "wrapAround": true}'>
       {{#each post}}
           <div class="gallery-cell">
             <h1>{{this.postTitle}}</h1>      
             <h2>Post by {{this.username}}</h2>  
             <p>{{this.postId}}</p>
-            <p>{{this.postContent}}</p>
-            <p>{{this.postCode}}</p>
-            {{!-- <h5>{{this.createdAt}}</h5>  --}}
+            <div class="home-code-content">{{{this.postContent}}}</div>
+            <div class="home-code-box">
+            <pre><code class="language-{{this.codingLanguage}}">{{this.postCode}}</code></pre>
+            </div>
+            <h5>{{this.createdAt}}</h5>
             </div>
         {{/each}}
     </div>
@@ -251,3 +255,36 @@
         new Darkmode().showWidget();
     </script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>// Initialize Flickity
+var flkty = new Flickity('.gallery', {
+  // options
+  cellAlign: 'center',
+  contain: true,
+  wrapAround: true,
+  percentPosition: true
+});
+
+// Previous button
+document.querySelector('.button--previous').addEventListener('click', function () {
+  flkty.previous();
+});
+
+// Next button
+document.querySelector('.button--next').addEventListener('click', function () {
+  flkty.next();
+});</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+    <script>
+    // Initialize highlight.js
+    hljs.highlightAll();
+</script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+/>
+<script>hljs.addPlugin(new CopyButtonPlugin());</script>
