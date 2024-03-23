@@ -183,17 +183,17 @@ draw();
                 ✎ Edit
             </a>
             <br>
-            <a class="btn btn-primary deleteButton" >
+            <a href="/post/comment/{{this._id}}" class="btn btn-primary">🗨 Comment</a> 
+             </div> 
+             <a class="btn btn-primary deleteButton" >
                 🗑 Delete
-            </a>
+            </a> 
             <div id="confirmationSection" style="display: none;">
                 <p>Are you sure you want to delete this post?</p>
                 <a class="btn btn-primary confirmDelete" href="/post/delete/{{this._id}}">Delete</a>
                 <a class="btn btn-primary cancelDelete">Cancel</a>
             </div>
             <br>
-             <a href="/post/comment/{{this._id}}" class="btn btn-primary">🗨 Comment</a> 
-             </div>  
              <div class="comment-section">
             {{#if comments}}
             <p>Comments:</p>
