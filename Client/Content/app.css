@@ -1,6 +1,8 @@
 /* Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
     1199455, 1191123, 1186384 , 1207799 */
-
+html{
+  overflow-x: hidden;
+}
     body {
       overflow-x: hidden;
         font-family: 'Roboto', sans-serif;
@@ -8,6 +10,26 @@
         padding: 0%;
         background-color: #ddd;
         position: relative
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #626262; 
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #bbbbbb; 
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #999; 
     }
 
     a {
@@ -56,7 +78,7 @@
   text-align: center;
   font-weight: bold;
   text-shadow: 3px 3px #000000;
-  background-color: rgb(222, 222, 222);
+  background-color:#005d99;
 }
 
 @media (max-width: 997px) {
@@ -65,8 +87,12 @@
   }
 }
 
-.darkmode--activated .gallery-cell > p, .darkmode--activated .gallery-cell > h5, .darkmode--activated .gallery-cell > h2{
+.darkmode--activated .home-code-content{
   color: white;
+}
+
+.darkmode--activated .gallery-cell > h5, .darkmode--activated .gallery-cell > h2{
+  color: #bbb;
 }
 
 .stats {
@@ -103,18 +129,71 @@
   height: 500px;
   margin-right: 10px;
   background: #e1e1e1;
-  filter: blur(3px);
+  filter: blur(3px) brightness(0.5);
   transition: ease-in-out .2s;
   opacity: .9;
   border-radius: 20px;
+
+  opacity: .5 !important;
+      transition: opacity .2s ease !important;
+      &.is-selected {
+        opacity: 1 !important;
+      }
+}
+.flick-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.button--previous, .button--next {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color:#005D99;
+  border: none; 
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  font-size: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+  color: white;
+  filter: drop-shadow(4px 4px 8px rgba(0,0,0,.9));
+}
+
+@media (max-width: 430px){
+  .button--previous, .button--next {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+.button--previous {
+  left: 0;
+}
+
+.button--next {
+  right: 0;
+}
+
+.home-code-box{
+  margin: 1%;
+  height: 200px;
 }
 
 .darkmode--activated .gallery-cell{
-  background: #1e1e1e;
+  background: #2b2b2b;
 }
 
 .is-selected{
-  filter: blur(0px);
+  filter: blur(0px) brightness(1);
   box-shadow:  0px 0px 40px rgba(0, 0, 0, 0.75);
   transform: scale(1.5);
 }
@@ -133,7 +212,7 @@
   padding-left: 3%;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 40px;
+  font-size: clamp(14px, 2vw, 40px);
   color: rgb(255, 255, 255);
   background-color: #005D99;
 }
@@ -144,18 +223,24 @@
   color: rgb(0, 0, 0);
 }
 
-.gallery-cell > p{
-  padding-left: 3%;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-}
-
 .gallery-cell > h5{
-  padding-left: 3%;
+  padding-left: 10px;
   font-size: 16px;
   color: rgb(0, 0, 0);
   font-style: italic;
-  padding-top: 8%;
+  position: absolute;
+  bottom: 0;
+}
+
+.home-code-content{
+  height: 100px;
+  overflow-y: scroll;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  overflow-y: scroll;
+  max-height: 100px;
 }
 
 .flickity-page-dots{
@@ -402,17 +487,11 @@ transform: scale(1.1);
 
 @media (max-width: 767px) {
   .nhVideoSec {
-    top: 550px;
-    width: 110%;
+    top: 500px;
+    width: 310%;
   }
 }
 
-@media (max-width: 360px) {
-  .nhVideoSec {
-    top: 550px;
-    width: 120%;
-  }
-}
 
 .darkmode--activated .nhVideoSec{
   filter: invert(100%);
@@ -423,7 +502,15 @@ transform: scale(1.1);
   margin-bottom: 0%;
   padding-bottom: 0%;
   height: 700px;
+  align-items: center;
 }
+
+@media (max-width: 430px){
+  .nhIntroSec{
+    height: 600px;
+  }
+}
+
 
 .nhIntroSecLogo {
   scale: 0.8;
@@ -444,6 +531,13 @@ transform: scale(1.1);
   left: 0;
   z-index: -1;
   filter: brightness(50%);
+  bottom: 0;
+}
+
+@media (max-width: 439px) {
+  .nhIntroSecVideo{
+    top: -600px;
+  }
 }
 
 .nhIntroText{
@@ -453,15 +547,10 @@ transform: scale(1.1);
   color: black;
 }
 
-.nhIntroTexth1{
-  color: black;
-
-}
 
 .newHomeSec2{
   justify-content: space-between;
   padding-top: 3%;
-  padding-bottom:35px;
   padding-top:35px;
   margin-bottom: 10%;
 }
@@ -1120,6 +1209,9 @@ padding-left: 5%;
 
 .blob-svg{
   transform: scaleX(3);
+  width: 400px; /* Adjust the width as needed */
+  height: 360px; /* Adjust the height as needed */
+  fill: url(#gradient); /* Apply the linear gradient defined in the SVG */
 }
 
   @media (max-width: 767px){
@@ -1129,10 +1221,6 @@ padding-left: 5%;
 
   }
 
-svg{
-  transform: scale(1.5);
-  padding-bottom: 10px;
-}
 
   @media (max-width: 767px){
     svg{
@@ -1144,6 +1232,7 @@ svg{
   width: 400px; /* Adjust the width as needed */
   height: 360px; /* Adjust the height as needed */
   fill: url(#gradient); /* Apply the linear gradient defined in the SVG */
+  transform: scale(1.5);
 }
 
 .about-card-container {
@@ -1619,25 +1708,29 @@ svg{
 /* Find Post///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .preCode {
-  padding: 3%;
   text-align: left;
-  background-color: #b0b0b0;
+}
+
+.hljs{
+  border-radius: 10px;
+  overflow-y: scroll;
+  max-height: 200px;
 }
 
 .continue-application {
   --color: #fff;
-  --background: #404660;
-  --background-hover: #3A4059;
-  --background-left: #2B3044;
-  --folder: #F3E9CB;
-  --folder-inner: #BEB393;
+  --background: #1e1e1e;
+  --background-hover: #2e2e2e;
+  --background-left: #3e3e3e;
+  --folder: #4CAF50;
+  --folder-inner: #357A36;;
   --paper: #FFFFFF;
   --paper-lines: #BBC1E1;
   --paper-behind: #E1E6F9;
   --pencil-cap: #fff;
-  --pencil-top: #275EFE;
+  --pencil-top: #007BFF;
   --pencil-middle: #fff;
-  --pencil-bottom: #5C86FF;
+  --pencil-bottom: #005d99;
   --shadow: rgba(13, 15, 25, .2);
   border: none;
   outline: none;
@@ -1829,27 +1922,51 @@ svg{
 
 .find-container {
   justify-content: center;
-  text-align: center;
-  text-align: center;
   position: relative;
   top: 50%;
   padding-top: 5%;
+  text-align: center;
 }
 
 .col-lg-4{
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(3px);
+  width: 50%;
+  padding: 2%;
+}
+
+.darkmode--activated .col-lg-4{
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+.darkmode--activated .col-lg-4 > h6{
+  color: white;
+}
+.darkmode--activated .col-lg-4 > p{
+  color: #e1e1e1;
+}
+
+
+.username{
+  color: #005d99;
+}
+
+.darkmode--activated .username{
+  color:#fff;
 }
 
 .col-lg-4 > h6{
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
+  text-align: left;
+  padding-top: 2%;
 }
 
 .col-lg-4 > p{
   font-size: 14px;
   font-weight: bold;
+  text-align: left;
 }
 
 .logo img {
@@ -1972,10 +2089,25 @@ svg{
 .btn-primary{
   margin: auto;
   padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
   border-radius: 20px;
   font-weight: bold;
+  width: 15%;
+  text-wrap: nowrap;
+  text-align: center;
+}
+
+.btn-primary-container{
+  display: flex;
+}
+
+.comment-section{
+  margin-top: 3%;
+  padding: 5%;
+  border: 2px solid #e1e1e1;
+}
+
+.darkmode--activated .comment-section > p{
+  color: white;
 }
 
 
@@ -2014,8 +2146,15 @@ svg{
   padding-top: 10px;
   padding-bottom: 10px;
   filter: invert(0%);
+  background-color: #005D99;
+  max-width: 500px;
+  border-radius: 1000px;
+  transition: ease-in-out .2s;
 }
 
+.darkmode--activated .tagline{
+  background-color: rgba(0, 93, 153, 0);
+}
 
 /* Apply fade-in animation to the overlay as well, for consistency */
 .overlay {
@@ -2339,6 +2478,14 @@ svg{
   z-index: -1; /* Ensures it stays behind the content */
 }
 
+.tox{
+  transition: ease-in-out .2s;
+  margin-bottom: 3%;
+}
+.darkmode--activated .tox{
+  filter: invert(100%);
+}
+
 
 .create-post{
   margin: 20px 0;
@@ -2348,12 +2495,10 @@ svg{
     color: #ffffff; /* White text color */
     display: inline-block; /* Make the background color cover the entire width */
     border-radius: 40px; /* Optional: Add rounded corners */
-    font-size: 90px;
     font-weight: bold;
+    text-align: left;
 }
-.create-button:hover {
-  background-color: #45a049;
-}
+
 .form-style{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -2362,20 +2507,22 @@ svg{
 }
 
 .background-container form {
-  max-width: 600px;
-  margin: auto;
   color: #ffffff;
 }
 
 .background-container label {
-    background-color: #005D99; /* Green background */
-    color: #fff; /* Black text color */
+    color: #000000;
     padding: 5px 5px; /* Add padding */
     border-radius: 5px; /* Rounded corners */
     display: inline-block; /* Ensure each label is displayed on its own line */
     margin-bottom: 5px; /* Add some space between labels */
-    text-shadow: 1px 1px 1px #000; /* Black text outline */
     font-size: larger;
+    transition: ease-in-out .2s;
+    font-weight: bold;
+}
+
+.darkmode--activated .background-container label{
+  color: #fff;
 }
 
 .background-container input,
@@ -2387,21 +2534,42 @@ svg{
   box-sizing: border-box;
   background-color: white; /* Dark background */
   color: black; /* White text color */
-  border: none; /* Remove default border */
   border-radius: 8px; /* Rounded edges */
+  border: 3px solid #ccc;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .background-container input,
+.darkmode--activated .background-container textarea,
+.darkmode--activated .background-container select {
+  border: 3px solid #111;
+  background-color: #222; /* Dark background */
+  color: white;
+}
+
+
+.CodeMirror{
+  text-align: left;
+  border-radius: 8px;
+  margin: 8px;
+  border: 3px solid #000;
+  transition: ease-in-out .2s;
+  width: 99%;
+  height: auto;
+}
+
+.code-editor{
+  padding-bottom: 50px;
+}
+
+.darkmode--activated .CodeMirror{
+  filter: invert(1);
 }
 
 .create-textarea {
-  background-color: #777; /* Dark background */
-  color: #ffffff; /* White text color */
-  padding: 8px; /* Add padding for better appearance */
-  border: #005D99; /* Remove default border */
-  border-radius: 8px; /* Rounded edges */
-  width: 100%; /* Full width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  resize: none; /* Disable resizing */
-  min-height: 100px; /* Set a minimum height to prevent the textarea from collapsing */
 }
+
 
 .create-button {
   background-color: #4CAF50;
@@ -2413,11 +2581,90 @@ svg{
   text-shadow: 2px 2px 2px #000; /* Black text outline */
   transition: transform 0.2s ease; /* Add transition effect */
   font-size: larger;
+  width: 125px;
 }
 
+
 .create-button:hover {
-    transform: scale(1.05); /* Increase the scale on hover */
+  background-color: #45a049;
 }
+
+
+.cancel-button {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px #000; /* Black text outline */
+  transition: transform 0.2s ease; /* Add transition effect */
+  font-size: larger;
+  width: 125px;
+  border: 2px solid #4CAF50
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.post-buttons{
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+
+@media (max-width: 430px){
+  .post-buttons{
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 430px){
+  .create-button{
+    transform: scale(.9);
+  }
+  .cancel-button{
+    transform: scale(.9);
+  }
+}
+
+.toggle-buttons{
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+  align-items: center;
+}
+
+.toggle-button{
+  padding: 15%;
+  background-color:#0056b3;
+  border-radius: 1000px;
+  max-height: 64px;
+}
+
+.darkmode--activated .toggle-button{
+  background-color: #000;
+}
+
+.toggle-img{
+  width: 32px;
+  height: 32px;
+  transition: ease-in-out .2s;
+  padding-left: 5%;
+  padding-right: 5%;
+  filter: invert(100%);
+}
+
+.toggle-img:hover{
+  transform: scale(1.1);
+}
+
+
 .create-body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -2431,27 +2678,22 @@ svg{
   backdrop-filter: blur(5px);
   border-radius: 20px; /* Rounded edges */
   padding: 20px; /* Add padding */
-  max-width: 600px; /* Set a maximum width to contain the content */
+  width: 75%;
   justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
   margin: auto;
   margin-top: 1%;
   margin-bottom: 5%;
-  max-width: 800px; /* Set a maximum width to contain the content */
 }
 
 .create-container {
   position: relative;
   z-index: 1; /* Ensure the form is on top of the background */
-  text-align: center; /* Center align its children */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
 }
 
 .create-container form {
-  max-width: 600px;
-  margin: auto;
   color: #eee;
+  box-sizing: border-box;
+  height: 675px;
 }
 
 .darkmode--activated .create-container form{
@@ -2468,11 +2710,41 @@ svg{
       border-radius: 8px; /* Optional: Add rounded corners */
   }
 
+
   .form-style{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
 
+  .lang-icon{
+    width: 32px;
+    transition: ease-in-out .2s;
+  }
+
+  .darkmode--activated .lang-icon{
+    filter: invert(100%);
+  }
+
+  .language-icons {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 5%;
+    border-radius: 20px;
+    gap: 40px;
+  }
+
+  .language-icon {
+    filter: brightness(50%);
+    transition: ease-in-out .2s;
+    width: 24px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.language-icon.selected {
+    filter: brightness(100%) drop-shadow(0 0 2px rgba(0,0,0,.9)); /* Adjust color and size of glow as needed */
+    transform: scale(1.1); /* Increase size */
+}
 label {
   display: block;
   margin-bottom: 8px;
@@ -2977,6 +3249,7 @@ label {
   text-align: center;
   max-width: 100%;
   filter: invert(0%);
+  bottom: 0;
 }
 
 .footer-col {

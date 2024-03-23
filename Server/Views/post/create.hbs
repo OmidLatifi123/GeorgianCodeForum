@@ -9,37 +9,57 @@
         <form method="post">
             <!-- Add enctype="multipart/form-data" for handling file uploads -->
             <h1 class="create-post">Create a Post</h1>
-            <label for="postTitle">Post Title:</label>
-            <input class="create-input" type="text" id="postTitle" name="postTitle" required>
+            <input class="create-input" type="text" id="postTitle" placeholder="Title" name="postTitle" required>
+            <div id="postEditor" class="post-editor" style="">
+                <textarea class="create-textarea" id="postContent" name="postContent" rows="6"></textarea>
+            </div>
 
-            <label for="postContent">Post Content:</label>
-            <textarea class="create-textarea" id="postContent" name="postContent" rows="6" required></textarea>
-
-            <label for="codingLanguage">Coding Language:</label>
-            <select class="create-input" id="codingLanguage" name="codingLanguage" required>
-                <option value="" disabled selected>Select a coding language</option>
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="java">Java</option>
-                <option value="csharp">C#</option>
-            </select>
 
             <!-- Section to upload an image -->
             {{!-- <label for="postImage">Upload an Image:</label>
             <input class="create-input" type="file" id="postImage" name="postImage" accept="image/*"> --}}
 
             <!-- Section to add code -->
-            <label for="postCode">Add Code:</label>
-            <textarea class="create-textarea" id="postCode" name="postCode" rows="6"></textarea>
-
-             <input name="username" id="username" type="hidden" value="{{user.username}}" />
-
-            <button class="create-button" type="submit">Submit Post</button>
+            <div id="codeEditor" class="code-editor" style="display:block;">
+                <label for="postCode">Add Code:</label>  
+                <div class="language-icons">
+                    <img class="lang-icon" src="/Assets/images/Images/CodeLang.png">
+                    <img id="jsIcon" src="/Assets/images/Images/JS.png" alt="JavaScript" class="language-icon" data-language="javascript">
+                    <img id="pythonIcon" src="/Assets/images/Images/Python.svg" alt="Python" class="language-icon" data-language="python">
+                    <img id="javaIcon" src="/Assets/images/Images/Java.png" alt="Java" class="language-icon" data-language="java">
+                    <img id="jsIcon" src="/Assets/images/Images/HTML5.png" alt="HTML" class="language-icon" data-language="html">
+                    <img id="jsIcon" src="/Assets/images/Images/CSS.png" alt="CSS" class="language-icon" data-language="css">
+                    <img id="pythonIcon" src="/Assets/images/Images/PHP.png" alt="PHP" class="language-icon" data-language="php">
+                    <img id="javaIcon" src="/Assets/images/Images/SQL.png" alt="SQL" class="language-icon" data-language="sql">
+                    <img id="csharpIcon" src="/Assets/images/Images/CSharp.png" alt="C#" class="language-icon" data-language="csharp">
+                    <img id="csharpIcon" src="/Assets/images/Images/CPlusPlus.png" alt="C++" class="language-icon" data-language="cplusplus">
+                </div>
+                <textarea class="code-textarea" id="postCode" name="postCode" rows="6"></textarea>
+            </div>
+            <div class="button-container">
+                <div class="toggle-buttons">
+                    <button class="toggle-button" id="postButton" type="button"><img class="toggle-img" src="/Assets/images/Images/Post.webp"></button>
+                    <button class="toggle-button" id="codeButton" type="button"><img class="toggle-img" src="/Assets/images/Images/CodeLang.png"></button>
+                </div>
+                <div class="post-buttons">
+                    <button class="create-button" type="submit">Post</button>
+                    <button type="button" class="cancel-button" name="cancel" value="cancel" onclick="goPrev()"> Cancel</button>
+                </div>
+            </div>
+                <script>
+                    function goPrev()
+                    {
+                        window.history.back();
+                    }
+                </script>
+            </div>
         </form>
     </div>
 </div>
 
 
+
+<script src="mode/javascript/javascript.js"></script>
 
 {{!-- Matrix Background INSPIRATION/SOURCE: https://www.youtube.com/watch?v=6Gn2KgKQVHU&ab_channel=QuickCodingTuts --}}
 </script>
@@ -84,10 +104,128 @@ function draw() {
 draw();
 
     </script>
-    </script>
+
       <script src="/darkmode-js/lib/darkmode-js.js"></script>
       <script>
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
     </script>
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <!-- Include CodeMirror JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <!-- Include CodeMirror JavaScript mode (for syntax highlighting) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/clike/clike.min.js"></script>
+
+
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("postCode"), {
+            lineNumbers: true // Enable line numbers
+        });
+        // Add event listener to select element
+        document.querySelectorAll('.language-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+        var mode = this.getAttribute('data-language'); // Get the language from the clicked icon
+        switch(mode) {
+        case "javascript":
+            editor.setOption("mode", "javascript");
+            break;
+        case "python":
+            editor.setOption("mode", "python");
+            break;
+        case "java":
+            editor.setOption("mode", "text/x-java");
+            break;
+        case "csharp":
+            editor.setOption("mode", "text/x-csharp");
+            break;
+        case "php":
+            editor.setOption("mode", "application/x-httpd-php");
+            break;
+        case "sql":
+            editor.setOption("mode", "text/x-sql");
+            break;
+        case "css":
+            editor.setOption("mode", "css");
+            break;
+        case "html5":
+            editor.setOption("mode", "htmlmixed");
+            break;
+        case "c++":
+            editor.setOption("mode", "text/x-c++src");
+            break;
+                
+            default:
+                console.log("Unsupported language");
+        }
+        
+        // Optionally, add logic here to visually indicate which icon is selected,
+        // such as adding a 'selected' class to the clicked icon
+        // and removing it from all other icons.
+        document.querySelectorAll('.language-icon').forEach(i => {
+            i.classList.remove('selected');
+        });
+        this.classList.add('selected');
+    });
+});
+
+    </script>
+    <script src="https://cdn.tiny.cloud/1/v3ro9xezxc9ll3uq2n1zoisrxutb0xiql2oskjs53ucgptgg/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <!-- Initialize TinyMCE -->
+  <script>
+        tinymce.init({
+        selector: ".create-textarea",
+        plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak'
+        ],
+        menubar: false
+        })
+</script>
+
+
+<script>
+    // Form submission event listener
+    document.querySelector('form').addEventListener('submit', function(e) {
+        var codeContent = editor.getValue(); // Get content from CodeMirror
+        var postContent = tinymce.get('postContent').getContent(); // Get content from TinyMCE
+
+        // Check if either content is empty
+        if (codeContent.trim() === '' || postContent.trim() === '') {
+            e.preventDefault(); // Prevent form submission
+            alert('Both post content and code must be provided.'); // Inform the user
+        }
+    });
+</script>
+
+<script>
+document.querySelectorAll('.language-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+        // Remove 'selected' class from all icons
+        document.querySelectorAll('.language-icon').forEach(i => {
+            i.classList.remove('selected');
+        });
+        
+        // Add 'selected' class to clicked icon
+        this.classList.add('selected');
+        
+        // Optional: Perform actions based on selection, such as updating a hidden input value
+    });
+});
+</script>
+
+<script>
+    document.getElementById('codeEditor').style.display = 'none';
+    document.getElementById('postButton').addEventListener('click', function() {
+    document.getElementById('postEditor').style.display = 'block'; // Show the TinyMCE editor
+    document.getElementById('codeEditor').style.display = 'none'; // Hide the CodeMirror editor
+});
+
+document.getElementById('codeButton').addEventListener('click', function() {
+    document.getElementById('postEditor').style.display = 'none'; // Hide the TinyMCE editor
+    document.getElementById('codeEditor').style.display = 'block'; // Show the CodeMirror editor
+});
+</script>
