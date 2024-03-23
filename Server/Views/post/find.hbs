@@ -191,10 +191,14 @@ draw();
 
             
 
-            <a href="/post/delete/{{this._id}}" class="btn btn-primary"
-                onclick="return confirm('Are you sure you want to delete this post?');">
+            <a class="btn btn-primary deleteButton" >
                 Delete
             </a>
+            <div id="confirmationSection" style="display: none;">
+                <p>Are you sure you want to delete this post?</p>
+                <a class="btn btn-primary confirmDelete" href="/post/delete/{{this._id}}">Delete</a>
+                <a class="btn btn-primary cancelDelete">Cancel</a>
+            </div>
             <br>
              <a href="/post/comment/{{this._id}}" class="btn btn-primary">
     Comment
@@ -235,6 +239,37 @@ draw();
 </ul>
 
 </script>
+<script>
+                const deleteButtons = document.querySelectorAll('.deleteButton');
+                    deleteButtons.forEach(deleteButton => {
+                        deleteButton.addEventListener('click', () => {
+                            // Show the confirmation section related to the clicked delete button
+                            const confirmationSection = deleteButton.nextElementSibling;
+                            confirmationSection.style.display = 'block';
+                        });
+                    });
+
+                    // Get all elements with class "confirmDelete" and add event listeners to each
+                    const confirmDeleteButtons = document.querySelectorAll('.confirmDelete');
+                    confirmDeleteButtons.forEach(confirmDeleteButton => {
+                        confirmDeleteButton.addEventListener('click', () => {
+                            // Perform deletion action
+                            // For demonstration purposes, just hide the confirmation section
+                            const confirmationSection = confirmDeleteButton.parentElement;
+                            confirmationSection.style.display = 'none';
+                        });
+                    });
+
+                    // Get all elements with class "cancelDelete" and add event listeners to each
+                    const cancelDeleteButtons = document.querySelectorAll('.cancelDelete');
+                    cancelDeleteButtons.forEach(cancelDeleteButton => {
+                        cancelDeleteButton.addEventListener('click', () => {
+                            // Hide the confirmation section related to the clicked cancel button
+                            const confirmationSection = cancelDeleteButton.parentElement;
+                            confirmationSection.style.display = 'none';
+                        });
+                    });
+            </script>
 </script>
       <script src="darkmode-js/lib/darkmode-js.js"></script>
       <script>
