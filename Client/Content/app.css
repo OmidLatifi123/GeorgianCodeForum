@@ -2378,6 +2378,10 @@ padding-left: 5%;
   color: white;
 }
 
+.darkmode--activated .btn-primary-container{
+  color: white;
+}
+
 /* Find post responsiveness starts here */
 @media screen and (max-width:820px){
   .findLogoImg{
