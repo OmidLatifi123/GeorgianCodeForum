@@ -66,15 +66,11 @@ passport.use(User.createStrategy());
 
 const GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
 const GithubStrategy = require('passport-github2').Strategy;
-const CLIENT_ID = '849012406795-9cf37us63auqqqv4dv8c5saq5nuf1juo.apps.googleusercontent.com'
-const CLIENT_SECRET = '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'
-const GITHUB_CLIENT_ID = 'a6c2931ee69142f7856c'
-const GITHUB_CLIENT_SECRET = '783aba7039d7196ac62de38d0ae503156b9f984e'
 
 passport.use(new GoogleStrategy({
-    clientID:     CLIENT_ID,
-    clientSecret: CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.GOOGLE_CALLBACK_URL,
   },
   async(request, accessToken, refreshToken, profile, done) =>{
     try{
@@ -93,12 +89,11 @@ passport.use(new GoogleStrategy({
   ));
 
   passport.use(new GithubStrategy({
-    clientID:     GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback",
+    clientID:     process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.GITHUB_CALLBACK_URL,
   },
   async(request, accessToken, refreshToken, profile, done) =>{
-    console.log(profile)
     try{
         let user = await User.findOne({username:profile.username})
         if(user){

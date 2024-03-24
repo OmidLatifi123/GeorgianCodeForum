@@ -1,15 +1,15 @@
 // Omid Latifi, Carlos DaSilva, Christian Schoenwiese, Tristan Schwekendiek
 //     1199455, 1191123, 1186384 , 1207799
-
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer')
 const {google} = require ('googleapis')
 
-const CLIENT_ID = '849012406795-0er531p8tsqae1rfd8s0h2ue50ccc0uk.apps.googleusercontent.com'
-const CLIENT_SECRET = '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'
+const CLIENT_ID = '849012406795-r8uc5hfqe54ndutfiho78spb8vef5pdk.apps.googleusercontent.com'
+const CLIENT_SECRET = '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'
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
-const REFRESH_TOKEN = '1//04X_GUPoCpKE7CgYIARAAGAQSNwF-L9IrwF1qf-R5n-Vwm3fluQLUpjYZshUOojJZDHbxNTa3l0bSLZ7ggMBhif5tzC0irsnhfuo'
+const REFRESH_TOKEN = '1//04iyBQ4QFAdlSCgYIARAAGAQSNwF-L9Iren8dhuWRE_M3EzOm2JUgueDjLquTZxA6PqC3htu8ZTxDfbdI5-eI6QvUuV0B_UvY5_E'
 
 const oAuth2Client =  new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
