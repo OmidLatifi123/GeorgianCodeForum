@@ -74,7 +74,7 @@ const GITHUB_CLIENT_SECRET = '783aba7039d7196ac62de38d0ae503156b9f984e'
 passport.use(new GoogleStrategy({
     clientID:     CLIENT_ID,
     clientSecret: CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL: "http://georgiancodeforum.com/auth/google/callback",
   },
   async(request, accessToken, refreshToken, profile, done) =>{
     try{
