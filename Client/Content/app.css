@@ -1507,6 +1507,7 @@ padding-left: 5%;
 }
   
   .about-p {
+    text-wrap: balance;
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -2071,13 +2072,14 @@ padding-left: 5%;
   display: flex; /* Enables flexbox properties */
   max-width: 10%;
   margin: auto;
+  margin-top: 1%;
   font-weight: bold;
   filter: invert(0%);
    transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 .addbtn:hover{
-  scale: 1.2;
+  scale: 1.1;
 }
 
 /* Optional: Add hover effects for visual feedback */
