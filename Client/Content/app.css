@@ -1338,12 +1338,14 @@ padding-left: 5%;
 }
 
 .textBox > .head {
+  color: whitesmoke;
   font-size: 20px;
   text-align: center;
   text-shadow: 2px 2px #000000;
 }
 
 .textBox > .price {
+  color: whitesmoke;
   font-size: 17px;
 }
 
