@@ -127,7 +127,6 @@ html{
 .gallery-cell {
   width: 50%;
   height: 500px;
-  margin-right: 10px;
   background: #e1e1e1;
   filter: blur(3px) brightness(0.5);
   transition: ease-in-out .2s;
@@ -140,6 +139,13 @@ html{
         opacity: 1 !important;
       }
 }
+
+@media (max-width: 430){
+  .gallery-cell{
+    width: 400px;
+  }
+}
+
 .flick-buttons{
   display: flex;
   justify-content: space-between;
@@ -378,11 +384,9 @@ cursor: pointer;
 .login {
   width: fit-content;
   height: fit-content;
-
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: white;
-  background-color: #171717;
+  background-color: #e1e1e1;
   padding: 1em 2em;
   border: none;
   border-radius: .6rem;
@@ -397,6 +401,17 @@ cursor: pointer;
 
   transition: transform 0.3s ease;
 
+}
+
+.darkmode--activated .login{
+  background-color: #1e1e1e;
+}
+
+.text{
+  color: #000;
+}
+.darkmode--activated .text{
+  color: #e1e1e1;
 }
 
 .login:hover {
@@ -1922,6 +1937,7 @@ padding-left: 5%;
 
 .find-container {
   justify-content: center;
+  align-items: center;
   position: relative;
   top: 50%;
   padding-top: 5%;
@@ -1934,6 +1950,12 @@ padding-left: 5%;
   backdrop-filter: blur(3px);
   width: 50%;
   padding: 2%;
+}
+
+@media (max-width: 1024px){
+  .col-lg-4{
+    width: 95%;
+  }
 }
 
 .darkmode--activated .col-lg-4{
@@ -2091,9 +2113,10 @@ padding-left: 5%;
   padding: 10px;
   border-radius: 20px;
   font-weight: bold;
-  width: 15%;
+  width: 120px;
   text-wrap: nowrap;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn-primary-container{
@@ -2434,28 +2457,16 @@ padding-left: 5%;
     width:90vw;
   }
 
-  #searchBtn{
-    width: 40vw;
-  }
 
   #filterBtn{
     width: 40vw;
   }
   
-  #searchBar{
-    padding: 2%;
-    align-items: center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    width:90vw;
-  }
 
   .card-body{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    width:90vw
   }
 
   .modal-content{
@@ -2467,6 +2478,10 @@ padding-left: 5%;
 .card-body {
   align-items: center;
   justify-content: center;
+}
+
+.darkmode--activated .confirm-p{
+  color: white;
 }
 
 
@@ -2622,18 +2637,31 @@ padding-left: 5%;
   gap: 20px;
 }
 
-@media (max-width: 430px){
+@media (max-width: 630px){
   .post-buttons{
     flex-direction: column-reverse;
   }
 }
 
-@media (max-width: 430px){
+@media (max-width: 640px){
   .create-button{
-    transform: scale(.9);
+    transform: scale(.75);
   }
   .cancel-button{
-    transform: scale(.9);
+    transform: scale(.75);
+  }
+}
+
+@media (max-width: 800px){
+  .language-icons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+  }
+  .language-icon{
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -2689,6 +2717,12 @@ padding-left: 5%;
   margin-bottom: 5%;
 }
 
+@media (max-width: 800px){
+  .create-container{
+    height: 800px;
+  }
+}
+
 .create-container {
   position: relative;
   z-index: 1; /* Ensure the form is on top of the background */
@@ -2737,12 +2771,17 @@ padding-left: 5%;
     gap: 40px;
   }
 
+
   .language-icon {
     filter: brightness(50%);
     transition: ease-in-out .2s;
     width: 24px;
     cursor: pointer;
     object-fit: contain;
+}
+.icon-group{
+  display: flex;
+  gap: 40px;
 }
 
 .language-icon.selected {
@@ -2898,7 +2937,7 @@ label {
 
 .Loginh1 {
   color: #1e1e1e;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   justify-content: center;
   font-weight: 600;
@@ -2917,7 +2956,7 @@ label {
   height: 850px; 
   background-image: url('/Assets/images/Images/2020-11-10-georgian-college.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   filter: invert(0%);
   transition: ease-in-out .2s;
 }
@@ -3439,8 +3478,7 @@ label {
 }
 
 .darkmode--activated .Contact-Us-Form{
-  filter: invert(100%);
-  box-shadow:  13px 13px 22px rgba(255,255,255,.3);
+  background: #1e1e1e;
   transition: ease-in .2s;
 }
 
@@ -3480,7 +3518,7 @@ label {
   font-size: 100%;
   position: absolute;
   left: 0;
-  padding: 0.8em;
+  margin-top: 0.8em;
   top: 0;
   margin-left: 0.5em;
   pointer-events: none;
@@ -3493,8 +3531,15 @@ label {
   transform: translateY(-50%) scale(.9);
   margin: 0em;
   margin-left: 1.3em;
-  padding: 0.4em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
   background-color: #ffffff;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.darkmode--activated .Contact-Input2  :is(input:focus, input:valid)~label {
+  background-color: #1e1e1e;
 }
 
 .Contact-Input2  :is(input:focus, input:valid) {
@@ -3539,9 +3584,8 @@ label {
   width: 100%;
 }
 
-.darkmode--activated .Contact-btn{
-  filter: invert(100%);
-}
+
+
 
 .darkmode--activated .Contact-P{
   color: #eee;
@@ -3649,4 +3693,3 @@ label {
 .darkmode-layer{
   transition: ease-in-out .2s;
 }
-
