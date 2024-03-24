@@ -18,7 +18,7 @@ let comment = require('../Models/comment');
 
 async function DisplayHome(req, res, next) {
   let post = await Post.find().sort({ createdAt: -1 }).limit(5);
-  res.render('home', { title: 'Home', page: 'home', post: post });
+  res.render('home', { title: 'Georgian Code Forum', page: 'home', post: post });
 }
 
 // Repeat above for all pages
