@@ -95,7 +95,7 @@ passport.use(new GoogleStrategy({
   passport.use(new GithubStrategy({
     clientID:     GITHUB_CLIENT_ID,
     clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback",
+    callbackURL: "http://georgiancodeforum.com/auth/github/callback",
   },
   async(request, accessToken, refreshToken, profile, done) =>{
     console.log(profile)
