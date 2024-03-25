@@ -22,11 +22,53 @@
         <label for="postContent">Content: </label>
         <input name="postContent" id="postContent"  value="{{post.postContent}}" />
     </fieldset>
-
+{{!-- 
     <fieldset>
         <label for="postCode">Code: </label>
         <textarea name="postCode" id="postCode" value="{{post.postCode}}"> </textarea>
-    </fieldset>
+    </fieldset> --}}
+
+      <div id="codeEditor" class="code-editor" style="display:block;">
+                <label for="postCode">Code:</label>  
+                <div class="language-icons">
+                    <div class="icon-group">
+                        <img id="jsIcon" src="/Assets/images/Images/JS.png" alt="JavaScript" class="language-icon" data-language="javascript">
+                        <img id="pythonIcon" src="/Assets/images/Images/Python.svg" alt="Python" class="language-icon" data-language="python">
+                        <img id="javaIcon" src="/Assets/images/Images/Java.png" alt="Java" class="language-icon" data-language="java">
+                    </div>
+                    <div class="icon-group">
+                        <img id="jsIcon" src="/Assets/images/Images/HTML5.png" alt="HTML" class="language-icon" data-language="html">
+                        <img id="jsIcon" src="/Assets/images/Images/CSS.png" alt="CSS" class="language-icon" data-language="css">
+                        <img id="pythonIcon" src="/Assets/images/Images/PHP.png" alt="PHP" class="language-icon" data-language="php">
+                    </div>
+                    <div class="icon-group">
+                        <img id="javaIcon" src="/Assets/images/Images/SQL.png" alt="SQL" class="language-icon" data-language="sql">
+                        <img id="csharpIcon" src="/Assets/images/Images/CSharp.png" alt="C#" class="language-icon" data-language="csharp">
+                        <img id="csharpIcon" src="/Assets/images/Images/CPlusPlus.png" alt="C++" class="language-icon" data-language="cplusplus">
+                    </div>
+                </div>
+                <textarea class="code-textarea" id="postCode" name="postCode" rows="6" value="{{post.postCode}}"></textarea>
+            </div>
+            <div class="button-container">
+                <div class="toggle-buttons">
+                    {{!-- <button class="toggle-button" id="postButton" type="button"><img class="toggle-img" src="/Assets/images/Images/Post.webp"></button> --}}
+                    <button class="toggle-button" id="codeButton" type="button"><img class="toggle-img" src="/Assets/images/Images/CodeLang.png"></button>
+                </div>
+                <div class="post-buttons">
+                    <button class="create-button" type="submit">Post</button>
+                    <button type="button" class="cancel-button" name="cancel" value="cancel" onclick="goPrev()"> Cancel</button>
+                </div>
+            </div>
+                <script>
+                    function goPrev()
+                    {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+</div>
  
     <button class="btn btn-primary offset-2">Save</button>
 </form>
