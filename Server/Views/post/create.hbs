@@ -9,9 +9,7 @@
         <form method="post">
             <!-- Add enctype="multipart/form-data" for handling file uploads -->
             <h1 class="create-post">Create a Post</h1>
-            <label for="postTitle">Post Title:</label>
             <input class="create-input" type="text" id="postTitle" name="postTitle" required>
-
             <label for="postContent">Post Content:</label>
             <textarea class="create-textarea" id="postContent" name="postContent" rows="6" required></textarea>
 
@@ -30,7 +28,7 @@
 
             <!-- Section to add code -->
             <label for="postCode">Add Code:</label>
-            <textarea class="create-textarea" id="postCode" name="postCode" rows="6"></textarea>
+            <textarea class="create-textarea" id="postContent" name="postContent" rows="6" required></textarea>
 
              <input name="username" id="username" type="hidden" value="{{user.username}}" />
 
@@ -40,6 +38,8 @@
 </div>
 
 
+
+<script src="mode/javascript/javascript.js"></script>
 
 {{!-- Matrix Background INSPIRATION/SOURCE: https://www.youtube.com/watch?v=6Gn2KgKQVHU&ab_channel=QuickCodingTuts --}}
 </script>
@@ -90,4 +90,43 @@ draw();
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
     </script>
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <!-- Include CodeMirror JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <!-- Include CodeMirror JavaScript mode (for syntax highlighting) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/clike/clike.min.js"></script>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("postCode"), {
+            lineNumbers: true // Enable line numbers
+        });
+
+        // Add event listener to select element
+        document.getElementById("codingLanguage").addEventListener("change", function() {
+            var mode = this.value;
+            if (mode === "javascript") {
+                editor.setOption("mode", "javascript");
+            } else if (mode === "python") {
+                editor.setOption("mode", "python");
+            } else if (mode === "java") {
+                editor.setOption("mode", "text/x-java");
+            } else if (mode === "csharp") {
+                editor.setOption("mode", "text/x-csharp");
+            }
+        });
+    </script>
+    <script src="https://cdn.tiny.cloud/1/v3ro9xezxc9ll3uq2n1zoisrxutb0xiql2oskjs53ucgptgg/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <!-- Initialize TinyMCE -->
+  <script>
+        tinymce.init({
+        selector: ".create-textarea",
+        plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak'
+        ],
+        menubar: false
+        })
+</script>

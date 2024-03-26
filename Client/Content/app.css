@@ -1621,7 +1621,6 @@ svg{
 .preCode {
   padding: 3%;
   text-align: left;
-  background-color: #b0b0b0;
 }
 
 .continue-application {
@@ -1829,9 +1828,8 @@ svg{
 
 .find-container {
   justify-content: center;
-  text-align: center;
-  text-align: center;
   position: relative;
+  text-align: center;
   top: 50%;
   padding-top: 5%;
 }
@@ -1840,6 +1838,16 @@ svg{
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(3px);
+  width: 50%;
+  padding: 3%;
+}
+
+.username{
+  color: #005d99;
+}
+
+.darkmode--activated .username{
+  color:#fff;
 }
 
 .col-lg-4 > h6{
@@ -1850,6 +1858,7 @@ svg{
 .col-lg-4 > p{
   font-size: 14px;
   font-weight: bold;
+  text-align: left;
 }
 
 .logo img {
@@ -1972,10 +1981,17 @@ svg{
 .btn-primary{
   margin: auto;
   padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
   border-radius: 20px;
   font-weight: bold;
+  width: 40%;
+  text-wrap: nowrap;
+  text-align: center;
+}
+
+.CodeMirror{
+  text-align: left;
+  border-radius: 8px;
+  margin: 2%;
 }
 
 
@@ -2303,12 +2319,14 @@ svg{
     color: #ffffff; /* White text color */
     display: inline-block; /* Make the background color cover the entire width */
     border-radius: 40px; /* Optional: Add rounded corners */
-    font-size: 90px;
     font-weight: bold;
+    text-align: left;
 }
 .create-button:hover {
   background-color: #45a049;
 }
+
+
 .form-style{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -2317,8 +2335,6 @@ svg{
 }
 
 .background-container form {
-  max-width: 600px;
-  margin: auto;
   color: #ffffff;
 }
 
@@ -2342,21 +2358,37 @@ svg{
   box-sizing: border-box;
   background-color: white; /* Dark background */
   color: black; /* White text color */
-  border: none; /* Remove default border */
   border-radius: 8px; /* Rounded edges */
+  border: 3px solid #000;
+  transition: ease-in-out .2s;
+}
+
+.darkmode--activated .background-container input,
+.darkmode--activated .background-container textarea,
+.darkmode--activated .background-container select {
+  border: 3px solid #ccc;
+  background-color: #222; /* Dark background */
+  color: white;
+}
+
+.tox-toolbar__primary{
+  height: 100px;
+}
+
+.CodeMirror{
+  border: 3px solid #000;
+  transition: ease-in-out .2s;
+  width: 95%;
+}
+
+.darkmode--activated .CodeMirror{
+  filter: invert(1);
 }
 
 .create-textarea {
-  background-color: #777; /* Dark background */
-  color: #ffffff; /* White text color */
-  padding: 8px; /* Add padding for better appearance */
-  border: #005D99; /* Remove default border */
-  border-radius: 8px; /* Rounded edges */
-  width: 100%; /* Full width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  resize: none; /* Disable resizing */
-  min-height: 100px; /* Set a minimum height to prevent the textarea from collapsing */
 }
+
 
 .create-button {
   background-color: #4CAF50;
@@ -2386,27 +2418,21 @@ svg{
   backdrop-filter: blur(5px);
   border-radius: 20px; /* Rounded edges */
   padding: 20px; /* Add padding */
-  max-width: 600px; /* Set a maximum width to contain the content */
+  width: 75%;
   justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
   margin: auto;
   margin-top: 1%;
   margin-bottom: 5%;
-  max-width: 800px; /* Set a maximum width to contain the content */
 }
 
 .create-container {
   position: relative;
   z-index: 1; /* Ensure the form is on top of the background */
-  text-align: center; /* Center align its children */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
 }
 
-.create-container form {
-  max-width: 600px;
-  margin: auto;
+.create-container .create-form {
   color: #eee;
+  box-sizing: border-box;
 }
 
 .darkmode--activated .create-container form{
@@ -2422,6 +2448,7 @@ svg{
       display: inline-block; /* Make the background color cover the entire width */
       border-radius: 8px; /* Optional: Add rounded corners */
   }
+
 
   .form-style{
     font-family: Arial, Helvetica, sans-serif;

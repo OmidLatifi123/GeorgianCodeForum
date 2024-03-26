@@ -169,21 +169,17 @@ draw();
 <ul class="card-body center">
     {{#each post}}
         <li class="card m-4 text-center col-lg-4">
-            <H3> Username: </H3>
-            <p>{{this.username}}</p>   
-            <H3> Date: </H3>         
-           <p>{{this.createdAt}}</p> 
+            <p class="username">{{this.username}}</p>         
             {{!-- <H3> Post ID: </H3>
             <h5>{{this.postId}}</h5> --}}
-            <H3> Title: </H3>
             <h6>{{this.postTitle}}</h6>
             <H3> Description: </H3>
             <p>{{this.postContent}}</p>
             <H3> Code: </H3>
             <span class="preCode">
-            <pre><code>{{this.postCode}}</code></pre>
-           </span>
-
+            <pre><code class="language-{{this.codingLanguage}}">{{this.postCode}}</code></pre>
+             </span>
+           <p>{{this.createdAt}}</p> 
             <a href="/post/edit/{{this._id}}" class="btn btn-primary">
                 Edit
             </a>
@@ -241,3 +237,10 @@ draw();
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+    <script>
+    // Initialize highlight.js
+    hljs.highlightAll();
+</script>
