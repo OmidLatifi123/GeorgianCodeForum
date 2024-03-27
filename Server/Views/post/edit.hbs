@@ -1,34 +1,26 @@
+{{!-- Omid Latifi
+1199455
+ --}}
 
 <canvas id="matrixEffect"></canvas>
+
 <div class="background-container">
     <div class="create-container">
+        <form method="post">
+            <!-- Add enctype="multipart/form-data" for handling file uploads -->
             <h1 class="create-post">Update Post</h1>
+            <input class="create-input" type="text" id="postTitle" placeholder="Title" name="postTitle" value="{{post.postTitle}}" required>
+            <div id="postEditor" class="post-editor" style="">
+                <textarea class="create-textarea" id="postContent" name="postContent" rows="6">{{post.postContent}}</textarea>
+            </div>
 
-<form method="post">
-    {{!-- <fieldset>
-        <label for="codingLanguage">Coding Language: *</label>
-        <select name="codingLanguage" id="codingLanguage">
-            {{selectOption 'JavaScript' post.codingLanguage}}
-            {{selectOption 'Python' post.codingLanguage}}
-            {{selectOption 'Java' post.codingLanguage}}
-            {{selectOption 'C#' post.codingLanguage}}
-        </select>
-    </fieldset> --}}
-    <fieldset>
-        <label for="postTitle">Title: </label>
-        <input name="postTitle" id="postTitle"  value="{{post.postTitle}}" />
-    </fieldset>
-   <fieldset>
-        <label for="postContent">Content: </label>
-        <input name="postContent" id="postContent"  value="{{post.postContent}}" />
-    </fieldset>
-{{!-- 
-    <fieldset>
-        <label for="postCode">Code: </label>
-        <textarea name="postCode" id="postCode" value="{{post.postCode}}"> </textarea>
-    </fieldset> --}}
 
-      <div id="codeEditor" class="code-editor" style="display:block;">
+            <!-- Section to upload an image -->
+            {{!-- <label for="postImage">Upload an Image:</label>
+            <input class="create-input" type="file" id="postImage" name="postImage" accept="image/*"> --}}
+
+            <!-- Section to add code -->
+            <div id="codeEditor" class="code-editor" style="display:block;">
                 <label for="postCode">Code:</label>  
                 <div class="language-icons">
                     <div class="icon-group">
@@ -47,15 +39,15 @@
                         <img id="csharpIcon" src="/Assets/images/Images/CPlusPlus.png" alt="C++" class="language-icon" data-language="cplusplus">
                     </div>
                 </div>
-                <textarea class="code-textarea" id="postCode" name="postCode" rows="6" value="{{post.postCode}}"></textarea>
+                <textarea class="code-textarea" id="postCode" name="postCode" rows="6">{{post.postCode}}</textarea>
             </div>
             <div class="button-container">
                 <div class="toggle-buttons">
-                    {{!-- <button class="toggle-button" id="postButton" type="button"><img class="toggle-img" src="/Assets/images/Images/Post.webp"></button> --}}
+                    <button class="toggle-button" id="postButton" type="button"><img class="toggle-img" src="/Assets/images/Images/Post.webp"></button>
                     <button class="toggle-button" id="codeButton" type="button"><img class="toggle-img" src="/Assets/images/Images/CodeLang.png"></button>
                 </div>
                 <div class="post-buttons">
-                    <button class="create-button" type="submit">Post</button>
+                    <button class="create-button" type="submit">Update</button>
                     <button type="button" class="cancel-button" name="cancel" value="cancel" onclick="goPrev()"> Cancel</button>
                 </div>
             </div>
@@ -69,12 +61,10 @@
         </form>
     </div>
 </div>
- 
-    <button class="btn btn-primary offset-2">Save</button>
-</form>
-    </div>
-</div>
 
+
+
+<script src="mode/javascript/javascript.js"></script>
 
 {{!-- Matrix Background INSPIRATION/SOURCE: https://www.youtube.com/watch?v=6Gn2KgKQVHU&ab_channel=QuickCodingTuts --}}
 </script>
@@ -120,8 +110,127 @@ draw();
 
     </script>
 
-          <script src="/darkmode-js/lib/darkmode-js.js"></script>
+      <script src="/darkmode-js/lib/darkmode-js.js"></script>
       <script>
         // Initialize Darkmode.js here
         new Darkmode().showWidget();
     </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <!-- Include CodeMirror JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <!-- Include CodeMirror JavaScript mode (for syntax highlighting) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/clike/clike.min.js"></script>
+
+
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("postCode"), {
+            lineNumbers: true // Enable line numbers
+        });
+        // Add event listener to select element
+        document.querySelectorAll('.language-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+        var mode = this.getAttribute('data-language'); // Get the language from the clicked icon
+        switch(mode) {
+        case "javascript":
+            editor.setOption("mode", "javascript");
+            break;
+        case "python":
+            editor.setOption("mode", "python");
+            break;
+        case "java":
+            editor.setOption("mode", "text/x-java");
+            break;
+        case "csharp":
+            editor.setOption("mode", "text/x-csharp");
+            break;
+        case "php":
+            editor.setOption("mode", "application/x-httpd-php");
+            break;
+        case "sql":
+            editor.setOption("mode", "text/x-sql");
+            break;
+        case "css":
+            editor.setOption("mode", "css");
+            break;
+        case "html5":
+            editor.setOption("mode", "htmlmixed");
+            break;
+        case "c++":
+            editor.setOption("mode", "text/x-c++src");
+            break;
+                
+            default:
+                console.log("Unsupported language");
+        }
+        
+        // Optionally, add logic here to visually indicate which icon is selected,
+        // such as adding a 'selected' class to the clicked icon
+        // and removing it from all other icons.
+        document.querySelectorAll('.language-icon').forEach(i => {
+            i.classList.remove('selected');
+        });
+        this.classList.add('selected');
+    });
+});
+    </script>
+    <script src="https://cdn.tiny.cloud/1/v3ro9xezxc9ll3uq2n1zoisrxutb0xiql2oskjs53ucgptgg/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <!-- Initialize TinyMCE -->
+
+  <script>
+        tinymce.init({
+        selector: ".create-textarea",
+        plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak'
+        ],
+        menubar: false
+        })
+</script>
+
+
+<script>
+    // Form submission event listener
+    document.querySelector('form').addEventListener('submit', function(e) {
+        var codeContent = editor.getValue(); // Get content from CodeMirror
+        var postContent = tinymce.get('postContent').getContent(); // Get content from TinyMCE
+
+        // Check if either content is empty
+        if (codeContent.trim() === '' || postContent.trim() === '') {
+            e.preventDefault(); // Prevent form submission
+            alert('Both post content and code must be provided.'); // Inform the user
+        }
+    });
+</script>
+
+<script>
+document.querySelectorAll('.language-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+        // Remove 'selected' class from all icons
+        document.querySelectorAll('.language-icon').forEach(i => {
+            i.classList.remove('selected');
+        });
+        
+        // Add 'selected' class to clicked icon
+        this.classList.add('selected');
+        
+        // Optional: Perform actions based on selection, such as updating a hidden input value
+    });
+});
+</script>
+
+<script>
+    document.getElementById('codeEditor').style.display = 'none';
+    document.getElementById('postButton').addEventListener('click', function() {
+    document.getElementById('postEditor').style.display = 'block'; // Show the TinyMCE editor
+    document.getElementById('codeEditor').style.display = 'none'; // Hide the CodeMirror editor
+});
+
+document.getElementById('codeButton').addEventListener('click', function() {
+    document.getElementById('postEditor').style.display = 'none'; // Hide the TinyMCE editor
+    document.getElementById('codeEditor').style.display = 'block'; // Show the CodeMirror editor
+});
+</script>
