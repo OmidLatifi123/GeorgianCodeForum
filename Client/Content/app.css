@@ -403,6 +403,7 @@ cursor: pointer;
 
 }
 
+
 .darkmode--activated .login{
   background-color: #1e1e1e;
 }
@@ -2981,7 +2982,6 @@ label {
 }
 
 .Login-form {
-  position:absolute;
   backdrop-filter: blur(4px);
   background-color: rgba(229,228,226, 0.6);
   transition: all .3s ease-in-out; 
@@ -3001,13 +3001,16 @@ label {
 }
 
 .Login-form input {
-  width: 100%;
   margin-bottom: 2%;
   background: rgba(234,233,232, 0.5);
   padding: 10px;
   border-radius: 20px;
   border: 2px solid #000;
   color: #000;
+}
+
+.textUserPass{
+  width: 100%;
 }
 
 .darkmode--activated .Login-form input {
@@ -3025,6 +3028,7 @@ label {
   border-radius: 10px;
   cursor: pointer;
 }
+
 
 .Login-form button:hover {
   background-color: #008616; 
