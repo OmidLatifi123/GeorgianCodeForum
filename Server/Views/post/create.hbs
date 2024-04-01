@@ -7,6 +7,7 @@
 <div class="background-container">
     <div class="create-container">
         <form method="post">
+         <input name="username" id="username" type="hidden" value="{{user.username}}" />
             <!-- Add enctype="multipart/form-data" for handling file uploads -->
             <h1 class="create-post">Create a Post</h1>
             <input class="create-input" type="text" id="postTitle" placeholder="Title" name="postTitle" required>

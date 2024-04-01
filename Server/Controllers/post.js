@@ -8,14 +8,15 @@ let index = async (req, res, next) => {
     // console.log(post);
     res.render('post/find', { 
         title: 'Find Post',
-        post: post
+        post: post, 
+        user: req.user
     });
 };
 
 let displayCreateForm = async(req, res, next) => {
 
 
-    res.render('post/create', { title: 'Add New Post' });
+    res.render('post/create', { title: 'Add New Post', user: req.user });
 
 };
 
@@ -41,7 +42,8 @@ let displayEditForm = async (req, res, next) => {
 
     res.render('post/edit', { 
         title: 'Update Post',
-        post: post,
+        post: post,  
+        user: req.user
     });
 };
 

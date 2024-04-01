@@ -18,19 +18,19 @@ let comment = require('../Models/comment');
 
 async function DisplayHome(req, res, next) {
   let post = await Post.find().sort({ createdAt: -1 }).limit(5);
-  res.render('home', { title: 'Georgian Code Forum', page: 'home', post: post });
+  res.render('home', { title: 'Georgian Code Forum', page: 'home', post: post, user: req.user });
 }
 
 // Repeat above for all pages
 
 function DisplayAbout(req, res, next)
 {
-  res.render('about', {title: 'About Us', page: 'about'});
+  res.render('about', {title: 'About Us', page: 'about', user: req.user});
 }
 
 function DisplayCreate(req, res, next)
 {
-  res.render('create', {title: 'Create Post', page: 'create'});
+  res.render('create', {title: 'Create Post', page: 'create', user: req.user});
 }
 
 // function DisplayFind(req, res, next)
@@ -44,8 +44,8 @@ async function DisplayFind(req, res, next) {
       populate: { path: 'username' } 
     }).sort({ createdAt: -1 }).limit(5);
 
-    res.render('find', { title: 'Find Post', page: 'find', posts: posts });
-    res.render('find', { title: 'Find Post', page: 'find', comments: comments });
+    res.render('find', { title: 'Find Post', page: 'find', posts: posts, user: req.user});
+    res.render('find', { title: 'Find Post', page: 'find', comments: comments, user: req.user });
   } catch (err) {
     console.error(err);
     res.status(500).send('Internal Server Error');
@@ -54,22 +54,22 @@ async function DisplayFind(req, res, next) {
 
 function DisplayContact(req, res, next)
 {
-  res.render('contact', {title: 'Contact Us', page: 'contact'});
+  res.render('contact', {title: 'Contact Us', page: 'contact', user: req.user});
 }
 
 function DisplayLogin(req, res, next)
 {
-  res.render('login', {title: 'Login', page: 'login'});
+  res.render('login', {title: 'Login', page: 'login', user: req.user});
 }
 
 function DisplayPrivacy(req, res, next)
 {
-  res.render('privacy', {title: 'Privacy Policy', page: 'privacy'});
+  res.render('privacy', {title: 'Privacy Policy', page: 'privacy', user: req.user});
 }
 
 function DisplayRegister(req, res, next)
 {
-  res.render('register', {title: 'Register', page: 'register'});
+  res.render('register', {title: 'Register', page: 'register', user: req.user});
 }
 
 
