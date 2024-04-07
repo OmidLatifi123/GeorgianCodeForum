@@ -7,7 +7,7 @@
         Please input your email address and your inquiries below.
         </p>
                 <div class="Contact-Us-Form">
-                    <form class="Contact-form" id="contact" action="/contact/send_email" method="post">
+                    <form class="Contact-form" id="contact">
                     <div class="Contact-Input2">
                         <input type="text" id="name" required autocomplete="off">
                         <label for="name">Name: </label>
@@ -18,6 +18,7 @@
                         </div>
                         <div class="Contact-Input2">
                         <textarea class="Contact-input" id="issue" placeholder="Input Your Inquiries Here"></textarea>
+                        <div id ="captcha" class="g-recaptcha" data-sitekey="6Le-_LIpAAAAAI3Yv-r5dWYS0d5Q8TL6EeRZ-9Ti"></div>
                         <button class="Contact-btn" onclick="">Submit</button>
                         </div>
                     </form>
@@ -34,11 +35,12 @@
 let formName = document.getElementById("name");
 let formEmail = document.getElementById("email");
 let formIssue = document.getElementById("issue");
-console.log(formName.value);
 
 contactForm.addEventListener('submit', function(event){
     event.preventDefault()
 
+    let formData = new FormData(contactForm)
+    let captchaResponse = formData.get("g-recaptcha-response")
     let json = {
         name: formName.value,
         email: formEmail.value,
@@ -46,12 +48,12 @@ contactForm.addEventListener('submit', function(event){
     }
 
     let http = new XMLHttpRequest();
-    http.open('POST', '/contact/send_email');
+    http.open('POST', '/contact/send_email/'+encodeURI(captchaResponse));
     http.setRequestHeader('content-type', 'application/json');
     http.onload = function(){
-        alert('Email has been sent')
+        window.location.assign("/")
+      alert("If Captcha was Successfully Filled Out, The Email Has Been Sent.")
     }
-
     http.send(JSON.stringify(json))
     }
 );

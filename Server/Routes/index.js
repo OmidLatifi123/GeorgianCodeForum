@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer')
 const {google} = require ('googleapis')
-
+const fetch = require('node-fetch')
 const CLIENT_ID = '849012406795-rjnvudahhj7obc3ug4jdntd1p18p1a6e.apps.googleusercontent.com'
 const CLIENT_SECRET = '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'
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
@@ -44,43 +44,50 @@ router.get('/login', (req, res, next)=>{IndexController.DisplayLogin(req, res, n
 /* GET register Page */
 router.get('/register', (req, res, next)=>{IndexController.DisplayRegister(req, res, next);});
 
-router.post("/contact/send_email", function(req, res){
+router.post("/contact/send_email/:captchaResponse", async(req, res) =>{
     let name = req.body.name;
     let email = req.body.email;
     let issue = req.body.issue;
-  
-    const accessToken = oAuth2Client.getAccessToken()
-  
-    const transport = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            type: 'OAuth2',
-            user: 'gcfhelpdesk1@gmail.com', 
-            clientId: CLIENT_ID,
-            clientSecret: CLIENT_SECRET,
-            refreshToken: REFRESH_TOKEN,
-            accessToken: accessToken
-        }
-    })
-  
-    const mailOptions = {
-        from: 'gcfhelpdesk1@gmail.com',
-        to: 'gcfhelpdesk1@gmail.com',
-        subject: "GCF Support Ticket: " + name,
-        text:  email +":" + issue,
-    };
+    let captchaResponse = req.body.captchaResponse;
 
-    const mailOptions2 ={
-        from:'gcfhelpdesk1@gmail.com',
-        to: email,
-        subject: "Support Ticket Issued",
-        text: "Your Support Ticket Has Been Sent. Our Team Will Contact You About Your Issues As Soon As Possible"
-    };
+    const captchaVerified = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret6Le-_LIpAAAAABc93noYx-p-lxnCE9-oJ3Y1hYgf&response=${req.params.captchaResponse}`,{
+        method:"POST"
+    }).then(res = res.json())
+    console.log(captchaVerified);
+    if(captchaVerified.status == 200){
+        const accessToken = oAuth2Client.getAccessToken()
   
-     transport.sendMail(mailOptions)
+        const transport = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: 'gcfhelpdesk1@gmail.com', 
+                clientId: CLIENT_ID,
+                clientSecret: CLIENT_SECRET,
+                refreshToken: REFRESH_TOKEN,
+                accessToken: accessToken
+            }
+        })
+      
+        const mailOptions = {
+            from: 'gcfhelpdesk1@gmail.com',
+            to: 'gcfhelpdesk1@gmail.com',
+            subject: "GCF Support Ticket: " + name,
+            text:  email +":" + issue,
+        };
     
-     transport.sendMail(mailOptions2)
-     res.redirect('/')
+        const mailOptions2 ={
+            from:'gcfhelpdesk1@gmail.com',
+            to: email,
+            subject: "Support Ticket Issued",
+            text: "Your Support Ticket Has Been Sent. Our Team Will Contact You About Your Issues As Soon As Possible"
+        };
+      
+         transport.sendMail(mailOptions)
+        
+         transport.sendMail(mailOptions2)
+    }
+  
   })
 
 
