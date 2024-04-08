@@ -85,13 +85,20 @@ let logout = (req, res, next) => {
 
 // });
 
-// let resetPassword = (req, res, next) => {
+let forgotPassword = (req, res, next) => {
+    res.render('auth/forgotPassword', { 
+        title: 'Forgot Password',
+        messages: messages
+    });
+};
 
-// };
+let resetPassword = (req, res, next) => {
+
+};
 
 // make public
 module.exports = {
     displayRegisterForm, displayLoginForm, 
     submitRegister, submitLogin, logout,
-    // forgotPassword, resetPassword
+    forgotPassword, resetPassword
 };
