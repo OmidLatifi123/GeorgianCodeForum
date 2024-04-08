@@ -166,6 +166,7 @@ draw();
     </div>
     Create Post
 </button></a>
+
 <ul class="card-body center">
     {{#each post}}
         <li class="card m-4 text-center col-lg-4">
@@ -178,13 +179,16 @@ draw();
             <span class="preCode">
             <pre><code class="language-{{this.codingLanguage}}">{{this.postCode}}</code></pre>
              </span>
+             {{#if this.editable}}
             <div class="btn-primary-container">
             <a href="/post/edit/{{this._id}}" class="btn btn-primary">
                 ✎ Edit
             </a>
             <br>
+            {{/if}}
             <a href="/post/comment/{{this._id}}" class="btn btn-primary">🗨 Comment</a> 
              </div> 
+            {{#if this.editable}}
              <a class="btn btn-primary deleteButton" >
                 🗑 Delete
             </a> 
@@ -193,38 +197,40 @@ draw();
                 <a class="btn btn-primary confirmDelete" href="/post/delete/{{this._id}}">Delete</a>
                 <a class="btn btn-primary cancelDelete">Cancel</a>
             </div>
+            {{/if}}
             <br>
-             <div class="comment-section">
-            {{#if comments}}
-            <p>Comments:</p>
-            <ul>
-                {{#each this.comments}}
-                    <li>{{comments}}</li>
-                {{/each}}
-            </ul>
-                 {{else}}
-            <p>Nothing to see here...</p>
-                {{/if}}
-            </div>
+            <div class="comment-section">
+           {{#if this.comment.length}}
+                <p>Comments:</p>
+                <ul>
+                    {{#each this.comment}}
+                    <div class="comment-box">
+                        <p class="username">{{this.username}}, {{this.createdAt}}</p>
+                        <p class="comment-content">{{this.content}}</p>
+                    </div>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>Nothing to see here...</p>
+            {{/if}}
 
             <br>
-<span class="reactionBtns">
-    <span>
-             <label class="likeBtn">
-  <input type="checkbox">
-  <svg class="likeSvg" id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-</label>
-    </span>
+            <span class="reactionBtns">
+                <span>
+                        <label class="likeBtn">
+            <input type="checkbox">
+            <svg class="likeSvg" id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
+            </label>
+                </span>
 
-    <span>
-       <label class="dislikeBtn">
-  <input type="checkbox">
-  <svg class="dislikeSvg" id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
-</label>
-    </span>
-      
-</span>
-     
+                <span>
+                <label class="dislikeBtn">
+            <input type="checkbox">
+            <svg class="dislikeSvg" id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M2.156,14.901l2.489-8.725C5.012,4.895,6.197,4,7.528,4h13.473C21.554,4,22,4.448,22,5v14  c0,0.215-0.068,0.425-0.197,0.597l-5.392,7.24C15.813,27.586,14.951,28,14.027,28c-1.669,0-3.026-1.357-3.026-3.026V20H5.999  c-1.265,0-2.427-0.579-3.188-1.589C2.047,17.399,1.809,16.12,2.156,14.901z" id="XMLID_259_"></path><path d="M25.001,20h4C29.554,20,30,19.552,30,19V5c0-0.552-0.446-1-0.999-1h-4c-0.553,0-1,0.448-1,1v14  C24.001,19.552,24.448,20,25.001,20z M27.001,6.5c0.828,0,1.5,0.672,1.5,1.5c0,0.828-0.672,1.5-1.5,1.5c-0.828,0-1.5-0.672-1.5-1.5  C25.501,7.172,26.173,6.5,27.001,6.5z" id="XMLID_260_"></path></svg>
+            </label>
+                </span>
+                
+            </span>
         </li>
     {{/each}}
 </ul>

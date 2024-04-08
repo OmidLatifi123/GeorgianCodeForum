@@ -12,7 +12,8 @@ let commentSchema = new mongoose.Schema ({
         default: Date.now 
     },
     username: {
-        type: String
+        type: String,
+        required: true
     },
     post: {
         type: mongoose.Schema.Types.ObjectId,

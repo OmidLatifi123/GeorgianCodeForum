@@ -2,24 +2,25 @@
 const Comment = require('../Models/comment');
 const Post = require('../Models/post');
 
+
 // Controller method to create a new comment
 const createComment = async (req, res, next) => {
     try {
-        const { postId } = req.params.postId;
-        // const { comment, username } = req.body;
+        const { comment, postId } = req.body;
+        const { username } = req.user;  // Assuming the username is available in req.user
 
         // Create a new comment instance
         const newComment = new Comment({
-            content: req.body.comment,
-
-            post: req.body.postId
+            content: comment,
+            username: username,  // Set the username from the logged-in user
+            post: postId
         });
 
         // Save the new comment to the database
         await newComment.save();
 
         // Redirect back to the post page after adding the comment
-        res.redirect(`/post/`);
+        res.redirect(`/post`);  // Adjust the URL as needed to match your application's routing
     } catch (error) {
         next(error); // Pass any errors to the error handler middleware
     }
@@ -34,26 +35,28 @@ const deleteComment = async (req, res, next) => {
         await Comment.findByIdAndDelete(commentId);
 
         // Redirect back to the post page after deleting the comment
-        res.redirect(`/post/${postId}`);
+        res.redirect(`/post/find/${postId}`);  // Make sure this route correctly shows the post
     } catch (error) {
         next(error); // Pass any errors to the error handler middleware
     }
 };
 
 let getComment = async (req, res, next) => {
+    const { postId } = req.params;
 
+    // Check if the user is logged in
+    if (!req.isAuthenticated()) {
+        // Redirect to the login page if the user is not authenticated
+        return res.redirect('/auth/login');  // Adjust the URL as per your login route
+    }
 
-
-    // let post = await Post.findById{
-    //     req.params.postId
-    // }
-
+    // Proceed to render the comment form if the user is logged in
     res.render('post/comment', { 
         title: 'Add New Comment',
-        postId: req.params.postId
+        postId: postId,
+        user: req.user  // Include the user in the rendering context if needed
     });
 }
-
 
 // Export the controller methods
 module.exports = {
