@@ -53,4 +53,15 @@ router.get('/github/callback',
     })
 
 
+    // REST/FOROGT PW ROUTER //////////////////////////////////////
+
+router.post('/forgotPassword', (req, res, next) => {
+    authController.forgotPassword(req, res, next);
+});
+
+router.post('/resetPassword', (req, res, next) => {
+    authController.resetPassword(req, res, next);
+});
+
+
 module.exports = router;

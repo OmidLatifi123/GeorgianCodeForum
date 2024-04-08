@@ -1,6 +1,7 @@
 // User model for Auth
 let User = require('../Models/user');
 const passport = require('passport');
+const sendEmail = require('../Utils/email');
 
 let displayRegisterForm = (req, res, next) => {
     let messages = req.session.messages || [];
@@ -11,31 +12,6 @@ let displayRegisterForm = (req, res, next) => {
         messages: messages
     });
 };
-
-// let submitRegister = (req, res, next) => {
-//     // Check if email or username already exists
-//     User.findOne({ $or: [{ email: req.body.email }, { username: req.body.username }] }, (err, existingUser) => {
-//         if (err) {
-//             // Handle error
-//             return res.render('/auth/register', { messages: err });
-//         }
-//         if (existingUser) {
-//             // User with the same email or username already exists
-//             let errorMessage = "Email or username already exists.";
-//             return res.render('/auth/register', { messages: errorMessage });
-//         }
-//         // Proceed with registration if email and username are unique
-//         User.register(new User({ username: req.body.username, email: req.body.email }), req.body.password, (err, newUser) => {
-//             if (err) {
-//                 return res.render('/auth/register', { messages: err });
-//             } else {
-//                 req.login(newUser, (err) => {
-//                     res.redirect('/post');
-//                 });
-//             }
-//         });
-//     });
-// };
 
 let submitRegister = (req, res, next) => {
     User.register(new User({ username: req.body.username }), req.body.password, (err, newUser) => {
@@ -89,7 +65,33 @@ let logout = (req, res, next) => {
     })
 };
 
+//RESET PASSWORD //////////////////////////////////////////////////
+
+// exports.forgotPassword = asyncErrorHandler(async (req, res, next) => {
+
+//     const user = await User.findOne({username: req.body.username})
+
+//     if (!user) {
+//         const error = new CustomError('User not found, try again with a registered email', 404);
+//         next(error);
+//     }
+
+//    const resetToken = user.createResetPasswordToken();
+
+//    await user.save({validateBeforeSave: false});
+
+//     const resetUrl = `${req.protocol}`
+//    await sendEmail();
+
+// });
+
+// let resetPassword = (req, res, next) => {
+
+// };
+
 // make public
 module.exports = {
-    displayRegisterForm, displayLoginForm, submitRegister, submitLogin, logout
+    displayRegisterForm, displayLoginForm, 
+    submitRegister, submitLogin, logout,
+    // forgotPassword, resetPassword
 };

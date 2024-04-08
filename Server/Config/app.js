@@ -6,6 +6,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 
+const multer = require('multer');
+// const GridFsStorage = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
+const Post = require('../Models/post');
+const File = require('../Models/file');
+
 // additional dependencies
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -119,6 +125,63 @@ passport.use(new GoogleStrategy({
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+// FILE UPLOAD ////////////////////////////////////////////////////////
+
+// Initialize GridFS
+// let gfs;
+// conn.once('open', () => {
+//     gfs = Grid(conn.db, mongoose.mongo);
+//     gfs.collection('uploads');
+// });
+
+// // Create storage engine
+// const storage = new GridFsStorage({
+//     url: 'mongodb+srv://olatifi:GCF2024@cluster0.aaruybt.mongodb.net/media',
+//     file: (req, file) => {
+//         return {
+//             filename: file.originalname,
+//             contentType: file.mimetype
+//         };
+//     }
+// });
+// const upload = multer({ storage });
+
+// // Handle file upload
+// app.post('/upload', upload.single('file'), async (req, res) => {
+//     try {
+//         const newFile = new File({
+//             filename: req.file.filename,
+//             contentType: req.file.contentType
+//         });
+//         const savedFile = await newFile.save();
+//         res.json(savedFile);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Server Error');
+//     }
+// });
+
+// // Handle POST creation
+// app.post('/post', async (req, res) => {
+//     try {
+//         const { postTitle, postContent, postCode, createdAt, username, comment, file } = req.body;
+//         const post = new Post({
+//             postTitle,
+//             postContent,
+//             postCode,
+//             createdAt,
+//             username,
+//             comment,
+//             file: req.file ? req.file.id : null // If file uploaded, save its ID
+//         });
+//         const savedPost = await post.save();
+//         res.json(savedPost);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Server Error');
+//     }
+// });
 
 app.use('/', indexRouter);
 app.use('/post', postRouter);

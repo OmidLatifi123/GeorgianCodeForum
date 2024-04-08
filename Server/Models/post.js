@@ -30,7 +30,11 @@ let postSchema = new mongoose.Schema ({
     }, comment: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
-    }]
+    }],
+    file: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'File'
+    }
 });
 
 let Post = mongoose.model('Post', postSchema);
